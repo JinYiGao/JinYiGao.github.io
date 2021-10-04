@@ -462,27 +462,27 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// uniform 变量在着色器中全局使用</span>
-<span style="color:#75715e">//-----设置uniform变量值-----</span>
-<span style="color:#75715e">//原生OpenGL函数</span>
-<span style="color:#111">glUniform1i</span><span style="color:#111">(</span><span style="color:#111">glGetUniformLocation</span><span style="color:#111">(</span><span style="color:#111">ourShader</span><span style="color:#111">.</span><span style="color:#111">ID</span><span style="color:#111">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#111">texture1</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#111">),</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span> 
-<span style="color:#75715e">//QOpenGLShaderProgram封装</span>
-<span style="color:#111">shderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setUniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">uniformName</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#111">value</span><span style="color:#111">)</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// uniform 变量在着色器中全局使用
+</span><span style="color:#75715e">//-----设置uniform变量值-----
+</span><span style="color:#75715e">//原生OpenGL函数
+</span><span style="color:#75715e"></span><span style="color:#111">glUniform1i</span><span style="color:#111">(</span><span style="color:#111">glGetUniformLocation</span><span style="color:#111">(</span><span style="color:#111">ourShader</span><span style="color:#111">.</span><span style="color:#111">ID</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;texture1&#34;</span><span style="color:#111">),</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span> 
+<span style="color:#75715e">//QOpenGLShaderProgram封装
+</span><span style="color:#75715e"></span><span style="color:#111">shderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setUniformValue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;uniformName&#34;</span><span style="color:#111">,</span><span style="color:#111">value</span><span style="color:#111">)</span>
     
-<span style="color:#75715e">//------------------纹理相关-----------------------</span>
-<span style="color:#75715e">//内置函数 texture</span>
-<span style="color:#111">texture</span><span style="color:#111">(</span><span style="color:#111">ourTexture1</span><span style="color:#111">,</span><span style="color:#111">TexCoord</span><span style="color:#111">)</span> <span style="color:#75715e">//纹理采样</span>
-<span style="color:#75715e">//内置函数 mix</span>
-<span style="color:#111">mix</span><span style="color:#111">(</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#ae81ff">0.2</span><span style="color:#111">)</span>  <span style="color:#75715e">//按照0.8texture1+0.2texture2采样</span>
-    
-<span style="color:#75715e">//------------------深度相关-----------------------</span>
-<span style="color:#111">gl_FragCoord</span> <span style="color:#75715e">//x和y分量代表片段的屏幕空间坐标 z分量代表片段真正深度值</span>
-    
-<span style="color:#75715e">//丢弃片段</span>
-<span style="color:#00a8c8">discard</span><span style="color:#111">;</span>
+<span style="color:#75715e">//------------------纹理相关-----------------------
+</span><span style="color:#75715e">//内置函数 texture
+</span><span style="color:#75715e"></span><span style="color:#111">texture</span><span style="color:#111">(</span><span style="color:#111">ourTexture1</span><span style="color:#111">,</span><span style="color:#111">TexCoord</span><span style="color:#111">)</span> <span style="color:#75715e">//纹理采样
+</span><span style="color:#75715e">//内置函数 mix
+</span><span style="color:#75715e"></span><span style="color:#111">mix</span><span style="color:#111">(</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#ae81ff">0.2</span><span style="color:#111">)</span>  <span style="color:#75715e">//按照0.8texture1+0.2texture2采样
+</span><span style="color:#75715e"></span>    
+<span style="color:#75715e">//------------------深度相关-----------------------
+</span><span style="color:#75715e"></span><span style="color:#111">gl_FragCoord</span> <span style="color:#75715e">//x和y分量代表片段的屏幕空间坐标 z分量代表片段真正深度值
+</span><span style="color:#75715e"></span>    
+<span style="color:#75715e">//丢弃片段
+</span><span style="color:#75715e"></span><span style="color:#111">discard</span><span style="color:#111">;</span>
 
-<span style="color:#75715e">//纹理变量</span>
-<span style="color:#00a8c8">sampler2D</span>  <span style="color:#111">,</span>  <span style="color:#111">samplerCube</span>
+<span style="color:#75715e">//纹理变量
+</span><span style="color:#75715e"></span><span style="color:#111">sampler2D</span>  <span style="color:#111">,</span>  <span style="color:#111">samplerCube</span>
     
 
 </code></pre></td></tr></table>
@@ -668,8 +668,8 @@
 </span><span style="color:#75715e">//   glBindTexture默认对应GL_TEXTURE0
 </span><span style="color:#75715e">//---对于多纹理使用，必须:
 </span><span style="color:#75715e">//  1.然后定义哪个uniform采样器对应哪个纹理单元.
-</span><span style="color:#75715e"></span><span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">texture1</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
-<span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">texture2</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+</span><span style="color:#75715e"></span><span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;texture1&#34;</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;texture2&#34;</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 <span style="color:#75715e">//  2.先绑定纹理对象到对应的纹理单元.
 </span><span style="color:#75715e"></span><span style="color:#111">glActivateTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE0</span><span style="color:#111">)</span><span style="color:#75715e">//激活纹理单元
 </span><span style="color:#75715e"></span><span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span><span style="color:#111">texture1</span><span style="color:#111">);</span>
@@ -1174,6 +1174,7 @@
 </tbody>
 </table>
 <h3 id="94-面剔除">9.4 面剔除</h3>
+<p>面剔除含义: 渲染正向面 ， 丢弃背向面</p>
 <div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1189,11 +1190,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#960050;background-color:#1e0010">面剔除含义</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">渲染正向面</span> <span style="color:#960050;background-color:#1e0010">，</span> <span style="color:#960050;background-color:#1e0010">丢弃背向面</span>
-<span style="color:#75715e">//启用面剔除
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//启用面剔除
 </span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_CULL_FACE</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//设置需要剔除的面类型
