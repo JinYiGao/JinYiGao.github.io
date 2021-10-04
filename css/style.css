@@ -879,7 +879,7 @@ img.alignright {
     line-height: 100%;
     outline: none;
     /* background: #fff; */
-    background: rgb(245, 196, 196);
+    background: rgb(247, 175, 175);
     padding: .6em 1em;
     margin: 1px;
     border-radius: 20px;
@@ -895,7 +895,7 @@ img.alignright {
 }
 .post-donation-qrcode {
     display: inline-block;
-    margin: 15px;
+    margin: 10px;
 }
 .post-donation-qrcode img {
     width: 200px;
