@@ -879,10 +879,11 @@ img.alignright {
     line-height: 100%;
     outline: none;
     /* background: #fff; */
-    background: rgb(247, 175, 175);
+    background: rgb(238, 85, 85);
     padding: .6em 1em;
     margin: 1px;
     border-radius: 20px;
+    color: white;
 }
 #post-donation-button:hover {
     border: 2px solid #0474bb;
