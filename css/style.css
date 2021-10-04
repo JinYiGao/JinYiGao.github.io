@@ -222,6 +222,7 @@ textarea {
     border:none;
 }
 #nav-menu a:hover {
+    color: #0089e0;
 }
 #nav-menu a.current {
     border:1px solid #ddd;

@@ -210,9 +210,9 @@
         <div class="post-content">
             <p>平时经常有使用github或者gitee，本篇笔记收录了git的一些常用命令，对于日常使用来说足够了，后面再有其他的会慢慢补充&hellip;</p>
 <h2 id="git常用命令">Git常用命令</h2>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -246,37 +246,37 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git init  <span style="color:#998;font-style:italic">#初始化 </span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git init  <span style="color:#75715e">#初始化 </span>
 
-git add .  <span style="color:#998;font-style:italic">#添加所有 </span>
+git add .  <span style="color:#75715e">#添加所有 </span>
 
-git commit -m <span style="color:#d14">&#34;first commit&#34;</span>   <span style="color:#998;font-style:italic">#提交 并添加注释</span>
+git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>   <span style="color:#75715e">#提交 并添加注释</span>
 
-git remote add origin https://github.com/JinYiGao/Geological-hazard-weapon  <span style="color:#998;font-style:italic">#远程连接到仓库</span>
+git remote add origin https://github.com/JinYiGao/Geological-hazard-weapon  <span style="color:#75715e">#远程连接到仓库</span>
 
-git push -u origin master  <span style="color:#998;font-style:italic">#push到仓库</span>
+git push -u origin master  <span style="color:#75715e">#push到仓库</span>
 
 git pull 
-<span style="color:#998;font-style:italic">#  若要提交到分支 则 </span>
-<span style="color:#998;font-style:italic">#  git push -u origin 分支名</span>
+<span style="color:#75715e">#  若要提交到分支 则 </span>
+<span style="color:#75715e">#  git push -u origin 分支名</span>
 
-git branch <span style="color:#998;font-style:italic">#查看当前分支</span>
+git branch <span style="color:#75715e">#查看当前分支</span>
 
-git branch 分支名   <span style="color:#998;font-style:italic">#创建新分支</span>
+git branch 分支名   <span style="color:#75715e">#创建新分支</span>
 
-git checkout -b 分支名    <span style="color:#998;font-style:italic">#（你自己创建的分支名 若无 则创建新分支）</span>
+git checkout -b 分支名    <span style="color:#75715e">#（你自己创建的分支名 若无 则创建新分支）</span>
 
-git checkout 分支名   <span style="color:#998;font-style:italic">#切换分支</span>
+git checkout 分支名   <span style="color:#75715e">#切换分支</span>
 
-git branch -D tmp <span style="color:#998;font-style:italic">#删除本地分支</span>
+git branch -D tmp <span style="color:#75715e">#删除本地分支</span>
 
-git branch -r <span style="color:#998;font-style:italic">#查看远程分支</span>
+git branch -r <span style="color:#75715e">#查看远程分支</span>
  
-git push origin --delete master  <span style="color:#998;font-style:italic">#删除Github项目上的master分支</span>
+git push origin --delete master  <span style="color:#75715e">#删除Github项目上的master分支</span>
 
-git rm -r --cached <span style="color:#d14">&#34;文件路径&#34;</span>   <span style="color:#998;font-style:italic">#不删除物理文件，仅将该文件从缓存中删除；</span>
+git rm -r --cached <span style="color:#e6db74">&#34;文件路径&#34;</span>   <span style="color:#75715e">#不删除物理文件，仅将该文件从缓存中删除；</span>
 
-git rm -r --f <span style="color:#d14">&#34;文件路径&#34;</span>   <span style="color:#998;font-style:italic">#不仅将该文件从缓存中删除，还会将物理文件删除</span>
+git rm -r --f <span style="color:#e6db74">&#34;文件路径&#34;</span>   <span style="color:#75715e">#不仅将该文件从缓存中删除，还会将物理文件删除</span>
 
 </code></pre></td></tr></table>
 </div>
