@@ -226,6 +226,7 @@ textarea {
 #nav-menu a.current {
     border:1px solid #ddd;
     border-bottom:1px solid #fff;
+    color: #0089e0;
 }
 .site-search {
     display:none;
@@ -275,9 +276,11 @@ textarea {
     padding-top:20px;
     float:left;
 }
+
 .post {
     padding:25px 0 15px;
 }
+
 .post-title {
     margin:0;
     color:#555;
@@ -286,9 +289,15 @@ textarea {
     font-size: 1.5em;
     font-weight: bold;
 }
+
 .post-title a, .keyword {
     color:#555;
 }
+
+.post-title a:hover{
+    color: #007EC6;
+}
+
 .post-meta {
     padding:0;
     margin:9px 0 0;
