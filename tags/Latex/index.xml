@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on 呆呆的博客</title>
+    <link>https://JinYiGao.github.io/tags/Latex/</link>
+    <description>Recent content in Latex on 呆呆的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 13 Dec 2020 21:00:00 +0800</lastBuildDate><atom:link href="https://JinYiGao.github.io/tags/Latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Latex 学习笔记</title>
+      <link>https://JinYiGao.github.io/post/2020-12-13-latex-study-note/</link>
+      <pubDate>Sun, 13 Dec 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://JinYiGao.github.io/post/2020-12-13-latex-study-note/</guid>
+      <description>作为一名工科研究生，想要发表论文，首先要过的就是论文格式这一关，一般人可能会想着用word来写作，但</description>
+    </item>
+    
+  </channel>
+</rss>

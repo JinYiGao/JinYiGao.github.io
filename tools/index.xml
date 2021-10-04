@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on 呆呆的博客</title>
+    <link>https://JinYiGao.github.io/tools/</link>
+    <description>Recent content in Tools on 呆呆的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 03 Oct 2021 15:42:39 +0800</lastBuildDate><atom:link href="https://JinYiGao.github.io/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021</title>
+      <link>https://JinYiGao.github.io/table/</link>
+      <pubDate>Sun, 03 Oct 2021 15:42:39 +0800</pubDate>
+      
+      <guid>https://JinYiGao.github.io/table/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
