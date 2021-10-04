@@ -878,20 +878,24 @@ img.alignright {
     border: 1px solid #272727;
     line-height: 100%;
     outline: none;
-    background: #fff;
+    /* background: #fff; */
+    background: rgb(245, 196, 196);
     padding: .6em 1em;
     margin: 1px;
+    border-radius: 20px;
 }
 #post-donation-button:hover {
     border: 2px solid #0474bb;
     color: #0474bb;
     margin: 0;
+    cursor: pointer;
 }
 #post-donation-qrcodes {
     margin-top: .8em;
 }
 .post-donation-qrcode {
     display: inline-block;
+    margin: 15px;
 }
 .post-donation-qrcode img {
     width: 200px;

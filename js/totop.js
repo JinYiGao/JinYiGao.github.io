@@ -10,3 +10,12 @@ $("#rocket").click(function() {
     });
     return false;
 });
+
+var hidden = true;
+$("#post-donation-qrcodes").hide();
+$("#post-donation-button").click(function() {
+    return function (){
+        hidden ? $("#post-donation-qrcodes").show() : $("#post-donation-qrcodes").hide();
+        hidden = !hidden;
+    }()
+});

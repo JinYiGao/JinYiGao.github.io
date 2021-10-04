@@ -503,26 +503,21 @@ curl localhost:3344    <span style="color:#998;font-style:italic"># 或者直接
         </div>
     </article>
     
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+    <div id="post-donation">
+  <button id="post-donation-button" title="点击隐藏/显示打赏信息">
+    Donate / 打赏
+  </button>
+  <div id="post-donation-qrcodes"><div class="post-donation-qrcode alipay">
+      <img src="https://JinYiGao.github.io/img/alipay_qrcode.png">
+      <p>Via Alipay / 支付宝</p>
+    </div><div class="post-donation-qrcode wechat">
+      <img src="https://JinYiGao.github.io/img/wechat_donation_qrcode.png">
+      <p>Via Wechat / 微信赞赏</p>
+    </div></div>
+</div>
     
     
     
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     
     
@@ -617,11 +612,13 @@ curl localhost:3344    <span style="color:#998;font-style:italic"># 或者直接
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<script type="text/javascript" src='/js/totop.js' async=""></script>
 
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
 
 
 
