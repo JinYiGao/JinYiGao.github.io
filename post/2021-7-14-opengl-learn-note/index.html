@@ -254,9 +254,9 @@
         <div class="post-content">
             <h1 id="opengl学习基于qopengl">OpenGL学习——基于QOpenGL</h1>
 <h2 id="1-基本知识">1. 基本知识</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -278,7 +278,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># VAO 顶点数组对象(记录顶点状态信息，无法记录纹理状态)</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># VAO 顶点数组对象(记录顶点状态信息，无法记录纹理状态)</span>
 <span style="color:#75715e"># VBO 顶点缓冲对象</span>
 <span style="color:#75715e"># EBO 索引缓冲对象</span>
 
@@ -301,9 +301,9 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="2-opengl常用函数">2. OpenGL常用函数</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -351,58 +351,58 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//开启深度测试 z缓冲
-</span><span style="color:#75715e"></span>glEnable(GL_DEPTH_TEST);
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//开启深度测试 z缓冲
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_DEPTH_TEST</span><span style="color:#111">);</span>
 <span style="color:#75715e">//如果启用了深度缓冲，还应该在每个渲染迭代之前使用GL_DEPTH_BUFFER_BIT来清除深度缓冲，否则会仍在使用上一次渲染迭代中的写入的深度值
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//创建VAO并绑定 用于存储之后设置的所有状态 下次绘制就直接启用VAO就行
-</span><span style="color:#75715e"></span>glGenVertexArrays(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>VAO);
-glBindVertexArray(VAO);
+</span><span style="color:#75715e"></span><span style="color:#111">glGenVertexArrays</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">VAO</span><span style="color:#111">);</span>
+<span style="color:#111">glBindVertexArray</span><span style="color:#111">(</span><span style="color:#111">VAO</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//创建缓冲区
-</span><span style="color:#75715e"></span>glGenBuffers(); <span style="color:#75715e">// --- 只有在bind后才会真正创建Object
-</span><span style="color:#75715e"></span>glCreateBuffers(); <span style="color:#75715e">// --- 创建即生成Object
+</span><span style="color:#75715e"></span><span style="color:#111">glGenBuffers</span><span style="color:#111">();</span> <span style="color:#75715e">// --- 只有在bind后才会真正创建Object
+</span><span style="color:#75715e"></span><span style="color:#111">glCreateBuffers</span><span style="color:#111">();</span> <span style="color:#75715e">// --- 创建即生成Object
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//将缓冲区绑定到相应目标类型，即设置缓冲区类型，以后对该目标操作即对绑定到该目标的对象生效
-</span><span style="color:#75715e"></span>glBindBuffer(GL_ARRAY_BUFFER, VBO);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBuffer</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#111">VBO</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 绑定缓冲时附带binding目标点
-</span><span style="color:#75715e"></span>glBindBufferBase(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">2</span>, uboExampleBlock); 
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBufferBase</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">);</span> 
 <span style="color:#75715e">// 绑定部分缓冲数据至bindding目标点
-</span><span style="color:#75715e"></span>glBindBufferRange(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">2</span>, uboExampleBlock, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">152</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBufferRange</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">152</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//将顶点数据存入指定目标类型的缓冲区
-</span><span style="color:#75715e"></span>glBufferData(GL_ARRAY_BUFFER,<span style="color:#66d9ef">sizeof</span>(vertices),vertices,GL_STATIC_DRAW) <span style="color:#75715e">// 给指定目标的缓冲区添加数据
-</span><span style="color:#75715e"></span>glNamedBufferData(GLuint buffer, GLsizeiptr size, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>data, GLenum usage); <span style="color:#75715e">//直接给指定的缓冲区添加数据，缓冲区可以不绑定到目标
-</span><span style="color:#75715e"></span>glNamedBufferStorage(GLuint buffer, GLsizeiptr size, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>data, GLenum flag); <span style="color:#75715e">// *Storage()不能对同一个buffer做两次。 *Data()可以。 *Storage()最后一个参数flag有GL_DYNAMIC_STORAGE_BIT则允许后续 *subdata（）更新数据。
+</span><span style="color:#75715e"></span><span style="color:#111">glBufferData</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span><span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">vertices</span><span style="color:#111">),</span><span style="color:#111">vertices</span><span style="color:#111">,</span><span style="color:#111">GL_STATIC_DRAW</span><span style="color:#111">)</span> <span style="color:#75715e">// 给指定目标的缓冲区添加数据
+</span><span style="color:#75715e"></span><span style="color:#111">glNamedBufferData</span><span style="color:#111">(</span><span style="color:#111">GLuint</span> <span style="color:#111">buffer</span><span style="color:#111">,</span> <span style="color:#111">GLsizeiptr</span> <span style="color:#111">size</span><span style="color:#111">,</span> <span style="color:#00a8c8">const</span> <span style="color:#00a8c8">void</span> <span style="color:#f92672">*</span><span style="color:#111">data</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">usage</span><span style="color:#111">);</span> <span style="color:#75715e">//直接给指定的缓冲区添加数据，缓冲区可以不绑定到目标
+</span><span style="color:#75715e"></span><span style="color:#111">glNamedBufferStorage</span><span style="color:#111">(</span><span style="color:#111">GLuint</span> <span style="color:#111">buffer</span><span style="color:#111">,</span> <span style="color:#111">GLsizeiptr</span> <span style="color:#111">size</span><span style="color:#111">,</span> <span style="color:#00a8c8">const</span> <span style="color:#00a8c8">void</span> <span style="color:#f92672">*</span><span style="color:#111">data</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">flag</span><span style="color:#111">);</span> <span style="color:#75715e">// *Storage()不能对同一个buffer做两次。 *Data()可以。 *Storage()最后一个参数flag有GL_DYNAMIC_STORAGE_BIT则允许后续 *subdata（）更新数据。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//设置如何解析顶点数据
 </span><span style="color:#75715e">//  1.对应着色器中location 顶点数据将传到该位置
 </span><span style="color:#75715e">//  2.属性大小 vec3 or vec4
-</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>)
+</span><span style="color:#75715e"></span><span style="color:#111">glVertexAttribPointer</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#111">GL_FLOAT</span><span style="color:#111">,</span> <span style="color:#111">GL_FALSE</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">),</span> <span style="color:#111">(</span><span style="color:#00a8c8">void</span><span style="color:#f92672">*</span><span style="color:#111">)</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
 <span style="color:#75715e">//设置启用顶点属性 
-</span><span style="color:#75715e"></span>glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glEnableVertexAttribArray</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//清除颜色缓冲和深度缓冲
-</span><span style="color:#75715e"></span>glClear(GL_COLOR_BUFFER_BIT <span style="color:#f92672">|</span> GL_DEPTH_BUFFER_BIT);
+</span><span style="color:#75715e"></span><span style="color:#111">glClear</span><span style="color:#111">(</span><span style="color:#111">GL_COLOR_BUFFER_BIT</span> <span style="color:#f92672">|</span> <span style="color:#111">GL_DEPTH_BUFFER_BIT</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//创建帧缓冲
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> fbo;
-glGenFramebuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>fbo);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">fbo</span><span style="color:#111">;</span>
+<span style="color:#111">glGenFramebuffers</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">fbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//绑定为激活的帧缓冲
-</span><span style="color:#75715e"></span>glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindFramebuffer</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">fbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//定义了一个缓冲区数组，片段着色器数据的输出将写入其中
-</span><span style="color:#75715e"></span>GLenum buffer[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1};
-glDrawBuffers(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">&amp;</span>buffer);
+</span><span style="color:#75715e"></span><span style="color:#111">GLenum</span> <span style="color:#111">buffer</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span><span style="color:#111">GL_COLOR_ATTACHMENT0</span><span style="color:#111">,</span> <span style="color:#111">GL_COLOR_ATTACHMENT1</span><span style="color:#111">};</span>
+<span style="color:#111">glDrawBuffers</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">buffer</span><span style="color:#111">);</span>
     
     
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="3-qopenlgshaderprogram">3. QOpenLGShaderProgram</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -418,26 +418,26 @@ glDrawBuffers(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//------该类可免去自己封装着色器类的过程------
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//------该类可免去自己封装着色器类的过程------
 </span><span style="color:#75715e">//添加着色器
-</span><span style="color:#75715e"></span>addShaderFromSourceFile()
+</span><span style="color:#75715e"></span><span style="color:#111">addShaderFromSourceFile</span><span style="color:#111">()</span>
 
 <span style="color:#75715e">//链接着色器
-</span><span style="color:#75715e"></span>link()
+</span><span style="color:#75715e"></span><span style="color:#111">link</span><span style="color:#111">()</span>
     
 <span style="color:#75715e">//使用着色器程序对象
-</span><span style="color:#75715e"></span>bind()
+</span><span style="color:#75715e"></span><span style="color:#111">bind</span><span style="color:#111">()</span>
 
 <span style="color:#75715e">//设置着色器中 uniform 的值
-</span><span style="color:#75715e"></span>setUniformValue()
+</span><span style="color:#75715e"></span><span style="color:#111">setUniformValue</span><span style="color:#111">()</span>
     
 <span style="color:#75715e">//不过还是建议自己封装一个着色器类，就用QOpenGLShaderProgram进行二次封装，以应对各种其他情况
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="4-glsl">4. GLSL</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -462,35 +462,35 @@ glDrawBuffers(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// uniform 变量在着色器中全局使用</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// uniform 变量在着色器中全局使用</span>
 <span style="color:#75715e">//-----设置uniform变量值-----</span>
 <span style="color:#75715e">//原生OpenGL函数</span>
-glUniform1i(glGetUniformLocation(ourShader.ID, <span style="color:#960050;background-color:#1e0010">&#34;</span>texture1<span style="color:#960050;background-color:#1e0010">&#34;</span>), <span style="color:#ae81ff">0</span>); 
+<span style="color:#111">glUniform1i</span><span style="color:#111">(</span><span style="color:#111">glGetUniformLocation</span><span style="color:#111">(</span><span style="color:#111">ourShader</span><span style="color:#111">.</span><span style="color:#111">ID</span><span style="color:#111">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#111">texture1</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#111">),</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span> 
 <span style="color:#75715e">//QOpenGLShaderProgram封装</span>
-shderProgram<span style="color:#f92672">-&gt;</span>setUniformValue(<span style="color:#960050;background-color:#1e0010">&#39;</span>uniformName<span style="color:#960050;background-color:#1e0010">&#39;</span>,value)
+<span style="color:#111">shderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setUniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">uniformName</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#111">value</span><span style="color:#111">)</span>
     
 <span style="color:#75715e">//------------------纹理相关-----------------------</span>
 <span style="color:#75715e">//内置函数 texture</span>
-texture(ourTexture1,TexCoord) <span style="color:#75715e">//纹理采样</span>
+<span style="color:#111">texture</span><span style="color:#111">(</span><span style="color:#111">ourTexture1</span><span style="color:#111">,</span><span style="color:#111">TexCoord</span><span style="color:#111">)</span> <span style="color:#75715e">//纹理采样</span>
 <span style="color:#75715e">//内置函数 mix</span>
-mix(texture(),texture(),<span style="color:#ae81ff">0.2</span>)  <span style="color:#75715e">//按照0.8texture1+0.2texture2采样</span>
+<span style="color:#111">mix</span><span style="color:#111">(</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#111">texture</span><span style="color:#111">(),</span><span style="color:#ae81ff">0.2</span><span style="color:#111">)</span>  <span style="color:#75715e">//按照0.8texture1+0.2texture2采样</span>
     
 <span style="color:#75715e">//------------------深度相关-----------------------</span>
-gl_FragCoord <span style="color:#75715e">//x和y分量代表片段的屏幕空间坐标 z分量代表片段真正深度值</span>
+<span style="color:#111">gl_FragCoord</span> <span style="color:#75715e">//x和y分量代表片段的屏幕空间坐标 z分量代表片段真正深度值</span>
     
 <span style="color:#75715e">//丢弃片段</span>
-<span style="color:#66d9ef">discard</span>;
+<span style="color:#00a8c8">discard</span><span style="color:#111">;</span>
 
 <span style="color:#75715e">//纹理变量</span>
-<span style="color:#66d9ef">sampler2D</span>  ,  samplerCube
+<span style="color:#00a8c8">sampler2D</span>  <span style="color:#111">,</span>  <span style="color:#111">samplerCube</span>
     
 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="5-textures-纹理">5. Textures 纹理</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -511,15 +511,15 @@ gl_FragCoord <span style="color:#75715e">//x和y分量代表片段的屏幕空�
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 在Qt中纹理图片的读取 可以用QImage读取，数据传入采用 img.bits()
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 在Qt中纹理图片的读取 可以用QImage读取，数据传入采用 img.bits()
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 2D纹理坐标在x和y轴上，范围为0到1之间 ( &gt;1则默认重复纹理图像)
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//--1.生成纹理引用
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> texture;
-glGenTextures(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>texture);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">texture</span><span style="color:#111">;</span>
+<span style="color:#111">glGenTextures</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">texture</span><span style="color:#111">);</span>
 <span style="color:#75715e">//--2.绑定到指定纹理类型目标，对该目标操作即可以对绑定到该目标上的对象生效
-</span><span style="color:#75715e"></span>glBindTexture(GL_TEXTURE_2D, texture);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">texture</span><span style="color:#111">);</span>
 <span style="color:#75715e">//--3.传入图片数据生成纹理
 </span><span style="color:#75715e">// 第一个参数指定了纹理目标(Target)。设置为GL_TEXTURE_2D意味着会生成与当前绑定的纹理对象在同一个目标上的纹理（任何绑定到GL_TEXTURE_1D和GL_TEXTURE_3D的纹理不会受到影响）。
 </span><span style="color:#75715e">// 第二个参数为纹理指定多级渐远纹理的级别，如果你希望单独手动设置每个多级渐远纹理的级别的话。这里我们填0，也就是基本级别。
@@ -528,17 +528,17 @@ glGenTextures(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">
 </span><span style="color:#75715e">// 下个参数应该总是被设为0（历史遗留的问题）。
 </span><span style="color:#75715e">// 第七第八个参数定义了源图的格式和数据类型。我们使用RGB值加载这个图像，并把它们储存为char(byte)数组，我们将会传入对应值。
 </span><span style="color:#75715e">// 最后一个参数是真正的图像数据。
-</span><span style="color:#75715e"></span>glTexImage2D(GL_TEXTURE_2D, <span style="color:#ae81ff">0</span>, GL_RGB, width, height, <span style="color:#ae81ff">0</span>, GL_RGB, GL_UNSIGNED_BYTE, data);
-glGenerateMipmap(GL_TEXTURE_2D);
+</span><span style="color:#75715e"></span><span style="color:#111">glTexImage2D</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">GL_UNSIGNED_BYTE</span><span style="color:#111">,</span> <span style="color:#111">data</span><span style="color:#111">);</span>
+<span style="color:#111">glGenerateMipmap</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="51-纹理环绕方式">5.1 纹理环绕方式</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 当纹理坐标设置在(0,0) (1,1)之外时，纹理重复方式</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 当纹理坐标设置在(0,0) (1,1)之外时，纹理重复方式</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
@@ -567,22 +567,22 @@ glGenerateMipmap(GL_TEXTURE_2D);
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//使用glTexParameter*函数对单独的一个坐标轴(s t r)设置
-</span><span style="color:#75715e"></span>glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT)
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT)
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//使用glTexParameter*函数对单独的一个坐标轴(s t r)设置
+</span><span style="color:#75715e"></span><span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_WRAP_S</span><span style="color:#111">,</span> <span style="color:#111">GL_MIRRORED_REPEAT</span><span style="color:#111">)</span>
+<span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_WRAP_T</span><span style="color:#111">,</span> <span style="color:#111">GL_MIRRORED_REPEAT</span><span style="color:#111">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="52-纹理过滤">5.2 纹理过滤</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -592,14 +592,14 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 设置纹理的采样方式
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 设置纹理的采样方式
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// GL_NEAREST 邻近过滤
 </span><span style="color:#75715e">// GL_LINEAR  线性过滤
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 当进行放大(Magnify)和缩小(Minify)操作的时候可以设置纹理过滤的选项
-</span><span style="color:#75715e"></span>glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+</span><span style="color:#75715e"></span><span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_MIN_FILTER</span><span style="color:#111">,</span> <span style="color:#111">GL_NEAREST</span><span style="color:#111">);</span>
+<span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_MAG_FILTER</span><span style="color:#111">,</span> <span style="color:#111">GL_LINEAR</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="53-多级渐进纹理">5.3 多级渐进纹理</h3>
@@ -629,9 +629,9 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -639,18 +639,18 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//自动创建多级渐进纹理
-</span><span style="color:#75715e"></span>glGenerateMipmaps(GL_TEXTURE_2D);
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//自动创建多级渐进纹理
+</span><span style="color:#75715e"></span><span style="color:#111">glGenerateMipmaps</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">);</span>
     
 <span style="color:#75715e">//设置纹理过滤方式
-</span><span style="color:#75715e"></span>glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+</span><span style="color:#75715e"></span><span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_MIN_FILTER</span><span style="color:#111">,</span> <span style="color:#111">GL_LINEAR_MIPMAP_LINEAR</span><span style="color:#111">);</span>
+<span style="color:#111">glTexParameteri</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_MAG_FILTER</span><span style="color:#111">,</span> <span style="color:#111">GL_LINEAR</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="54-纹理单元">5.4 纹理单元</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -664,25 +664,25 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//---若只有一个纹理 则默认激活GL_TEXTURE0，
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//---若只有一个纹理 则默认激活GL_TEXTURE0，
 </span><span style="color:#75715e">//   glBindTexture默认对应GL_TEXTURE0
 </span><span style="color:#75715e">//---对于多纹理使用，必须:
 </span><span style="color:#75715e">//  1.然后定义哪个uniform采样器对应哪个纹理单元.
-</span><span style="color:#75715e"></span>shaderProgram<span style="color:#f92672">-&gt;</span>setuniformValue(<span style="color:#960050;background-color:#1e0010">&#39;</span>texture1<span style="color:#960050;background-color:#1e0010">&#39;</span>,<span style="color:#ae81ff">0</span>)
-shaderProgram<span style="color:#f92672">-&gt;</span>setuniformValue(<span style="color:#960050;background-color:#1e0010">&#39;</span>texture2<span style="color:#960050;background-color:#1e0010">&#39;</span>,<span style="color:#ae81ff">1</span>)
+</span><span style="color:#75715e"></span><span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">texture1</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setuniformValue</span><span style="color:#111">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">texture2</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 <span style="color:#75715e">//  2.先绑定纹理对象到对应的纹理单元.
-</span><span style="color:#75715e"></span>glActivateTexture(GL_TEXTURE0)<span style="color:#75715e">//激活纹理单元
-</span><span style="color:#75715e"></span>glBindTexture(GL_TEXTURE_2D,texture1);
-glActiveTexture(GL_TEXTURE1);
-glBindTexture(GL_TEXTURE_2D, texture2);
+</span><span style="color:#75715e"></span><span style="color:#111">glActivateTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE0</span><span style="color:#111">)</span><span style="color:#75715e">//激活纹理单元
+</span><span style="color:#75715e"></span><span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span><span style="color:#111">texture1</span><span style="color:#111">);</span>
+<span style="color:#111">glActiveTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE1</span><span style="color:#111">);</span>
+<span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">texture2</span><span style="color:#111">);</span>
 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="6-坐标">6. 坐标</h2>
 <h3 id="61-坐标变换">6.1 坐标变换</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -700,50 +700,50 @@ glBindTexture(GL_TEXTURE_2D, texture2);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 项目中采用Eigen库进行矩阵操作
-</span><span style="color:#75715e"></span>Eigen<span style="color:#f92672">::</span>Translation3f translation;<span style="color:#75715e">//平移 本质是一个3x1的矩阵
-</span><span style="color:#75715e"></span>Eigen<span style="color:#f92672">::</span>AngleAxisf rotation;<span style="color:#75715e">//旋转
-</span><span style="color:#75715e"></span>rotation <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>AngleAxisf(angle, Eigen<span style="color:#f92672">::</span>Vector3f<span style="color:#f92672">::</span>UnitZ());<span style="color:#75715e">//设置旋转角和旋转轴
-</span><span style="color:#75715e"></span>Eigen<span style="color:#f92672">::</span>Isometry3f trans;<span style="color:#75715e">//欧式变换矩阵
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 项目中采用Eigen库进行矩阵操作
+</span><span style="color:#75715e"></span><span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">Translation3f</span> <span style="color:#111">translation</span><span style="color:#111">;</span><span style="color:#75715e">//平移 本质是一个3x1的矩阵
+</span><span style="color:#75715e"></span><span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">AngleAxisf</span> <span style="color:#111">rotation</span><span style="color:#111">;</span><span style="color:#75715e">//旋转
+</span><span style="color:#75715e"></span><span style="color:#111">rotation</span> <span style="color:#f92672">=</span> <span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">AngleAxisf</span><span style="color:#111">(</span><span style="color:#111">angle</span><span style="color:#111">,</span> <span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">Vector3f</span><span style="color:#f92672">::</span><span style="color:#111">UnitZ</span><span style="color:#111">());</span><span style="color:#75715e">//设置旋转角和旋转轴
+</span><span style="color:#75715e"></span><span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">Isometry3f</span> <span style="color:#111">trans</span><span style="color:#111">;</span><span style="color:#75715e">//欧式变换矩阵
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 1.Eigen: 列主序 OpenGL mat: 列主序
 </span><span style="color:#75715e">// 2.Eigen Matrix 转 QMatrix
-</span><span style="color:#75715e"></span>Eigen<span style="color:#f92672">::</span>Matrix4f mat;
-QMatrix4x4(mat.<span style="color:#66d9ef">template</span> cast<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span>().data(), <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>)
+</span><span style="color:#75715e"></span><span style="color:#111">Eigen</span><span style="color:#f92672">::</span><span style="color:#111">Matrix4f</span> <span style="color:#111">mat</span><span style="color:#111">;</span>
+<span style="color:#111">QMatrix4x4</span><span style="color:#111">(</span><span style="color:#111">mat</span><span style="color:#111">.</span><span style="color:#00a8c8">template</span> <span style="color:#111">cast</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">float</span><span style="color:#f92672">&gt;</span><span style="color:#111">().</span><span style="color:#111">data</span><span style="color:#111">(),</span> <span style="color:#ae81ff">4</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">//传入uniform 矩阵变量
-</span><span style="color:#75715e"></span>shaderProgram<span style="color:#f92672">-&gt;</span>setUniformValue(<span style="color:#e6db74">&#34;transform&#34;</span>, QMatrix4x4(transform.<span style="color:#66d9ef">template</span> cast<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span>().data()));
+</span><span style="color:#75715e"></span><span style="color:#111">shaderProgram</span><span style="color:#f92672">-&gt;</span><span style="color:#111">setUniformValue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;transform&#34;</span><span style="color:#111">,</span> <span style="color:#111">QMatrix4x4</span><span style="color:#111">(</span><span style="color:#111">transform</span><span style="color:#111">.</span><span style="color:#00a8c8">template</span> <span style="color:#111">cast</span><span style="color:#f92672">&lt;</span><span style="color:#00a8c8">float</span><span style="color:#f92672">&gt;</span><span style="color:#111">().</span><span style="color:#111">data</span><span style="color:#111">()));</span>
 
-transform.data() <span style="color:#75715e">//矩阵首地址   
+<span style="color:#111">transform</span><span style="color:#111">.</span><span style="color:#111">data</span><span style="color:#111">()</span> <span style="color:#75715e">//矩阵首地址   
 </span><span style="color:#75715e"></span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="62-坐标系统">6.2 坐标系统</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 模型矩阵 观察矩阵 投影矩阵 </span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 模型矩阵 观察矩阵 投影矩阵 </span>
 <span style="color:#75715e"># 具体见camera.h和camera.cpp文件</span>
 
 <span style="color:#75715e">#在本程序Camera原理中，左右上下平移本质为改变Camera位置，旋转采用四元数通过改变观察矩阵(LookAt)实现</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="7-lighting-光照">7. Lighting 光照</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 冯氏光照模型(Phong)</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 冯氏光照模型(Phong)</span>
 <span style="color:#75715e"># 主要由三个分量组成: 1.环境光照 2.漫反射光照 3.镜面光照</span>
 
 <span style="color:#75715e"># 漫反射光照计算 理论上是在世界坐标中进行，利用法向量和光线方向，计算得到顶点所对应的颜色.</span>
@@ -751,9 +751,9 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="71-材质">7.1 材质</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -793,50 +793,50 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//物体材质信息</span>
-<span style="color:#66d9ef">struct</span> Material{
-    <span style="color:#66d9ef">vec3</span> ambient;<span style="color:#75715e">//环境光照下物体反射的颜色，通常和物体本身颜色一致</span>
-    <span style="color:#66d9ef">vec3</span> diffuse;<span style="color:#75715e">//漫反射光照下物体的颜色，通常也为物体本身颜色</span>
-    <span style="color:#66d9ef">vec3</span> specular;<span style="color:#75715e">//镜面光照对物体的颜色影响，类似于specularstrength</span>
-    <span style="color:#66d9ef">float</span> shininess;<span style="color:#75715e">//反光度</span>
-};
-<span style="color:#66d9ef">uniform</span> Material material;
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//物体材质信息</span>
+<span style="color:#00a8c8">struct</span> <span style="color:#111">Material</span><span style="color:#111">{</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">ambient</span><span style="color:#111">;</span><span style="color:#75715e">//环境光照下物体反射的颜色，通常和物体本身颜色一致</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">diffuse</span><span style="color:#111">;</span><span style="color:#75715e">//漫反射光照下物体的颜色，通常也为物体本身颜色</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">specular</span><span style="color:#111">;</span><span style="color:#75715e">//镜面光照对物体的颜色影响，类似于specularstrength</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">shininess</span><span style="color:#111">;</span><span style="color:#75715e">//反光度</span>
+<span style="color:#111">};</span>
+<span style="color:#00a8c8">uniform</span> <span style="color:#111">Material</span> <span style="color:#111">material</span><span style="color:#111">;</span>
     
-<span style="color:#66d9ef">struct</span> Light{
-    <span style="color:#66d9ef">vec3</span> position;
+<span style="color:#00a8c8">struct</span> <span style="color:#111">Light</span><span style="color:#111">{</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">position</span><span style="color:#111">;</span>
 
-    <span style="color:#66d9ef">vec3</span> ambient;<span style="color:#75715e">//环境光</span>
-    <span style="color:#66d9ef">vec3</span> diffuse;<span style="color:#75715e">//漫反射光</span>
-    <span style="color:#66d9ef">vec3</span> specular;<span style="color:#75715e">//镜面反射光</span>
-};
-<span style="color:#66d9ef">uniform</span> Light light;
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">ambient</span><span style="color:#111">;</span><span style="color:#75715e">//环境光</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">diffuse</span><span style="color:#111">;</span><span style="color:#75715e">//漫反射光</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">specular</span><span style="color:#111">;</span><span style="color:#75715e">//镜面反射光</span>
+<span style="color:#111">};</span>
+<span style="color:#00a8c8">uniform</span> <span style="color:#111">Light</span> <span style="color:#111">light</span><span style="color:#111">;</span>
 
-<span style="color:#66d9ef">void</span> main()
-{
+<span style="color:#00a8c8">void</span> <span style="color:#111">main</span><span style="color:#111">()</span>
+<span style="color:#111">{</span>
     <span style="color:#75715e">//环境光照</span>
-    <span style="color:#66d9ef">vec3</span> ambient <span style="color:#f92672">=</span> material.ambient <span style="color:#f92672">*</span> light.ambient;
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">ambient</span> <span style="color:#f92672">=</span> <span style="color:#111">material</span><span style="color:#111">.</span><span style="color:#111">ambient</span> <span style="color:#f92672">*</span> <span style="color:#111">light</span><span style="color:#111">.</span><span style="color:#111">ambient</span><span style="color:#111">;</span>
 
     <span style="color:#75715e">//漫反射光照计算 在世界坐标下进行</span>
-    <span style="color:#66d9ef">vec3</span> norm <span style="color:#f92672">=</span> normalize(Normal);
-    <span style="color:#66d9ef">vec3</span> lightDir <span style="color:#f92672">=</span> normalize(lightPos <span style="color:#f92672">-</span> FragPos);<span style="color:#75715e">//光线方向</span>
-    <span style="color:#66d9ef">float</span> diff <span style="color:#f92672">=</span> max(dot(norm, lightDir), <span style="color:#ae81ff">0.0</span>);
-    <span style="color:#66d9ef">vec3</span> diffuse <span style="color:#f92672">=</span> (diff <span style="color:#f92672">*</span> material.diffuse) <span style="color:#f92672">*</span> light.diffuse;
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">norm</span> <span style="color:#f92672">=</span> <span style="color:#111">normalize</span><span style="color:#111">(</span><span style="color:#111">Normal</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">lightDir</span> <span style="color:#f92672">=</span> <span style="color:#111">normalize</span><span style="color:#111">(</span><span style="color:#111">lightPos</span> <span style="color:#f92672">-</span> <span style="color:#111">FragPos</span><span style="color:#111">);</span><span style="color:#75715e">//光线方向</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">diff</span> <span style="color:#f92672">=</span> <span style="color:#111">max</span><span style="color:#111">(</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">norm</span><span style="color:#111">,</span> <span style="color:#111">lightDir</span><span style="color:#111">),</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">diffuse</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">diff</span> <span style="color:#f92672">*</span> <span style="color:#111">material</span><span style="color:#111">.</span><span style="color:#111">diffuse</span><span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#111">light</span><span style="color:#111">.</span><span style="color:#111">diffuse</span><span style="color:#111">;</span>
 
     <span style="color:#75715e">//镜面反射 在观察空间下进行</span>
-    <span style="color:#66d9ef">vec3</span> viewDir <span style="color:#f92672">=</span> normalize(<span style="color:#f92672">-</span><span style="color:#66d9ef">vec3</span>(view <span style="color:#f92672">*</span> <span style="color:#66d9ef">vec4</span>(FragPos, <span style="color:#ae81ff">1.0</span>)));
-    <span style="color:#66d9ef">vec3</span> reflectDir <span style="color:#f92672">=</span> reflect(<span style="color:#f92672">-</span><span style="color:#66d9ef">vec3</span>(normalize(view<span style="color:#f92672">*</span><span style="color:#66d9ef">vec4</span>(lightPos,<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">-</span> 	view<span style="color:#f92672">*</span><span style="color:#66d9ef">vec4</span>(FragPos,<span style="color:#ae81ff">1.0</span>))), mat3(transpose(inverse(view))) <span style="color:#f92672">*</span> Normal);
-    <span style="color:#66d9ef">float</span> spec <span style="color:#f92672">=</span> pow(max(dot(viewDir, reflectDir), <span style="color:#ae81ff">0.0</span>), 					material.shininess);
-    <span style="color:#66d9ef">vec3</span> specular <span style="color:#f92672">=</span> (material.specular <span style="color:#f92672">*</span> spec) <span style="color:#f92672">*</span> light.specular;
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">viewDir</span> <span style="color:#f92672">=</span> <span style="color:#111">normalize</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#00a8c8">vec3</span><span style="color:#111">(</span><span style="color:#111">view</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">vec4</span><span style="color:#111">(</span><span style="color:#111">FragPos</span><span style="color:#111">,</span> <span style="color:#ae81ff">1.0</span><span style="color:#111">)));</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">reflectDir</span> <span style="color:#f92672">=</span> <span style="color:#111">reflect</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#00a8c8">vec3</span><span style="color:#111">(</span><span style="color:#111">normalize</span><span style="color:#111">(</span><span style="color:#111">view</span><span style="color:#f92672">*</span><span style="color:#00a8c8">vec4</span><span style="color:#111">(</span><span style="color:#111">lightPos</span><span style="color:#111">,</span><span style="color:#ae81ff">1.0</span><span style="color:#111">)</span> <span style="color:#f92672">-</span> 	<span style="color:#111">view</span><span style="color:#f92672">*</span><span style="color:#00a8c8">vec4</span><span style="color:#111">(</span><span style="color:#111">FragPos</span><span style="color:#111">,</span><span style="color:#ae81ff">1.0</span><span style="color:#111">))),</span> <span style="color:#111">mat3</span><span style="color:#111">(</span><span style="color:#111">transpose</span><span style="color:#111">(</span><span style="color:#111">inverse</span><span style="color:#111">(</span><span style="color:#111">view</span><span style="color:#111">)))</span> <span style="color:#f92672">*</span> <span style="color:#111">Normal</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">spec</span> <span style="color:#f92672">=</span> <span style="color:#111">pow</span><span style="color:#111">(</span><span style="color:#111">max</span><span style="color:#111">(</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">viewDir</span><span style="color:#111">,</span> <span style="color:#111">reflectDir</span><span style="color:#111">),</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">),</span> 					<span style="color:#111">material</span><span style="color:#111">.</span><span style="color:#111">shininess</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">specular</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">material</span><span style="color:#111">.</span><span style="color:#111">specular</span> <span style="color:#f92672">*</span> <span style="color:#111">spec</span><span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#111">light</span><span style="color:#111">.</span><span style="color:#111">specular</span><span style="color:#111">;</span>
 
-    <span style="color:#66d9ef">vec3</span> result <span style="color:#f92672">=</span> (ambient <span style="color:#f92672">+</span> diffuse <span style="color:#f92672">+</span> specular);
-    FragColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(result, <span style="color:#ae81ff">1.0</span>);
-}
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">ambient</span> <span style="color:#f92672">+</span> <span style="color:#111">diffuse</span> <span style="color:#f92672">+</span> <span style="color:#111">specular</span><span style="color:#111">);</span>
+    <span style="color:#111">FragColor</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">vec4</span><span style="color:#111">(</span><span style="color:#111">result</span><span style="color:#111">,</span> <span style="color:#ae81ff">1.0</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="72-光照贴图">7.2 光照贴图</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -861,55 +861,55 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//漫反射贴图</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//漫反射贴图</span>
 
 <span style="color:#75715e">//镜面光贴图</span>
 
 <span style="color:#75715e">//光源信息</span>
-<span style="color:#66d9ef">struct</span> Light
-{
-    <span style="color:#66d9ef">vec3</span> position;
+<span style="color:#00a8c8">struct</span> <span style="color:#111">Light</span>
+<span style="color:#111">{</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">position</span><span style="color:#111">;</span>
 
-    <span style="color:#66d9ef">vec3</span> ambient;<span style="color:#75715e">//环境光</span>
-    <span style="color:#66d9ef">vec3</span> diffuse;<span style="color:#75715e">//漫反射光</span>
-    <span style="color:#66d9ef">vec3</span> specular;<span style="color:#75715e">//镜面反射光</span>
-};
-<span style="color:#66d9ef">uniform</span> Light light;
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">ambient</span><span style="color:#111">;</span><span style="color:#75715e">//环境光</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">diffuse</span><span style="color:#111">;</span><span style="color:#75715e">//漫反射光</span>
+    <span style="color:#00a8c8">vec3</span> <span style="color:#111">specular</span><span style="color:#111">;</span><span style="color:#75715e">//镜面反射光</span>
+<span style="color:#111">};</span>
+<span style="color:#00a8c8">uniform</span> <span style="color:#111">Light</span> <span style="color:#111">light</span><span style="color:#111">;</span>
 
 <span style="color:#75715e">//材质贴图---漫反射贴图 镜面光贴图</span>
-<span style="color:#66d9ef">struct</span> Material
-{
-    <span style="color:#66d9ef">sampler2D</span> diffuse;<span style="color:#75715e">//漫反射贴图</span>
-    <span style="color:#66d9ef">sampler2D</span> specular;<span style="color:#75715e">//镜面光贴图</span>
-    <span style="color:#66d9ef">float</span> shininess;
-};
-<span style="color:#66d9ef">uniform</span> Material material;
+<span style="color:#00a8c8">struct</span> <span style="color:#111">Material</span>
+<span style="color:#111">{</span>
+    <span style="color:#00a8c8">sampler2D</span> <span style="color:#111">diffuse</span><span style="color:#111">;</span><span style="color:#75715e">//漫反射贴图</span>
+    <span style="color:#00a8c8">sampler2D</span> <span style="color:#111">specular</span><span style="color:#111">;</span><span style="color:#75715e">//镜面光贴图</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">shininess</span><span style="color:#111">;</span>
+<span style="color:#111">};</span>
+<span style="color:#00a8c8">uniform</span> <span style="color:#111">Material</span> <span style="color:#111">material</span><span style="color:#111">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="73-投光物">7.3 投光物</h3>
 <h3 id="74-多光源">7.4 多光源</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 目前不是特别重要 以后有需要再学...</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 目前不是特别重要 以后有需要再学...</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="8-模型加载">8. 模型加载</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 这个可以先放一放 不是特别重要</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 这个可以先放一放 不是特别重要</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="9-高级opengl">9. 高级OpenGL</h2>
 <h3 id="91-深度测试">9.1 深度测试</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -925,20 +925,20 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//开启深度测试 z缓冲
-</span><span style="color:#75715e"></span>glEnable(GL_DEPTH_TEST);
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//开启深度测试 z缓冲
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_DEPTH_TEST</span><span style="color:#111">);</span>
 <span style="color:#75715e">//如果启用了深度缓冲，还应该在每个渲染迭代之前使用GL_DEPTH_BUFFER_BIT来清除深度缓冲，否则会仍在使用上一次渲染迭代中的写入的深度值
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//清除颜色缓冲和深度缓冲
-</span><span style="color:#75715e"></span>glClear(GL_COLOR_BUFFER_BIT <span style="color:#f92672">|</span> GL_DEPTH_BUFFER_BIT);
+</span><span style="color:#75715e"></span><span style="color:#111">glClear</span><span style="color:#111">(</span><span style="color:#111">GL_COLOR_BUFFER_BIT</span> <span style="color:#f92672">|</span> <span style="color:#111">GL_DEPTH_BUFFER_BIT</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//禁用深度缓冲写入 即 使用一个只读的深度缓冲 
 </span><span style="color:#75715e">//***只在深度测试被启用的时候才有效果
-</span><span style="color:#75715e"></span>glDepthMask(GL_FALSE);
+</span><span style="color:#75715e"></span><span style="color:#111">glDepthMask</span><span style="color:#111">(</span><span style="color:#111">GL_FALSE</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//深度测试函数 
 </span><span style="color:#75715e">//即 通过修改比较运算符, 让我们来决定什么时候该通过或者丢弃一个片段
-</span><span style="color:#75715e"></span>glDepthFunc(GL_LESS);
+</span><span style="color:#75715e"></span><span style="color:#111">glDepthFunc</span><span style="color:#111">(</span><span style="color:#111">GL_LESS</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
@@ -984,9 +984,9 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </tbody>
 </table>
 <h3 id="92-模板测试">9.2 模板测试</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1016,29 +1016,29 @@ transform.data() <span style="color:#75715e">//矩阵首地址
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//其本质原理类比于模板操作
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//其本质原理类比于模板操作
 </span><span style="color:#75715e">//通过设置一个viewport的模板值，即模板缓冲，基于一定的规则 来决定缓冲对应的片段是否应该被绘制.以及模板测试时缓冲的内容应该如何更新.
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//模板缓冲操作允许我们在渲染片段时将模板缓冲设定为一个特定的值。通过在渲染时修改模板缓冲的内容，我们写入了模板缓冲。在同一个（或者接下来的）渲染迭代中，我们可以读取这些值，来决定丢弃还是保留某个片段。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//启用模板测试
-</span><span style="color:#75715e"></span>glEnable(GL_STENCIL_TEST);
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_STENCIL_TEST</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//每次渲染迭代前 清除模板缓冲
-</span><span style="color:#75715e"></span>glClear(GL_STENCIL_BUFFER_BIT);
+</span><span style="color:#75715e"></span><span style="color:#111">glClear</span><span style="color:#111">(</span><span style="color:#111">GL_STENCIL_BUFFER_BIT</span><span style="color:#111">);</span>
 
-glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#75715e">// 每一位写入模板缓冲时都保持原样(正常写入)
-</span><span style="color:#75715e"></span>glStencilMask(<span style="color:#ae81ff">0x00</span>); <span style="color:#75715e">// 每一位在写入模板缓冲时都会变成0(禁用写入)
+<span style="color:#111">glStencilMask</span><span style="color:#111">(</span><span style="color:#ae81ff">0xFF</span><span style="color:#111">);</span> <span style="color:#75715e">// 每一位写入模板缓冲时都保持原样(正常写入)
+</span><span style="color:#75715e"></span><span style="color:#111">glStencilMask</span><span style="color:#111">(</span><span style="color:#ae81ff">0x00</span><span style="color:#111">);</span> <span style="color:#75715e">// 每一位在写入模板缓冲时都会变成0(禁用写入)
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//--------------------模板函数------------------------
 </span><span style="color:#75715e">// ---该函数决定了以何种规则进行比较，以确定模板测试是否通过
-</span><span style="color:#75715e"></span>glStencilFunc(GLenum func, GLint ref, GLuint mask);
+</span><span style="color:#75715e"></span><span style="color:#111">glStencilFunc</span><span style="color:#111">(</span><span style="color:#111">GLenum</span> <span style="color:#111">func</span><span style="color:#111">,</span> <span style="color:#111">GLint</span> <span style="color:#111">ref</span><span style="color:#111">,</span> <span style="color:#111">GLuint</span> <span style="color:#111">mask</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 1.func：设置模板测试函数(Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和glStencilFunc函数的ref值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL和GL_ALWAYS。它们的语义和深度缓冲的函数类似。
 </span><span style="color:#75715e">// 2.ref：设置了模板测试的参考值(Reference Value)。模板缓冲的内容将会与这个值进行比较。
 </span><span style="color:#75715e">// 3.mask：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与(AND)运算。初始情况下所有位都为1
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// ---该函数决定了模板测试通过或失败时该如何更新模板缓冲值 
-</span><span style="color:#75715e"></span>glStencilOp(GLenum sfail, GLenum dpfail, GLenum dppass);
+</span><span style="color:#75715e"></span><span style="color:#111">glStencilOp</span><span style="color:#111">(</span><span style="color:#111">GLenum</span> <span style="color:#111">sfail</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">dpfail</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">dppass</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 1.sfail：模板测试失败时采取的行为。
 </span><span style="color:#75715e">// 2.dpfail：模板测试通过，但深度测试失败时采取的行为。
 </span><span style="color:#75715e">// 3.dppass：模板测试和深度测试都通过时采取的行为。
@@ -1089,9 +1089,9 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 </tbody>
 </table>
 <h3 id="93-混合">9.3 混合</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -1099,12 +1099,12 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// ***用于渲染多个透明度级别的纹理图像
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// ***用于渲染多个透明度级别的纹理图像
 </span><span style="color:#75715e">//启用混合
-</span><span style="color:#75715e"></span>glEnable(GL_BLEND);
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_BLEND</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//混合函数 ---设置源和目标因子值
-</span><span style="color:#75715e"></span>glBlendFunc(GLenum sfactor, GLenum dfactor)
+</span><span style="color:#75715e"></span><span style="color:#111">glBlendFunc</span><span style="color:#111">(</span><span style="color:#111">GLenum</span> <span style="color:#111">sfactor</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">dfactor</span><span style="color:#111">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
@@ -1174,9 +1174,9 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 </tbody>
 </table>
 <h3 id="94-面剔除">9.4 面剔除</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1192,26 +1192,26 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#960050;background-color:#1e0010">面剔除含义</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">渲染正向面</span> <span style="color:#960050;background-color:#1e0010">，</span> <span style="color:#960050;background-color:#1e0010">丢弃背向面</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#960050;background-color:#1e0010">面剔除含义</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">渲染正向面</span> <span style="color:#960050;background-color:#1e0010">，</span> <span style="color:#960050;background-color:#1e0010">丢弃背向面</span>
 <span style="color:#75715e">//启用面剔除
-</span><span style="color:#75715e"></span>glEnable(GL_CULL_FACE);
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_CULL_FACE</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//设置需要剔除的面类型
-</span><span style="color:#75715e"></span>glCullFace(GL_FRONT);
+</span><span style="color:#75715e"></span><span style="color:#111">glCullFace</span><span style="color:#111">(</span><span style="color:#111">GL_FRONT</span><span style="color:#111">);</span>
 <span style="color:#75715e">// GL_BACK：只剔除背向面。
 </span><span style="color:#75715e">// GL_FRONT：只剔除正向面。
 </span><span style="color:#75715e">// GL_FRONT_AND_BACK：剔除正向面和背向面。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//设置正向面的定义
-</span><span style="color:#75715e"></span>glFrontFace(GL_CCW);
+</span><span style="color:#75715e"></span><span style="color:#111">glFrontFace</span><span style="color:#111">(</span><span style="color:#111">GL_CCW</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 逆时针 --GL_CCW
 </span><span style="color:#75715e">// 顺时针 --GL_CW
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="95-帧缓冲重要---------离屏渲染">9.5 帧缓冲(重要!!!)  &mdash;&mdash;-离屏渲染</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1285,7 +1285,7 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 帧缓冲 = 颜色缓冲 + 深度缓冲 + 模板缓冲
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 帧缓冲 = 颜色缓冲 + 深度缓冲 + 模板缓冲
 </span><span style="color:#75715e">//glfw 或者 QOpenGLWidget在创建窗口的时候会生成默认的帧缓冲.=屏幕
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//**** QOpenGL默认屏幕帧缓冲与原生OpenGL不同 
@@ -1295,10 +1295,10 @@ glStencilMask(<span style="color:#ae81ff">0xFF</span>); <span style="color:#7571
 <span style="color:#75715e">// 其本质是经过离屏渲染后将场景作为纹理绘制到默认帧缓冲(屏幕)上.
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//创建帧缓冲
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> fbo;
-glGenFramebuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>fbo);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">fbo</span><span style="color:#111">;</span>
+<span style="color:#111">glGenFramebuffers</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">fbo</span><span style="color:#111">);</span>
 <span style="color:#75715e">//绑定为激活的帧缓冲
-</span><span style="color:#75715e"></span>glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindFramebuffer</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">fbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//也可以使用GL_READ_FRAMEBUFFER或GL_DRAW_FRAMEBUFFER，将一个帧缓冲分别绑定到读取目标或写入目标。
 </span><span style="color:#75715e">// 绑定到GL_READ_FRAMEBUFFER的帧缓冲将会使用在所有像是glReadPixels的读取操作中;
@@ -1311,20 +1311,20 @@ glGenFramebuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f926
 </span><span style="color:#75715e">//  4.每个缓冲都应该有相同的样本数。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// 检查帧缓冲是否完整
-</span><span style="color:#75715e"></span>glCheckFramebufferStatus(GL_FRAMEBUFFER)
+</span><span style="color:#75715e"></span><span style="color:#111">glCheckFramebufferStatus</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">//***通常的规则是，如果你不需要从一个缓冲中采样数据，那么对这个缓冲使用渲染缓冲对象会是明智的选择。如果你需要从缓冲中采样颜色或深度值等数据，那么你应该选择纹理附件.   
 </span><span style="color:#75715e"></span> 
 <span style="color:#75715e">//---------------------------------------------1. 纹理附件-----------------------------------------------
 </span><span style="color:#75715e">// 即 创建一个纹理 并附加到帧缓冲
 </span><span style="color:#75715e">// 创建一个纹理
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> texture;
-glGenTextures(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>texture);
-glBindTexture(GL_TEXTURE_2D, texture);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">texture</span><span style="color:#111">;</span>
+<span style="color:#111">glGenTextures</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">texture</span><span style="color:#111">);</span>
+<span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">texture</span><span style="color:#111">);</span>
 
-glTexImage2D(GL_TEXTURE_2D, <span style="color:#ae81ff">0</span>, GL_RGB, <span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>, <span style="color:#ae81ff">0</span>, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+<span style="color:#111">glTexImage2D</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#ae81ff">800</span><span style="color:#111">,</span> <span style="color:#ae81ff">600</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">GL_UNSIGNED_BYTE</span><span style="color:#111">,</span> <span style="color:#111">NULL</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 将上述创建的纹理 附加到帧缓冲
-</span><span style="color:#75715e"></span>glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, <span style="color:#ae81ff">0</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glFramebufferTexture2D</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">GL_COLOR_ATTACHMENT0</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_2D</span><span style="color:#111">,</span> <span style="color:#111">texture</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
 <span style="color:#75715e">// glFrameBufferTexture2D有以下的参数：
 </span><span style="color:#75715e">// 1.target：帧缓冲的目标（绘制、读取或者两者皆有）
 </span><span style="color:#75715e">// 2.attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。
@@ -1333,36 +1333,36 @@ glTexImage2D(GL_TEXTURE_2D, <span style="color:#ae81ff">0</span>, GL_RGB, <span 
 </span><span style="color:#75715e">// 5.level：多级渐远纹理的级别。我们将它保留为0。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//***也可以将深度和模板缓冲附加为一个单独的纹理到帧缓冲,可以单独分别附加，也可以合并为一个纹理进行附加.
-</span><span style="color:#75715e"></span>GL_DEPTH_COMPONENT
-GL_STENCIL_ATTACHMENT
-GL_DEPTH_STENCIL_ATTACHMENT
+</span><span style="color:#75715e"></span><span style="color:#111">GL_DEPTH_COMPONENT</span>
+<span style="color:#111">GL_STENCIL_ATTACHMENT</span>
+<span style="color:#111">GL_DEPTH_STENCIL_ATTACHMENT</span>
 <span style="color:#75715e">//------------------------------------------2. 渲染缓冲对象附件-------------------------------------------
 </span><span style="color:#75715e">//*** 渲染缓冲对象是只写的 ***
 </span><span style="color:#75715e">//创建渲染缓冲对象 
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> rbo;
-glGenRenderbuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>rbo);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">rbo</span><span style="color:#111">;</span>
+<span style="color:#111">glGenRenderbuffers</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">rbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//绑定 让之后所有的渲染缓冲操作影响当前的rbo
-</span><span style="color:#75715e"></span>glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindRenderbuffer</span><span style="color:#111">(</span><span style="color:#111">GL_RENDERBUFFER</span><span style="color:#111">,</span> <span style="color:#111">rbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//创建一个深度和模板渲染缓冲对象
-</span><span style="color:#75715e"></span>glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, <span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glRenderbufferStorage</span><span style="color:#111">(</span><span style="color:#111">GL_RENDERBUFFER</span><span style="color:#111">,</span> <span style="color:#111">GL_DEPTH24_STENCIL8</span><span style="color:#111">,</span> <span style="color:#ae81ff">800</span><span style="color:#111">,</span> <span style="color:#ae81ff">600</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//附加渲染缓冲对象到帧缓冲
-</span><span style="color:#75715e"></span>glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+</span><span style="color:#75715e"></span><span style="color:#111">glFramebufferRenderbuffer</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">GL_DEPTH_STENCIL_ATTACHMENT</span><span style="color:#111">,</span> <span style="color:#111">GL_RENDERBUFFER</span><span style="color:#111">,</span> <span style="color:#111">rbo</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">// ========================================== 相关函数 ==================================================
 </span><span style="color:#75715e">// 直接复制帧缓冲 到屏幕缓冲 不需要重新绑定屏幕帧缓冲 即可显示图形
-</span><span style="color:#75715e"></span>glBlitNamedFramebuffer(fboEDL<span style="color:#f92672">-&gt;</span>fbo,defaultFramebufferObject(),
-		<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, fboEDL<span style="color:#f92672">-&gt;</span>width, fboEDL<span style="color:#f92672">-&gt;</span>height,
-		<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1536</span>, <span style="color:#ae81ff">864</span>,
-		GL_COLOR_BUFFER_BIT, GL_LINEAR);
+</span><span style="color:#75715e"></span><span style="color:#111">glBlitNamedFramebuffer</span><span style="color:#111">(</span><span style="color:#111">fboEDL</span><span style="color:#f92672">-&gt;</span><span style="color:#111">fbo</span><span style="color:#111">,</span><span style="color:#111">defaultFramebufferObject</span><span style="color:#111">(),</span>
+		<span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">fboEDL</span><span style="color:#f92672">-&gt;</span><span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">fboEDL</span><span style="color:#f92672">-&gt;</span><span style="color:#111">height</span><span style="color:#111">,</span>
+		<span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1536</span><span style="color:#111">,</span> <span style="color:#ae81ff">864</span><span style="color:#111">,</span>
+		<span style="color:#111">GL_COLOR_BUFFER_BIT</span><span style="color:#111">,</span> <span style="color:#111">GL_LINEAR</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="96-立方体贴图">9.6 立方体贴图</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -1370,12 +1370,12 @@ glGenRenderbuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//  应用 —— 天空盒
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//  应用 —— 天空盒
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//创建立方体贴图纹理
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> textureID;
-glGenTextures(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>textureID);
-glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">textureID</span><span style="color:#111">;</span>
+<span style="color:#111">glGenTextures</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">textureID</span><span style="color:#111">);</span>
+<span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_CUBE_MAP</span><span style="color:#111">,</span> <span style="color:#111">textureID</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
@@ -1412,9 +1412,9 @@ glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -1424,20 +1424,20 @@ glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//纹理目标其背后对应int值依次递增
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//纹理目标其背后对应int值依次递增
 </span><span style="color:#75715e">//设置立方体贴图每个面纹理数据
-</span><span style="color:#75715e"></span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>;
-glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X <span style="color:#f92672">+</span> i, <span style="color:#ae81ff">0</span>, GL_RGB, width, height, <span style="color:#ae81ff">0</span>, GL_RGB, GL_UNSIGNED_BYTE, data);
+</span><span style="color:#75715e"></span><span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#111">;</span>
+<span style="color:#111">glTexImage2D</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span> <span style="color:#f92672">+</span> <span style="color:#111">i</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">GL_UNSIGNED_BYTE</span><span style="color:#111">,</span> <span style="color:#111">data</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//立方体贴图纹理采样器
 </span><span style="color:#75715e">// --采样时需要给定一个方向向量
-</span><span style="color:#75715e"></span>uniform samplerCube cubemap;
+</span><span style="color:#75715e"></span><span style="color:#111">uniform</span> <span style="color:#111">samplerCube</span> <span style="color:#111">cubemap</span><span style="color:#111">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="97-高级数据">9.7 高级数据</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1459,33 +1459,33 @@ glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X <span style="color:#f92672">+</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//插入或更新部分缓冲内存  ----必须先调用glBufferData
-</span><span style="color:#75715e"></span>glBufferSubData(GL_ARRAY_BUFFER, <span style="color:#ae81ff">24</span>, <span style="color:#66d9ef">sizeof</span>(data), <span style="color:#f92672">&amp;</span>data); <span style="color:#75715e">// 范围： [24, 24 + sizeof(data)]
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//插入或更新部分缓冲内存  ----必须先调用glBufferData
+</span><span style="color:#75715e"></span><span style="color:#111">glBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">24</span><span style="color:#111">,</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">data</span><span style="color:#111">),</span> <span style="color:#f92672">&amp;</span><span style="color:#111">data</span><span style="color:#111">);</span> <span style="color:#75715e">// 范围： [24, 24 + sizeof(data)]
 </span><span style="color:#75715e">//*** 分块读取顶点属性 ***
 </span><span style="color:#75715e">// 填充缓冲
-</span><span style="color:#75715e"></span>glBufferSubData(GL_ARRAY_BUFFER, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(positions), <span style="color:#f92672">&amp;</span>positions);
-glBufferSubData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(positions), <span style="color:#66d9ef">sizeof</span>(normals), <span style="color:#f92672">&amp;</span>normals);
-glBufferSubData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(positions) <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(normals), <span style="color:#66d9ef">sizeof</span>(tex), <span style="color:#f92672">&amp;</span>tex);
+</span><span style="color:#75715e"></span><span style="color:#111">glBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">positions</span><span style="color:#111">),</span> <span style="color:#f92672">&amp;</span><span style="color:#111">positions</span><span style="color:#111">);</span>
+<span style="color:#111">glBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">positions</span><span style="color:#111">),</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">normals</span><span style="color:#111">),</span> <span style="color:#f92672">&amp;</span><span style="color:#111">normals</span><span style="color:#111">);</span>
+<span style="color:#111">glBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">positions</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">normals</span><span style="color:#111">),</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">tex</span><span style="color:#111">),</span> <span style="color:#f92672">&amp;</span><span style="color:#111">tex</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 设置顶点属性读取
-</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), <span style="color:#ae81ff">0</span>);  
-glVertexAttribPointer(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)(<span style="color:#66d9ef">sizeof</span>(positions)));  
-glVertexAttribPointer(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)(<span style="color:#66d9ef">sizeof</span>(positions) <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(normals)));
+</span><span style="color:#75715e"></span><span style="color:#111">glVertexAttribPointer</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#111">GL_FLOAT</span><span style="color:#111">,</span> <span style="color:#111">GL_FALSE</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">),</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>  
+<span style="color:#111">glVertexAttribPointer</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">,</span> <span style="color:#111">GL_FLOAT</span><span style="color:#111">,</span> <span style="color:#111">GL_FALSE</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">),</span> <span style="color:#111">(</span><span style="color:#00a8c8">void</span><span style="color:#f92672">*</span><span style="color:#111">)(</span><span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">positions</span><span style="color:#111">)));</span>  
+<span style="color:#111">glVertexAttribPointer</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">GL_FLOAT</span><span style="color:#111">,</span> <span style="color:#111">GL_FALSE</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">),</span> <span style="color:#111">(</span><span style="color:#00a8c8">void</span><span style="color:#f92672">*</span><span style="color:#111">)(</span><span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">positions</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">normals</span><span style="color:#111">)));</span>
 
 <span style="color:#75715e">//返回当前绑定缓冲目标对应的缓冲变量内存指针
-</span><span style="color:#75715e"></span>glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+</span><span style="color:#75715e"></span><span style="color:#111">glMapBuffer</span><span style="color:#111">(</span><span style="color:#111">GL_ARRAY_BUFFER</span><span style="color:#111">,</span> <span style="color:#111">GL_WRITE_ONLY</span><span style="color:#111">);</span>
 <span style="color:#75715e">// 复制数据到缓冲内存
-</span><span style="color:#75715e"></span>memcpy(ptr, data, <span style="color:#66d9ef">sizeof</span>(data));
+</span><span style="color:#75715e"></span><span style="color:#111">memcpy</span><span style="color:#111">(</span><span style="color:#111">ptr</span><span style="color:#111">,</span> <span style="color:#111">data</span><span style="color:#111">,</span> <span style="color:#00a8c8">sizeof</span><span style="color:#111">(</span><span style="color:#111">data</span><span style="color:#111">));</span>
 
 <span style="color:#75715e">//复制缓冲
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">glCopyBufferSubData</span>(GLenum readtarget, GLenum writetarget, GLintptr readoffset,GLintptr writeoffset, GLsizeiptr size);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#75af00">glCopyBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GLenum</span> <span style="color:#111">readtarget</span><span style="color:#111">,</span> <span style="color:#111">GLenum</span> <span style="color:#111">writetarget</span><span style="color:#111">,</span> <span style="color:#111">GLintptr</span> <span style="color:#111">readoffset</span><span style="color:#111">,</span><span style="color:#111">GLintptr</span> <span style="color:#111">writeoffset</span><span style="color:#111">,</span> <span style="color:#111">GLsizeiptr</span> <span style="color:#111">size</span><span style="color:#111">);</span>
 <span style="color:#75715e">//***但如果我们想读写数据的两个不同缓冲都为顶点数组缓冲该怎么办呢？我们不能同时将两个缓冲绑定到同一个缓冲目标上。正是出于这个原因，OpenGL提供给我们另外两个缓冲目标，叫做GL_COPY_READ_BUFFER和GL_COPY_WRITE_BUFFER。我们接下来就可以将需要的缓冲绑定到这两个缓冲目标上，并将这两个目标作为readtarget和writetarget参数。
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="98-高级glsl">9.8 高级GLSL</h3>
 <h4 id="981-glsl内建变量">9.8.1 GLSL内建变量</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1518,37 +1518,37 @@ glVertexAttribPointer(<span style="color:#ae81ff">2</span>, <span style="color:#
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//============================GLSL内建变量=============================</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">//============================GLSL内建变量=============================</span>
 <span style="color:#75715e">//----------------------------顶点着色器变量----------------------------</span>
 <span style="color:#75715e">//---顶点着色器的裁剪空间输出位置向量</span>
-gl_Position   
+<span style="color:#111">gl_Position</span>   
     
 <span style="color:#75715e">//***必须先启用***</span>
-glEnable(GL_PROGRAM_POINT_SIZE);
+<span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_PROGRAM_POINT_SIZE</span><span style="color:#111">);</span>
 <span style="color:#75715e">//---设置渲染的点大小 (默认禁用)</span>
-gl_PointSize
+<span style="color:#111">gl_PointSize</span>
 
 <span style="color:#75715e">//正在绘制顶点的当前ID</span>
 <span style="color:#75715e">//***当（使用glDrawElements）进行索引渲染的时候，这个变量会存储正在绘制顶点的当前索引。当（使用glDrawArrays）不使用索引进行绘制的时候，这个变量会储存从渲染调用开始的已处理顶点数量(每调用一次Draw重新计数)。***</span>
-gl_VertexID
+<span style="color:#111">gl_VertexID</span>
 
 <span style="color:#75715e">//当前渲染的实例ID</span>
-gl_InstanceID
+<span style="color:#111">gl_InstanceID</span>
 <span style="color:#75715e">//----------------------------片段着色器变量----------------------------</span>
 <span style="color:#75715e">//***gl_FragCoord的z分量等于对应片段的深度值, x和y分量是片段的窗口空间(Window-space)坐标，其原点为窗口的左下角***</span>
-gl_FragCoord
+<span style="color:#111">gl_FragCoord</span>
     
 <span style="color:#75715e">//bool变量，如果当前片段是正向面的一部分那么就是true，否则就是false</span>
-gl_FrontFacing
+<span style="color:#111">gl_FrontFacing</span>
 
 <span style="color:#75715e">//设置片段的深度值</span>
-gl_FragDepth
+<span style="color:#111">gl_FragDepth</span>
 <span style="color:#75715e">//***然而，由我们自己设置深度值有一个很大的缺点，只要我们在片段着色器中对gl_FragDepth进行写入，OpenGL就会（像深度测试小节中讨论的那样）禁用所有的提前深度测试(Early Depth Testing)。它被禁用的原因是，OpenGL无法在片段着色器运行之前得知片段将拥有的深度值，因为片段着色器可能会完全修改这个深度值。***</span>
 
 <span style="color:#75715e">//但可以进行一定程度的调和</span>
-layout (depth_<span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>) <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">float</span> gl_FragDepth;
+<span style="color:#111">layout</span> <span style="color:#111">(</span><span style="color:#111">depth_</span><span style="color:#f92672">&lt;</span><span style="color:#111">condition</span><span style="color:#f92672">&gt;</span><span style="color:#111">)</span> <span style="color:#00a8c8">out</span> <span style="color:#00a8c8">float</span> <span style="color:#111">gl_FragDepth</span><span style="color:#111">;</span>
 
-condition可以为下表中的值<span style="color:#f92672">:</span>
+<span style="color:#111">condition可以为下表中的值</span><span style="color:#f92672">:</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
@@ -1577,18 +1577,18 @@ condition可以为下表中的值<span style="color:#f92672">:</span>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl">
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl">
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="982-接口块">9.8.2 接口块</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1602,24 +1602,24 @@ condition可以为下表中的值<span style="color:#f92672">:</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//================================接口块================================
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//================================接口块================================
 </span><span style="color:#75715e">// 类似C/C++结构体
 </span><span style="color:#75715e">// 例如
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Light</span>{
-    vec3 position;
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">struct</span> <span style="color:#75af00">Light</span><span style="color:#111">{</span>
+    <span style="color:#111">vec3</span> <span style="color:#111">position</span><span style="color:#111">;</span>
 
-    vec3 ambient;<span style="color:#75715e">//环境光
-</span><span style="color:#75715e"></span>    vec3 diffuse;<span style="color:#75715e">//漫反射光
-</span><span style="color:#75715e"></span>    vec3 specular;<span style="color:#75715e">//镜面反射光
-</span><span style="color:#75715e"></span>};
-uniform Light light;
-out Light light_out;
+    <span style="color:#111">vec3</span> <span style="color:#111">ambient</span><span style="color:#111">;</span><span style="color:#75715e">//环境光
+</span><span style="color:#75715e"></span>    <span style="color:#111">vec3</span> <span style="color:#111">diffuse</span><span style="color:#111">;</span><span style="color:#75715e">//漫反射光
+</span><span style="color:#75715e"></span>    <span style="color:#111">vec3</span> <span style="color:#111">specular</span><span style="color:#111">;</span><span style="color:#75715e">//镜面反射光
+</span><span style="color:#75715e"></span><span style="color:#111">};</span>
+<span style="color:#111">uniform</span> <span style="color:#111">Light</span> <span style="color:#111">light</span><span style="color:#111">;</span>
+<span style="color:#111">out</span> <span style="color:#111">Light</span> <span style="color:#111">light_out</span><span style="color:#111">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="983-uniform缓冲对象uniform块">9.8.3 Uniform缓冲对象(Uniform块)</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1680,71 +1680,71 @@ out Light light_out;
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//=============================Uniform缓冲对象============================
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//=============================Uniform缓冲对象============================
 </span><span style="color:#75715e">//------------------------------uniform Block块布局----------------------------
 </span><span style="color:#75715e">//***Uniform块的内容是储存在一个缓冲对象中的，它实际上只是一块预留内存。因为这块内存并不会保存它具体保存的是什么类型的数据，我们还需要告诉OpenGL内存的哪一部分对应着着色器中的哪一个uniform变量***
 </span><span style="color:#75715e">//---Uniform块---
-</span><span style="color:#75715e"></span>layout (std140) uniform ExampleBlock
-{
-    <span style="color:#66d9ef">float</span> value;
-    vec3  vector;
-    mat4  matrix;
-    <span style="color:#66d9ef">float</span> values[<span style="color:#ae81ff">3</span>];
-    <span style="color:#66d9ef">bool</span>  boolean;
-    <span style="color:#66d9ef">int</span>   integer;
-};
+</span><span style="color:#75715e"></span><span style="color:#111">layout</span> <span style="color:#111">(</span><span style="color:#111">std140</span><span style="color:#111">)</span> <span style="color:#111">uniform</span> <span style="color:#111">ExampleBlock</span>
+<span style="color:#111">{</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">value</span><span style="color:#111">;</span>
+    <span style="color:#111">vec3</span>  <span style="color:#111">vector</span><span style="color:#111">;</span>
+    <span style="color:#111">mat4</span>  <span style="color:#111">matrix</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">values</span><span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">];</span>
+    <span style="color:#00a8c8">bool</span>  <span style="color:#111">boolean</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span>   <span style="color:#111">integer</span><span style="color:#111">;</span>
+<span style="color:#111">};</span>
 
 <span style="color:#75715e">//每个变量都有一个基准对齐量(Base Alignment)，它等于一个变量在Uniform块中所占据的空间（包括填充量(Padding)），这个基准对齐量是使用std140布局的规则计算出来的。接下来，对每个变量，我们再计算它的对齐偏移量(Aligned Offset)，它是一个变量从块起始位置的字节偏移量。一个变量的对齐字节偏移量必须等于基准对齐量的倍数。
-</span><span style="color:#75715e"></span>layout (std140) uniform ExampleBlock
-{
+</span><span style="color:#75715e"></span><span style="color:#111">layout</span> <span style="color:#111">(</span><span style="color:#111">std140</span><span style="color:#111">)</span> <span style="color:#111">uniform</span> <span style="color:#111">ExampleBlock</span>
+<span style="color:#111">{</span>
                      <span style="color:#75715e">// 基准对齐量       // 对齐偏移量
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> value;     <span style="color:#75715e">// 4               // 0 
-</span><span style="color:#75715e"></span>    vec3 vector;     <span style="color:#75715e">// 16              // 16  (必须是16的倍数，所以 4-&gt;16)
-</span><span style="color:#75715e"></span>    mat4 matrix;     <span style="color:#75715e">// 16              // 32  (列 0)
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">float</span> <span style="color:#111">value</span><span style="color:#111">;</span>     <span style="color:#75715e">// 4               // 0 
+</span><span style="color:#75715e"></span>    <span style="color:#111">vec3</span> <span style="color:#111">vector</span><span style="color:#111">;</span>     <span style="color:#75715e">// 16              // 16  (必须是16的倍数，所以 4-&gt;16)
+</span><span style="color:#75715e"></span>    <span style="color:#111">mat4</span> <span style="color:#111">matrix</span><span style="color:#111">;</span>     <span style="color:#75715e">// 16              // 32  (列 0)
 </span><span style="color:#75715e"></span>                     <span style="color:#75715e">// 16              // 48  (列 1)
 </span><span style="color:#75715e"></span>                     <span style="color:#75715e">// 16              // 64  (列 2)
 </span><span style="color:#75715e"></span>                     <span style="color:#75715e">// 16              // 80  (列 3)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> values[<span style="color:#ae81ff">3</span>]; <span style="color:#75715e">// 16              // 96  (values[0])
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">float</span> <span style="color:#111">values</span><span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">];</span> <span style="color:#75715e">// 16              // 96  (values[0])
 </span><span style="color:#75715e"></span>                     <span style="color:#75715e">// 16              // 112 (values[1])
 </span><span style="color:#75715e"></span>                     <span style="color:#75715e">// 16              // 128 (values[2])
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> boolean;    <span style="color:#75715e">// 4               // 144
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> integer;     <span style="color:#75715e">// 4               // 148
-</span><span style="color:#75715e"></span>}; 
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">bool</span> <span style="color:#111">boolean</span><span style="color:#111">;</span>    <span style="color:#75715e">// 4               // 144
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">int</span> <span style="color:#111">integer</span><span style="color:#111">;</span>     <span style="color:#75715e">// 4               // 148
+</span><span style="color:#75715e"></span><span style="color:#111">};</span> 
 
 <span style="color:#75715e">//-----------------------------使用Uniform缓冲----------------------------
 </span><span style="color:#75715e">// * 首先跟其他缓冲一样必须在程序中创建
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> uboExampleBlock;
-glGenBuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>uboExampleBlock);
-glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-glBufferData(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">152</span>, NULL, GL_STATIC_DRAW); <span style="color:#75715e">// 分配152字节的内存
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">;</span>
+<span style="color:#111">glGenBuffers</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">uboExampleBlock</span><span style="color:#111">);</span>
+<span style="color:#111">glBindBuffer</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">);</span>
+<span style="color:#111">glBufferData</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">152</span><span style="color:#111">,</span> <span style="color:#111">NULL</span><span style="color:#111">,</span> <span style="color:#111">GL_STATIC_DRAW</span><span style="color:#111">);</span> <span style="color:#75715e">// 分配152字节的内存
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//***如何才能让OpenGL知道哪个Uniform缓冲对应的是哪个Uniform块呢？***
 </span><span style="color:#75715e">//在OpenGL上下文中，定义了一些绑定点(Binding Point)，我们可以将一个Uniform缓冲链接至它。在创建Uniform缓冲之后，我们将它绑定到其中一个绑定点上，并将着色器中的Uniform块绑定到相同的绑定点，把它们连接到一起。
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//将Uniform块绑定到一个特定的绑定点
 </span><span style="color:#75715e">//先查询着色器中Uniform块索引，绑定到绑定点2
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> lights_index <span style="color:#f92672">=</span> glGetUniformBlockIndex(shaderA.ID,<span style="color:#e6db74">&#34;Lights&#34;</span>); 
-glUniformBlockBinding(shaderA.ID, lights_index, <span style="color:#ae81ff">2</span>);
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">unsigned</span> <span style="color:#00a8c8">int</span> <span style="color:#111">lights_index</span> <span style="color:#f92672">=</span> <span style="color:#111">glGetUniformBlockIndex</span><span style="color:#111">(</span><span style="color:#111">shaderA</span><span style="color:#111">.</span><span style="color:#111">ID</span><span style="color:#111">,</span><span style="color:#d88200">&#34;Lights&#34;</span><span style="color:#111">);</span> 
+<span style="color:#111">glUniformBlockBinding</span><span style="color:#111">(</span><span style="color:#111">shaderA</span><span style="color:#111">.</span><span style="color:#111">ID</span><span style="color:#111">,</span> <span style="color:#111">lights_index</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">);</span>
 <span style="color:#75715e">//再将Uniform缓冲绑定到相同的绑定点2
-</span><span style="color:#75715e"></span>glBindBufferBase(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">2</span>, uboExampleBlock); 
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBufferBase</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">);</span> 
 <span style="color:#75715e">// 或
-</span><span style="color:#75715e"></span>glBindBufferRange(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">2</span>, uboExampleBlock, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">152</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBufferRange</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">152</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//***从OpenGL 4.2版本起，也可以添加一个布局标识符，显式地将Uniform块的绑定点储存在着色器中，这样就不用再调用glGetUniformBlockIndex和glUniformBlockBinding了。***
 </span><span style="color:#75715e">// 例如:
-</span><span style="color:#75715e"></span>layout(std140, binding <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) uniform Lights { ... };
+</span><span style="color:#75715e"></span><span style="color:#111">layout</span><span style="color:#111">(</span><span style="color:#111">std140</span><span style="color:#111">,</span> <span style="color:#111">binding</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#111">)</span> <span style="color:#111">uniform</span> <span style="color:#111">Lights</span> <span style="color:#111">{</span> <span style="color:#111">...</span> <span style="color:#111">};</span>
     
 <span style="color:#75715e">//填充或者更新Uniform缓冲
-</span><span style="color:#75715e"></span>glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> true; <span style="color:#75715e">// GLSL中的bool是4字节的，所以我们将它存为一个integer
-</span><span style="color:#75715e"></span>glBufferSubData(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">144</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">&amp;</span>b); 
-glBindBuffer(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">0</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindBuffer</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#111">uboExampleBlock</span><span style="color:#111">);</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">true</span><span style="color:#111">;</span> <span style="color:#75715e">// GLSL中的bool是4字节的，所以我们将它存为一个integer
+</span><span style="color:#75715e"></span><span style="color:#111">glBufferSubData</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">144</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">b</span><span style="color:#111">);</span> 
+<span style="color:#111">glBindBuffer</span><span style="color:#111">(</span><span style="color:#111">GL_UNIFORM_BUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="984-着色器缓存对象buffer">9.8.4 着色器缓存对象(buffer)</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1756,12 +1756,12 @@ glBindBuffer(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">0</span>);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//处理大型结构化数据块，这时可以用一个buffer类型缓存变量来存储数据，着色器中定义缓存变量方法为将变量放置到一个块接口中，使用buffer关键字声明。
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//处理大型结构化数据块，这时可以用一个buffer类型缓存变量来存储数据，着色器中定义缓存变量方法为将变量放置到一个块接口中，使用buffer关键字声明。
 </span><span style="color:#75715e">// 例如
-</span><span style="color:#75715e"></span>layout(std <span style="color:#ae81ff">430</span>, binging <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) buffer BufferObject{
-    <span style="color:#66d9ef">int</span> mode;
-    vec4 points[];
-}
+</span><span style="color:#75715e"></span><span style="color:#111">layout</span><span style="color:#111">(</span><span style="color:#111">std</span> <span style="color:#ae81ff">430</span><span style="color:#111">,</span> <span style="color:#111">binging</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">buffer</span> <span style="color:#111">BufferObject</span><span style="color:#111">{</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">mode</span><span style="color:#111">;</span>
+    <span style="color:#111">vec4</span> <span style="color:#111">points</span><span style="color:#111">[];</span>
+<span style="color:#111">}</span>
 
 <span style="color:#75715e">// *** 着色器缓存对象与Uniform块最大区别在于: 着色器存储缓存对象可以在着色器中读写，通过缓存块写入的存储缓存的内容也可以被其他着色器请求使用，并且可以通过程序进行回读。 ***
 </span><span style="color:#75715e"></span>
@@ -1769,20 +1769,20 @@ glBindBuffer(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">0</span>);
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="99-几何着色器">9.9 几何着色器</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// 顶点着色器和片段着色器之间 可选的一个着色器</span>
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// 顶点着色器和片段着色器之间 可选的一个着色器</span>
 
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="910-实例化重要----------批量渲染">9.10 实例化(重要!!!) &mdash;&mdash;&mdash;批量渲染</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1814,42 +1814,42 @@ glBindBuffer(GL_UNIFORM_BUFFER, <span style="color:#ae81ff">0</span>);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 使用一次渲染调用来绘制多个物体, 节省每次绘制物体时CPU-&gt;GPU的通信
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 使用一次渲染调用来绘制多个物体, 节省每次绘制物体时CPU-&gt;GPU的通信
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//使用实例化渲染 将glDrawArrays和glDrawElements改为如下API:
-</span><span style="color:#75715e"></span>glDrawArraysInstanced()
-glDrawElementsInstanced()
+</span><span style="color:#75715e"></span><span style="color:#111">glDrawArraysInstanced</span><span style="color:#111">()</span>
+<span style="color:#111">glDrawElementsInstanced</span><span style="color:#111">()</span>
 <span style="color:#75715e">//这个函数本身并没有什么用。渲染同一个物体一千次对我们并没有什么用处，每个物体都是完全相同的，而且还在同一个位置。我们只能看见一个物体!出于这个原因，GLSL在顶点着色器中嵌入了另一个内建变量，gl_InstanceID。
 </span><span style="color:#75715e">//在使用实例化渲染调用时，gl_InstanceID会从0开始，在每个实例被渲染时递增1。比如说，我们正在渲染第43个实例，那么顶点着色器中它的gl_InstanceID将会是42。因为每个实例都有唯一的ID，我们可以建立一个数组，将ID与位置值对应起来，将每个实例放置在世界的不同位置。
 </span><span style="color:#75715e">// *** 例如:
 </span><span style="color:#75715e"></span><span style="color:#75715e">#version 330 core
-</span><span style="color:#75715e"></span>layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) in vec2 aPos;
-layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) in vec3 aColor;
+</span><span style="color:#75715e"></span><span style="color:#111">layout</span> <span style="color:#111">(</span><span style="color:#111">location</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">in</span> <span style="color:#111">vec2</span> <span style="color:#111">aPos</span><span style="color:#111">;</span>
+<span style="color:#111">layout</span> <span style="color:#111">(</span><span style="color:#111">location</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#111">in</span> <span style="color:#111">vec3</span> <span style="color:#111">aColor</span><span style="color:#111">;</span>
 
-out vec3 fColor;
+<span style="color:#111">out</span> <span style="color:#111">vec3</span> <span style="color:#111">fColor</span><span style="color:#111">;</span>
 
-uniform vec2 offsets[<span style="color:#ae81ff">100</span>];
+<span style="color:#111">uniform</span> <span style="color:#111">vec2</span> <span style="color:#111">offsets</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">];</span>
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
-{
-    vec2 offset <span style="color:#f92672">=</span> offsets[gl_InstanceID];
-    gl_Position <span style="color:#f92672">=</span> vec4(aPos <span style="color:#f92672">+</span> offset, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>);
-    fColor <span style="color:#f92672">=</span> aColor;
-}
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">main</span><span style="color:#111">()</span>
+<span style="color:#111">{</span>
+    <span style="color:#111">vec2</span> <span style="color:#111">offset</span> <span style="color:#f92672">=</span> <span style="color:#111">offsets</span><span style="color:#111">[</span><span style="color:#111">gl_InstanceID</span><span style="color:#111">];</span>
+    <span style="color:#111">gl_Position</span> <span style="color:#f92672">=</span> <span style="color:#111">vec4</span><span style="color:#111">(</span><span style="color:#111">aPos</span> <span style="color:#f92672">+</span> <span style="color:#111">offset</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1.0</span><span style="color:#111">);</span>
+    <span style="color:#111">fColor</span> <span style="color:#f92672">=</span> <span style="color:#111">aColor</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
 
-gl_InstanceID <span style="color:#75715e">//当前渲染实例ID
+<span style="color:#111">gl_InstanceID</span> <span style="color:#75715e">//当前渲染实例ID
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//-----------------------------实例化数组---------------------------------
 </span><span style="color:#75715e">//虽然上述实现在目前的情况下能够正常工作，但是如果我们要渲染远超过100个实例的时候，我们最终会超过最大能够发送至着色器的uniform数据大小上限。它的一个代替方案是实例化数组(Instanced Array).
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//告诉OpenGL什么时候更新顶点属性，以下例子表明位于顶点位置2的顶点属性是一个实例化数组，每渲染一个实例更新一次顶点属性
-</span><span style="color:#75715e"></span>glVertexAttribDivisor(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span><span style="color:#75715e"></span><span style="color:#111">glVertexAttribDivisor</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="911-抗锯齿">9.11 抗锯齿</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -1886,23 +1886,23 @@ gl_InstanceID <span style="color:#75715e">//当前渲染实例ID
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//多重采样抗锯齿(MSAA)
-</span><span style="color:#75715e"></span>glEnable(GL_MULTISAMPLE);
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//多重采样抗锯齿(MSAA)
+</span><span style="color:#75715e"></span><span style="color:#111">glEnable</span><span style="color:#111">(</span><span style="color:#111">GL_MULTISAMPLE</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">// *** 离屏MSAA *** ---帧缓冲---
 </span><span style="color:#75715e">//----------------------------多重采样纹理附件-------------------------------
 </span><span style="color:#75715e">//用glTexImage2DMultisample来替代glTexImage2D，它的纹理目标是GL_TEXTURE_2D_MULTISAPLE
 </span><span style="color:#75715e">//创建多重采样纹理
-</span><span style="color:#75715e"></span>glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, tex);
-glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, GL_RGB, width, height, GL_TRUE);
-glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, <span style="color:#ae81ff">0</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D_MULTISAMPLE</span><span style="color:#111">,</span> <span style="color:#111">tex</span><span style="color:#111">);</span>
+<span style="color:#111">glTexImage2DMultisample</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D_MULTISAMPLE</span><span style="color:#111">,</span> <span style="color:#111">samples</span><span style="color:#111">,</span> <span style="color:#111">GL_RGB</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">,</span> <span style="color:#111">GL_TRUE</span><span style="color:#111">);</span>
+<span style="color:#111">glBindTexture</span><span style="color:#111">(</span><span style="color:#111">GL_TEXTURE_2D_MULTISAMPLE</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
 <span style="color:#75715e">//附加纹理到帧缓冲
-</span><span style="color:#75715e"></span>glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, tex, <span style="color:#ae81ff">0</span>);
+</span><span style="color:#75715e"></span><span style="color:#111">glFramebufferTexture2D</span><span style="color:#111">(</span><span style="color:#111">GL_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">GL_COLOR_ATTACHMENT0</span><span style="color:#111">,</span> <span style="color:#111">GL_TEXTURE_2D_MULTISAMPLE</span><span style="color:#111">,</span> <span style="color:#111">tex</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">//---------------------------多重采样渲染缓冲对象---------------------------
 </span><span style="color:#75715e">//创建多重采样渲染缓冲对象 并指定存储
 </span><span style="color:#75715e">//指定样本数为4
-</span><span style="color:#75715e"></span>glRenderbufferStorageMultisample(GL_RENDERBUFFER, <span style="color:#ae81ff">4</span>, GL_DEPTH24_STENCIL8, width, height);
+</span><span style="color:#75715e"></span><span style="color:#111">glRenderbufferStorageMultisample</span><span style="color:#111">(</span><span style="color:#111">GL_RENDERBUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">,</span> <span style="color:#111">GL_DEPTH24_STENCIL8</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">);</span>
 
 
 <span style="color:#75715e">//渲染到多重采样帧缓冲
@@ -1910,46 +1910,46 @@ glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, <span style="color:#ae81ff">0</span>);
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//多重采样帧缓冲还原
 </span><span style="color:#75715e">//glBlitFramebuffer将一个帧缓冲中的某个区域复制到另一个帧缓冲中，并且将多重采样缓冲还原
-</span><span style="color:#75715e"></span>glBindFramebuffer(GL_READ_FRAMEBUFFER, multisampledFBO); <span style="color:#75715e">//帧缓冲
-</span><span style="color:#75715e"></span>glBindFramebuffer(GL_DRAW_FRAMEBUFFER, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">//屏幕缓冲
-</span><span style="color:#75715e"></span>glBlitFramebuffer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, width, height, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+</span><span style="color:#75715e"></span><span style="color:#111">glBindFramebuffer</span><span style="color:#111">(</span><span style="color:#111">GL_READ_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#111">multisampledFBO</span><span style="color:#111">);</span> <span style="color:#75715e">//帧缓冲
+</span><span style="color:#75715e"></span><span style="color:#111">glBindFramebuffer</span><span style="color:#111">(</span><span style="color:#111">GL_DRAW_FRAMEBUFFER</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span> <span style="color:#75715e">//屏幕缓冲
+</span><span style="color:#75715e"></span><span style="color:#111">glBlitFramebuffer</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">width</span><span style="color:#111">,</span> <span style="color:#111">height</span><span style="color:#111">,</span> <span style="color:#111">GL_COLOR_BUFFER_BIT</span><span style="color:#111">,</span> <span style="color:#111">GL_NEAREST</span><span style="color:#111">);</span>
 
 <span style="color:#75715e">// *** 但如果想要使用多重采样帧缓冲的纹理输出来做像是后期处理这样的事情呢？我们不能直接在片段着色器中使用多重采样的纹理。但我们能做的是将多重采样缓冲位块传送到一个没有使用多重采样纹理附件的FBO中。然后用这个普通的颜色附件来做后期处理，从而达到我们的目的。然而，这也意味着我们需要生成一个新的FBO，作为中介帧缓冲对象，将多重采样缓冲还原为一个能在着色器中使用的普通2D纹理。***
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// *** 将一个多重采样的纹理图像不进行还原直接传入着色器也是可行的。GLSL提供了这样的选项，让我们能够对纹理图像的每个子样本进行采样，所以我们可以创建我们自己的抗锯齿算法。
 </span><span style="color:#75715e">// 例如:
-</span><span style="color:#75715e"></span>uniform sampler2DMS screenTextureMS;
+</span><span style="color:#75715e"></span><span style="color:#111">uniform</span> <span style="color:#111">sampler2DMS</span> <span style="color:#111">screenTextureMS</span><span style="color:#111">;</span>
 <span style="color:#75715e">//获取每个子样本颜色值
-</span><span style="color:#75715e"></span>vec4 colorSample <span style="color:#f92672">=</span> texelFetch(screenTextureMS, TexCoords, <span style="color:#ae81ff">3</span>);  <span style="color:#75715e">// 第4个子样本
+</span><span style="color:#75715e"></span><span style="color:#111">vec4</span> <span style="color:#111">colorSample</span> <span style="color:#f92672">=</span> <span style="color:#111">texelFetch</span><span style="color:#111">(</span><span style="color:#111">screenTextureMS</span><span style="color:#111">,</span> <span style="color:#111">TexCoords</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">);</span>  <span style="color:#75715e">// 第4个子样本
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="10-高级光照">10. 高级光照</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//暂时先放一放
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//暂时先放一放
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="11-pbr">11. PBR</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//暂时先放一放
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//暂时先放一放
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="12-调试">12. 调试</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 返回错误标记
-</span><span style="color:#75715e"></span>glGetError();
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// 返回错误标记
+</span><span style="color:#75715e"></span><span style="color:#111">glGetError</span><span style="color:#111">();</span>
 </code></pre></td></tr></table>
 </div>
 </div><table>
