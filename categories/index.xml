@@ -6,22 +6,31 @@
     <description>Recent content in Categories on 呆呆的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 04 Oct 2021 17:07:31 +0800</lastBuildDate><atom:link href="https://JinYiGao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 23:06:33 +0800</lastBuildDate><atom:link href="https://JinYiGao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker</title>
-      <link>https://JinYiGao.github.io/categories/Docker/</link>
-      <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
+      <title>OpenGL</title>
+      <link>https://JinYiGao.github.io/categories/OpenGL/</link>
+      <pubDate>Mon, 04 Oct 2021 23:06:33 +0800</pubDate>
       
-      <guid>https://JinYiGao.github.io/categories/Docker/</guid>
+      <guid>https://JinYiGao.github.io/categories/OpenGL/</guid>
       <description></description>
     </item>
     
     <item>
       <title>学习笔记</title>
       <link>https://JinYiGao.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
+      <pubDate>Mon, 04 Oct 2021 23:06:33 +0800</pubDate>
       
       <guid>https://JinYiGao.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://JinYiGao.github.io/categories/Docker/</link>
+      <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
+      
+      <guid>https://JinYiGao.github.io/categories/Docker/</guid>
       <description></description>
     </item>
     
