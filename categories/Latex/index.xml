@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Latex on 呆呆的博客</title>
-    <link>https://JinYiGao.github.io/categories/Latex/</link>
+    <link>https://jiniygao.github.io/categories/Latex/</link>
     <description>Recent content in Latex on 呆呆的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Dec 2020 21:00:00 +0800</lastBuildDate><atom:link href="https://JinYiGao.github.io/categories/Latex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Dec 2020 21:00:00 +0800</lastBuildDate><atom:link href="https://jiniygao.github.io/categories/Latex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Latex 学习笔记</title>
-      <link>https://JinYiGao.github.io/post/2020-12-13-latex-study-note/</link>
+      <link>https://jiniygao.github.io/post/2020-12-13-latex-study-note/</link>
       <pubDate>Sun, 13 Dec 2020 21:00:00 +0800</pubDate>
       
-      <guid>https://JinYiGao.github.io/post/2020-12-13-latex-study-note/</guid>
+      <guid>https://jiniygao.github.io/post/2020-12-13-latex-study-note/</guid>
       <description>本篇笔记就简单介绍一下latex写作时的一些常用命令，其他知识以后我会慢慢补充！</description>
     </item>
     
