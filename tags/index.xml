@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 呆呆的博客</title>
-    <link>https://jinyigao.github.io/tags/</link>
+    <link>https://gujin.store/tags/</link>
     <description>Recent content in Tags on 呆呆的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 17 Oct 2021 02:21:12 +0800</lastBuildDate><atom:link href="https://jinyigao.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 02:21:12 +0800</lastBuildDate><atom:link href="https://gujin.store/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>软件安装包</title>
-      <link>https://jinyigao.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <link>https://gujin.store/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</link>
       <pubDate>Sun, 17 Oct 2021 02:21:12 +0800</pubDate>
       
-      <guid>https://jinyigao.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      <guid>https://gujin.store/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenGL</title>
-      <link>https://jinyigao.github.io/tags/OpenGL/</link>
+      <link>https://gujin.store/tags/OpenGL/</link>
       <pubDate>Mon, 04 Oct 2021 23:06:33 +0800</pubDate>
       
-      <guid>https://jinyigao.github.io/tags/OpenGL/</guid>
+      <guid>https://gujin.store/tags/OpenGL/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://jinyigao.github.io/tags/Docker/</link>
+      <link>https://gujin.store/tags/Docker/</link>
       <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
       
-      <guid>https://jinyigao.github.io/tags/Docker/</guid>
+      <guid>https://gujin.store/tags/Docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://jinyigao.github.io/tags/Git/</link>
+      <link>https://gujin.store/tags/Git/</link>
       <pubDate>Mon, 04 Oct 2021 16:58:55 +0800</pubDate>
       
-      <guid>https://jinyigao.github.io/tags/Git/</guid>
+      <guid>https://gujin.store/tags/Git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Latex</title>
-      <link>https://jinyigao.github.io/tags/Latex/</link>
+      <link>https://gujin.store/tags/Latex/</link>
       <pubDate>Sun, 13 Dec 2020 21:00:00 +0800</pubDate>
       
-      <guid>https://jinyigao.github.io/tags/Latex/</guid>
+      <guid>https://gujin.store/tags/Latex/</guid>
       <description></description>
     </item>
     
