@@ -213,10 +213,43 @@
 <h2 id="-研究背景">· 研究背景</h2>
 <p>随着3D扫描技术的发展，使得创建具有数亿个多边形的网格模型成为现实，对于这种大小的数据集来说，传统的用于显示，简化和渐进传输的算法是不切实际的。</p>
 <h2 id="-创新点">· 创新点</h2>
-<p>提出了一个用于</p>
+<p>提出了一个用于表示和渐进渲染多边形网格的系统QSplat，该系统主要特点是将<strong>基于边界球的多分辨率结构</strong>与基于点的渲染系统相结合。</p>
+<p>比基于多边形的系统有更低的预处理和渲染成本。</p>
 <h2 id="-研究方法">· 研究方法</h2>
+<ol>
+<li>
+<p><strong>数据结构</strong></p>
+<p>QSplat使用一个包围球的层次结构用于可见性筛选，希捷层次控制以及渲染。树的每个节点包含了球体中心坐标以及半径，法线，圆锥体宽度，还有一个可选的颜色。</p>
+</li>
+<li>
+<p><strong>算法</strong></p>
+<p>2.1 <strong>渲染算法</strong></p>
+<p>
+        <a data-fancybox="gallery" href="image-20211119223048957.png">
+            <img class="mx-auto" alt="image-20211119223048957" src="image-20211119223048957.png" />
+        </a>
+    </p>
+<p><strong>何时进行递归？</strong></p>
+<p>QSplat根据屏幕上的投影大小来决定递归长度。即，如果球体面积投影到观察平面上超过一个阈值，节点就被细分，为了保持帧速率，通过在前一帧的实际渲染时间与期望渲染时间的比率来调整阈值。</p>
+<p>2.2 <strong>预处理算法</strong></p>
+<p>从三角网格开始，因为需要计算每个节点<strong>法向</strong>，也可以直接从点云构建QSplat的层次结构，但如果没有网格，必须将平面拟合到周围领域点来进行法向计算。</p>
+<p>
+        <a data-fancybox="gallery" href="image-20211119223742661.png">
+            <img class="mx-auto" alt="image-20211119223742661" src="image-20211119223742661.png" />
+        </a>
+    </p>
+<p>该算法通过沿包围盒的最长轴线分割顶点集。</p>
+</li>
+</ol>
 <h2 id="-结论">· 结论</h2>
+<p>渲染适用于低端机器。</p>
+<p>
+        <a data-fancybox="gallery" href="image-20211119225027079.png">
+            <img class="mx-auto" alt="image-20211119225027079" src="image-20211119225027079.png" />
+        </a>
+    </p>
 <h2 id="-个人感想">· 个人感想</h2>
+<p>构建层次结构需要计算每个节点法向，对于非三角网结构点云数据或者不含法线信息的点云计算费时。该算法暂时不支持点云编辑。</p>
 
         </div>
 
@@ -318,7 +351,7 @@
  
     </div>
     <div style="margin-top: 20px; color:#6E7173">
-        &copy; 2021 <a href="https://www.gujin.store">小小呆呆没有脑袋的博客 By 小小呆呆没有脑袋</a>
+        &copy; 2022 <a href="https://www.gujin.store">小小呆呆没有脑袋的博客 By 小小呆呆没有脑袋</a>
         
          | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">辽ICP备2021010117号</a>
         
@@ -390,6 +423,14 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.gujin.store/post/2022-3-17-webpacklearn/" title="Webpack5学习笔记">Webpack5学习笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://www.gujin.store/post/2021-12-15-ad-learn-note1/" title="Altium Designer 常用快捷键整理(持续更新~~)">Altium Designer 常用快捷键整理(持续更新~~)</a>
+    </li>
+    
+    <li>
         <a href="https://www.gujin.store/post/2021-11-11-qsplat-read-note/" title="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)">论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)</a>
     </li>
     
@@ -424,7 +465,11 @@
     
     <li><a href="https://www.gujin.store/categories/OpenGL/">OpenGL (1)</a></li>
     
-    <li><a href="https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记 (4)</a></li>
+    <li><a href="https://www.gujin.store/categories/Web/">Web (1)</a></li>
+    
+    <li><a href="https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记 (5)</a></li>
+    
+    <li><a href="https://www.gujin.store/categories/%E7%A1%AC%E4%BB%B6/">硬件 (1)</a></li>
     
     <li><a href="https://www.gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读 (1)</a></li>
     
@@ -437,6 +482,8 @@
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
+    <a href="https://www.gujin.store/tags/Altium-Designer/">Altium Designer</a>
+    
     <a href="https://www.gujin.store/tags/Docker/">Docker</a>
     
     <a href="https://www.gujin.store/tags/Git/">Git</a>
@@ -444,6 +491,10 @@
     <a href="https://www.gujin.store/tags/Latex/">Latex</a>
     
     <a href="https://www.gujin.store/tags/OpenGL/">OpenGL</a>
+    
+    <a href="https://www.gujin.store/tags/Web/">Web</a>
+    
+    <a href="https://www.gujin.store/tags/Webpack/">Webpack</a>
     
     <a href="https://www.gujin.store/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a>
     

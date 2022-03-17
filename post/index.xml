@@ -6,7 +6,34 @@
     <description>Recent content in Posts on 小小呆呆没有脑袋的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 04 Oct 2021 23:06:33 +0800</lastBuildDate><atom:link href="https://www.gujin.store/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Mar 2022 22:24:00 +0800</lastBuildDate><atom:link href="https://www.gujin.store/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webpack5学习笔记</title>
+      <link>https://www.gujin.store/post/2022-3-17-webpacklearn/</link>
+      <pubDate>Thu, 17 Mar 2022 22:24:00 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2022-3-17-webpacklearn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Altium Designer 常用快捷键整理(持续更新~~)</title>
+      <link>https://www.gujin.store/post/2021-12-15-ad-learn-note1/</link>
+      <pubDate>Wed, 15 Dec 2021 17:03:33 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2021-12-15-ad-learn-note1/</guid>
+      <description>因为学习研究的需要，身为一名测绘人，干起了电气的事，自学了一段时间的PCB设计，主要用的Altium Designer这款软件，下面记录了一些设计PCB过程中十分有用的功能快捷键，以及一些设计小技巧~~~</description>
+    </item>
+    
+    <item>
+      <title>论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)</title>
+      <link>https://www.gujin.store/post/2021-11-11-qsplat-read-note/</link>
+      <pubDate>Thu, 11 Nov 2021 15:08:31 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2021-11-11-qsplat-read-note/</guid>
+      <description>QSplat论文阅读笔记</description>
+    </item>
+    
     <item>
       <title>OpenGL 学习笔记</title>
       <link>https://www.gujin.store/post/2021-7-14-opengl-learn-note/</link>
