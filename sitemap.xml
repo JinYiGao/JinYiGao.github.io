@@ -3,30 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.gujin.store/categories/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/post/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://www.gujin.store/tags/React/</loc>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://www.gujin.store/post/2022-4-1-reactlearn/</loc>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/tags/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.gujin.store/tags/Web/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/categories/Web/</loc>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://www.gujin.store/</loc>
+    <lastmod>2022-04-02T00:00:01+08:00</lastmod>
+  </url><url>
+    <loc>https://www.gujin.store/tags/Web/</loc>
     <lastmod>2022-03-17T22:24:00+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/tags/Webpack/</loc>
     <lastmod>2022-03-17T22:24:00+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/post/2022-3-17-webpacklearn/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-03-17T22:24:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.gujin.store/</loc>
     <lastmod>2022-03-17T22:24:00+08:00</lastmod>
   </url><url>
     <loc>https://www.gujin.store/tags/Altium-Designer/</loc>

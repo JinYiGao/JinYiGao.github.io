@@ -6,7 +6,16 @@
     <description>Recent content on 小小呆呆没有脑袋的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Mar 2022 22:24:00 +0800</lastBuildDate><atom:link href="https://www.gujin.store/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:01 +0800</lastBuildDate><atom:link href="https://www.gujin.store/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React全家桶学习笔记</title>
+      <link>https://www.gujin.store/post/2022-4-1-reactlearn/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:01 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2022-4-1-reactlearn/</guid>
+      <description>之前学过Vue,现在来学一下React,本文记录了学习过程中的一些学习笔记..</description>
+    </item>
+    
     <item>
       <title>Webpack5学习笔记</title>
       <link>https://www.gujin.store/post/2022-3-17-webpacklearn/</link>
@@ -3649,7 +3658,7 @@
       <pubDate>Sun, 03 Oct 2021 15:42:39 +0800</pubDate>
       
       <guid>https://www.gujin.store/about/</guid>
-      <description>一名普普通通的研究生，平时喜欢琢磨一些小玩意，会一点C++， C#， Javascript， Python，也写过一些游戏脚本。 参与过一些基于Vue + Cesium的Web平台搭建，也写过基于OpenGL的大规模点云可视化软件。 下面打个广告！ 我自己的服务型公众号，平时有点外卖的朋友或者喜欢网购领券的朋友都可以关注一下，感谢支持！</description>
+      <description>一名普普通通的研究生，平时喜欢琢磨一些小玩意，会一点C++， C#， Javascript， Python，也写过一些游戏脚本。</description>
     </item>
     
     <item>
