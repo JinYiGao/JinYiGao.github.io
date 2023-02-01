@@ -143,13 +143,33 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#1-docker基本组成">1. Docker基本组成</a></li>
-    <li><a href="#2-docker常用命令">2. Docker常用命令</a>
+    <li><a href="#2-帮助命令">2. 帮助命令</a></li>
+    <li><a href="#3-镜像命令">3. 镜像命令</a></li>
+    <li><a href="#3-容器命令">3. 容器命令</a></li>
+    <li><a href="#4-常用其他命令">4. 常用其他命令</a></li>
+    <li><a href="#5-容器数据卷">5. 容器数据卷</a></li>
+    <li><a href="#6-dockerfile">6. Dockerfile</a></li>
+    <li><a href="#7-docker网络">7. Docker网络</a>
       <ul>
-        <li><a href="#21-帮助命令">2.1 帮助命令</a></li>
-        <li><a href="#22-镜像命令">2.2 镜像命令</a></li>
-        <li><a href="#23-容器命令">2.3 容器命令</a></li>
-        <li><a href="#24-常用其他命令">2.4 常用其他命令</a></li>
-        <li><a href="#25-作业练习">2.5 作业练习</a></li>
+        <li><a href="#71-docker0">7.1. Docker0</a></li>
+        <li><a href="#72-自定义网络">7.2. 自定义网络</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-docker镜像发布">8. Docker镜像发布</a>
+      <ul>
+        <li><a href="#81--发布到dockerhub">8.1.  发布到DockerHub</a></li>
+        <li><a href="#82--发布到阿里云镜像仓库">8.2.  发布到阿里云镜像仓库</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-docker可视化管理工具">9. Docker可视化管理工具</a>
+      <ul>
+        <li><a href="#91-portainer">9.1. Portainer</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-练习用例">10. 练习用例</a>
+      <ul>
+        <li><a href="#101-docker安装nginx">10.1. Docker安装Nginx</a></li>
+        <li><a href="#102-构建自己的centos">10.2. 构建自己的centos</a></li>
       </ul>
     </li>
   </ul>
@@ -219,83 +239,329 @@
         <div class="post-content">
             <p>最近，对微服务有点兴趣，就去学了一下docker，了解了一些基本的命令以及使用方法，汇成了这篇笔记，当然，还有很多没记下来(因为我还没学完&hellip;)，后面会慢慢完善&hellip;&hellip;</p>
 <h2 id="1-docker基本组成">1. Docker基本组成</h2>
+<ul>
+<li>
 <p><strong>镜像(Image)：</strong></p>
 <p>docker镜像类似于一个Class，通过镜像来创建容器，同一个镜像可以创建多个容器。</p>
+</li>
+<li>
 <p><strong>容器(container)：</strong></p>
 <p>通过镜像创建，启动、停止、删除命令。</p>
+</li>
+<li>
 <p><strong>仓库：</strong></p>
 <p>存储docker镜像。</p>
-<h2 id="2-docker常用命令">2. Docker常用命令</h2>
-<h3 id="21-帮助命令">2.1 帮助命令</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker version		<span style="color:#008000"># 显示docker版本信息</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker info 			<span style="color:#008000"># 显示docker系统信息，包括镜像和容器数量</span>
-</span></span></code></pre></div><h3 id="22-镜像命令">2.2 镜像命令</h3>
-<h4 id="查看本地所有镜像">查看本地所有镜像</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker images		<span style="color:#008000"># 查看本地所有镜像</span>
-</span></span></code></pre></div><h4 id="搜索镜像">搜索镜像</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker search 镜像名           <span style="color:#008000"># 搜索镜像</span>
-</span></span></code></pre></div><h4 id="下载镜像">下载镜像</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker pull 镜像名[:tag]      <span style="color:#008000"># 下载镜像   --不写tag 则默认latest</span>
-</span></span></code></pre></div><h4 id="删除指定镜像">删除指定镜像</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker rmi  镜像ID / 镜像名             <span style="color:#008000"># 删除指定镜像</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>                           -f                                      <span style="color:#008000"># 强制删除</span>
-</span></span></code></pre></div><h3 id="23-容器命令">2.3 容器命令</h3>
-<h4 id="启动容器">启动容器</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>docker run [可选参数] image      <span style="color:#008000"># 通过镜像名 启动容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#008000"># 参数说明</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>--name=<span style="color:#a31515">&#34;Name&#34;</span>                              <span style="color:#008000"># 容器名字  用于区分容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>-d                                                            <span style="color:#008000"># 后台方式运行</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>-it                                                            <span style="color:#008000"># 使用交互方式运行，进入到容器内部查看内容  </span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>                          exit                               <span style="color:#008000"># 从交互容器中退出，并停止容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>                          Ctrl+P+Q                    <span style="color:#008000"># 从交互容器中退出，不停止容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>-p                                                            <span style="color:#008000"># 指定容器端口    -p 8080:8080</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>                          -p ip : 主机端口 : 容器端口
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>                          -p 主机端口 : 容器端口
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>                          -p 容器端口
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>                          容器端口
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>-P                                                            <span style="color:#008000"># 大写P，随机指定端口</span>
-</span></span></code></pre></div><h4 id="列出容器">列出容器</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker ps                                            <span style="color:#008000"># 列出所有运行中的容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>                           -a                                 <span style="color:#008000"># 列出当前+历史运行过的容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>                           -n=?                            <span style="color:#008000"># 列出最近运行过的n个容器</span>
-</span></span></code></pre></div><h4 id="删除容器">删除容器</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker rm 容器ID                             <span style="color:#008000"># 根据Id删除容器， 不能删除正在运行的容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>                           -f                                   <span style="color:#008000"># 强制删除容器，包括正在运行的容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker rm -f <span style="color:#00f">$(</span>docker ps -aq<span style="color:#00f">)</span>     <span style="color:#008000"># 递归删除所有容器</span>
-</span></span></code></pre></div><h4 id="容器操作">容器操作</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker start 容器ID                          <span style="color:#008000"># 启动一个停止的容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker restart 容器ID                      <span style="color:#008000"># 重启容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker stop 容器ID                           <span style="color:#008000"># 停止容器</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker kill 容器ID                              <span style="color:#008000"># 强制停止(杀掉)容器</span>
-</span></span></code></pre></div><h3 id="24-常用其他命令">2.4 常用其他命令</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 以后台方式运行一个centos系统  (必须要有一个进程在运行，不然docker自动结束后台容器)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker run -d centos /bin/sh -c <span style="color:#a31515">&#34;while true;do echo jinyigao;sleep 1;done&#34;</span>
-</span></span></code></pre></div><h4 id="输出日志">输出日志</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 输出日志</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker logs  容器ID                           
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>                          -tf                                    <span style="color:#008000"># 显示日志</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>                          --tail n                           <span style="color:#008000"># 要显示的日志条数</span>
-</span></span></code></pre></div><h4 id="查看容器内进程信息">查看容器内进程信息</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 查看容器内进程信息                         </span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker top 容器ID
-</span></span></code></pre></div><h4 id="查看容器的元数据">查看容器的元数据</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 查看容器的元数据</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker inspect 容器ID
-</span></span></code></pre></div><h4 id="进入运行中容器">进入运行中容器</h4>
+</li>
+</ul>
+<h2 id="2-帮助命令">2. 帮助命令</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 显示docker版本信息</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker version	
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 显示docker系统信息，包括镜像和容器数量</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker info 			
+</span></span></code></pre></div><h2 id="3-镜像命令">3. 镜像命令</h2>
+<ul>
+<li>
+<p><strong>查看本地所有镜像</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 查看本地所有镜像</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker images	
+</span></span></code></pre></div></li>
+<li>
+<p><strong>搜索镜像</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 搜索镜像</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker search 镜像名      
+</span></span></code></pre></div></li>
+<li>
+<p><strong>下载镜像</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 下载镜像</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># 不写tag 则默认latest</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker pull 镜像名[:tag]      
+</span></span></code></pre></div></li>
+<li>
+<p><strong>删除指定镜像</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 删除指定镜像 </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -f 强制删除</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker rmi 镜像ID/镜像名 [-f]
+</span></span></code></pre></div></li>
+<li>
+<p><strong>创建镜像</strong></p>
+<p>当我们从 docker 镜像仓库中下载的镜像不能满足我们的需求时，我们可以通过以下两种方式对镜像进行更改，创建自己的镜像</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 1. 从容器创建本地镜像副本</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker commit -m <span style="color:#a31515">&#34;message&#34;</span> -a <span style="color:#a31515">&#34;author&#34;</span> 容器ID 镜像名:tag版本
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># 2. 从Dockerfile构建镜像</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>查看镜像构建历史</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker history imageID
+</span></span></code></pre></div></li>
+<li>
+<p><strong>修改镜像名</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker tag SOURCE_IMAGE[:tag] TARGET_IMAGE[:tag]
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="3-容器命令">3. 容器命令</h2>
+<ul>
+<li>
+<p><strong>启动容器</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#008000"># 通过镜像名 启动容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>docker run [--name] [-d] [-it] [-p] [-P] 镜像名 [/bin/bash]    
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#008000"># 参数说明</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#008000"># --name=&#34;Name&#34; 容器实例名字,用于区分容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#008000"># -d 后台方式运行,不会自动进入容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#008000"># -it 使用交互方式运行，进入到容器内部查看内容  </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#008000"># -p 指定端口映射,例如-p 8080:8080</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#008000"># 	1. -p ip:主机端口:容器端口</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#008000"># 	2. -p 主机端口:容器端口</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#008000"># 	3. -p 容器端口</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#008000"># 	4. 容器端口</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#008000"># -P 大写P，随机指定端口</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>列出容器</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># -a 列出当前+历史运行过的容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -n 列出最近运行过的n个容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># -q 仅列出容器ID</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker ps [-a] [-n=?] [-q]
+</span></span></code></pre></div></li>
+<li>
+<p><strong>删除容器</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 根据Id删除容器, 不能删除正在运行的容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -f 强制删除容器，包括正在运行的容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker rm [-f] 容器ID         
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># 递归删除所有容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>docker rm -f <span style="color:#00f">$(</span>docker ps -aq<span style="color:#00f">)</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>容器操作</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 启动一个停止的容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker start 容器ID   
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 重启容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker restart 容器ID 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#008000"># 停止容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>docker stop 容器ID 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#008000"># 强制停止(杀掉)容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>docker kill 容器ID             
+</span></span></code></pre></div></li>
+<li>
+<p><strong>进入运行中容器</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 进入当前正在运行的容器 (通常容器都是以后台方式运行，有时需要进入修改配置或者进行其他操作)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># 方式1   -----进入容器后开启一个新的终端 (常用)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># 方式1   -----进入容器后开启一个新的终端 (常用),使用exit退出时不会导致容器停止</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker exec -it 容器id bashShell
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># 例如： docker exec -it 容器id /bin/bash</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#008000"># 方式2  ------进入创建容器时执行的终端，不会启动新的终端</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#008000"># 方式2  ------进入创建容器时执行的终端，不会启动新的终端,使用exit退出时会导致容器停止</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>docker attach 容器id
-</span></span></code></pre></div><h4 id="从容器内拷贝文件到主机上">从容器内拷贝文件到主机上</h4>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>退出容器</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 从交互容器中退出，并停止容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>exit
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 从交互容器中退出，不停止容器</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Ctrl+P+Q                    
+</span></span></code></pre></div></li>
+<li>
+<p><strong>从容器内拷贝文件到主机上</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 拷贝容器内文件到主机</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker cp 容器id:容器内路径 目的主机路径
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 拷贝主机文件到容器内</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker cp 目的主机路径 容器id:容器内路径 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#008000"># ---拷贝是一个手动过程 未来可通过  -v 卷技术 实现容器主机同步</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="4-常用其他命令">4. 常用其他命令</h2>
+<ul>
+<li>
+<p><strong>日志输出</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 输出容器日志</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -tf 显示日志</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># --tail n 要显示的日志条数</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker logs 容器ID [-tf] [--tail n]       
+</span></span></code></pre></div></li>
+<li>
+<p><strong>查看容器内进程信息</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 查看容器内进程信息                         </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker top 容器ID
+</span></span></code></pre></div></li>
+<li>
+<p><strong>查看容器的元数据</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 查看容器的元数据</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker inspect 容器ID
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="5-容器数据卷">5. 容器数据卷</h2>
+<p>Docker容器产生的数据，如果不备份，那么当容器实例删除后，容器内的数据自然也就没有了。</p>
+<p>为了能实现数据持久化，在docker中我们使用卷。</p>
+<p>卷就是目录或文件，将主机目录挂载在一个或多个容器中，由docker挂载到容器，是一种<strong>数据共享技术</strong>。</p>
+<p>卷的设计目的就是数据的持久化，完全独立于容器的生存周期，因此Docker不会在容器删除时删除其挂载的数据卷。</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>数据卷可在容器之间共享或重用数据</li>
+<li>卷中的更改可以直接实时生效</li>
+<li>数据卷中的更改不会包含在镜像的更新中</li>
+<li>数据卷的生命周期一直持续到没有容器使用它为止</li>
+</ol>
+<ul>
+<li>
+<p><strong>数据卷使用</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 使用-v命令挂载</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker run -it -v 主机目录:容器目录 imagename /bin/bash
+</span></span></code></pre></div></li>
+<li>
+<p><strong>具名挂载和匿名挂载</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 具名挂载</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -v 命令同时指定了卷名和容器内路径</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker run -d -P --name n1 -v volname:/etc/nginx nginx
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># -v 命令同时指定主机路径和容器内路径</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>docker run -d -P --name n1 -v /home/nginx:/etc/nginx nginx
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#008000"># 匿名挂载</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#008000"># -v 命令只指定了容器内路径</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>docker run -d -P --name n1 -v /etc/nginx nginx
+</span></span></code></pre></div></li>
+<li>
+<p><strong>列出所有数据卷</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker volume ls
+</span></span></code></pre></div></li>
+<li>
+<p><strong>查看数据卷元数据</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker volume inspect volume_name
+</span></span></code></pre></div></li>
+<li>
+<p><strong>设置容器对数据卷读写权限</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># ro readonly 只读</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># rw readwrite 可读可写</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>docker run -d -P --name n1 -v volname:/etc/nginx[:ro | :rw] nginx
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="6-dockerfile">6. Dockerfile</h2>
+<p>Dockerfile就是用来构建docker镜像的构建脚本。</p>
+<ul>
+<li>
+<p><strong>Dockerfile基本指令</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#008000"># FROM 指定基础镜像 例如centos ubuntu</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style=""></span><span style="color:#00f">FROM</span><span style="color:#a31515"> centos</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style=""></span><span style="color:#008000"># MAINTAINER 声明维护者信息</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style=""></span><span style="color:#00f">MAINTAINER</span><span style="color:#a31515"> jin,497189xxx@gmail.com</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style=""></span><span style="color:#008000"># RUN 镜像构建(build)时需要执行的命令</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style=""></span><span style="color:#008000"># 1. shell方式</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style=""></span><span style="color:#00f">RUN</span> <span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style=""></span><span style="color:#008000"># 2. exec方式</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style=""></span><span style="color:#00f">RUN</span> [<span style="color:#a31515">&#34;可执行文件&#34;</span>,<span style="color:#a31515">&#34;参数1&#34;</span>,<span style="color:#a31515">&#34;参数2&#34;</span>]<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style=""></span><span style="color:#008000"># WORKDIR 镜像进入时工作目录</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style=""></span><span style="color:#00f">WORKDIR</span><span style="color:#a31515"> /home</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style=""></span><span style="color:#008000"># VOLUME 主机卷挂载到的目录(容器内)</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style=""></span><span style="color:#00f">VOLUME</span> [<span style="color:#a31515">&#34;volume01&#34;</span>, <span style="color:#a31515">&#34;volume02&#34;</span>]<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style=""></span><span style="color:#008000"># EXPOSE 声明端口</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style=""></span><span style="color:#008000"># 帮助镜像使用者理解这个镜像服务使用的端口，以方便配置映射</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style=""></span><span style="color:#008000"># 在运行时使用随机端口映射时，会自动随机映射EXPOSE的端口</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style=""></span><span style="color:#00f">EXPOSE</span><span style="color:#a31515"> 8080 3306</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span><span style=""></span><span style="color:#008000"># CMD 指定容器启动(docker run)时候执行的命令</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style=""></span><span style="color:#008000"># 可以被docker run命令行参数中指定要运行的命令所覆盖</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style=""></span><span style="color:#008000"># 如果存在多个CMD指令, 仅最后一个生效</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style=""></span><span style="color:#008000"># 1. shell方式</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span><span style=""></span><span style="color:#00f">CMD</span> /bin/bash<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style=""></span><span style="color:#008000"># 2. exec方式</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span><span style=""></span><span style="color:#00f">CMD</span> [<span style="color:#a31515">&#34;&lt;可执行文件或命令&gt;&#34;</span>, <span style="color:#a31515">&#34;&lt;参数1&gt;&#34;</span>, <span style="color:#a31515">&#34;&lt;参数2&gt;&#34;</span>]<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span><span style=""></span><span style="color:#008000"># 3. 为ENTRYPOINT指令提供参数</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span><span style=""></span><span style="color:#00f">CMD</span> [<span style="color:#a31515">&#34;参数1&#34;</span>, <span style="color:#a31515">&#34;参数2&#34;</span>, <span style="">...</span>]<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span><span style=""></span><span style="color:#008000"># ENTRYPOINT 类似于CMD指令 </span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span><span style=""></span><span style="color:#008000"># 不会被docker run命令行参数指定的命令所覆盖，并且这些命令会被作为参数追加到ENTRYPOINT命令后</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span><span style=""></span><span style="color:#008000"># 如果存在多个ENTRYPOINT指令，仅最后一个生效</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style=""></span><span style="color:#00f">ENTRYPOINT</span> [<span style="color:#a31515">&#34;可执行文件或命令&#34;</span>, <span style="color:#a31515">&#34;参数1&#34;</span>, <span style="color:#a31515">&#34;参数2&#34;</span>]<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span><span style=""></span><span style="color:#008000"># ONBUILD 当另一个Dockerfile使用该Dockerfile构建的镜像时执行的命令</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span><span style=""></span><span style="color:#00f">ONBUILD</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span><span style="color:#008000"># COPY 复制文件或目录到容器内指定路径</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span><span style=""></span><span style="color:#00f">COPY</span> [00chown=&lt;user&gt;:&lt;group&gt;] 源路径 目标路径<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span><span style=""></span><span style="color:#008000"># ADD 和COPY指令类似</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span><span style=""></span><span style="color:#008000"># ADD优点: 在执行&lt;源文件&gt;为tar压缩文件时，压缩格式为 gzip, bzip2 以及 xz 的情况下，会自动复制并解压到 &lt;目标路径&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span><span style=""></span><span style="color:#00f">ADD</span> <span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span><span style=""></span><span style="color:#008000"># ENV 构建时设置环境变量</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span><span style=""></span><span style="color:#00f">ENV</span> key value<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span><span style=""></span><span style="color:#00f">ENV</span> key1=value1 key2=value2 ...<span style="">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>使用Dockerfile构建镜像</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># -f 文件路径</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#008000"># -t target 目标镜像</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># . 上下文路径，docker是C/S，docker在构建镜像时是在docker引擎下完成的</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000">#   在构建时需要将指定目录下的文件一起打包供docker引擎使用</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#008000">#   默认上下文路径是Dockerfile所在路径</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>docker build -f dockerfile文件路径 -t 镜像名[:tag] .
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="7-docker网络">7. Docker网络</h2>
+<h3 id="71-docker0">7.1. Docker0</h3>
+<p>Docker使用Linux桥接，在宿主机虚拟一个Docker容器网桥(<strong>docker0</strong>)，Docker启动一个容器时会根据Docker网桥的网段分配给容器一个IP地址，称为Container-IP，同时Docker网桥是每个容器的默认网关。</p>
+<p>因为在同一宿主机内的容器都接入同一个网桥，这样容器之间就能够通过容器的Container-IP直接 通信。</p>
+<p>Docker容器网络就很好的利用了Linux虚拟网络技术，在本地主机和容器内分别创建一个虚拟接口，并让他们彼此联通（这样一对接口叫<strong>veth pair</strong>）
+Docker中的网络接口默认都是虚拟的接口。虚拟接口的优势就是转发效率极高（因为Linux是在内核中进行数据的复制来实现虚拟接口之间的数据转发，无需通过外部的网络设备交换）</p>
+<p>
+        <a data-fancybox="gallery" href="https://img.gujin.store/img/image-20221106215525134.png">
+            <img class="mx-auto" alt="image-20221106215525134" src="https://img.gujin.store/img/image-20221106215525134.png" />
+        </a>
+    </p>
+<h3 id="72-自定义网络">7.2. 自定义网络</h3>
+<p><strong>docker0缺点</strong>：不支持容器名网络访问</p>
+<ul>
+<li>
+<p><strong>查看所有的docker网络</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker network ls
+</span></span></code></pre></div></li>
+<li>
+<p><strong>网络模式</strong></p>
+<ul>
+<li><strong>bridge</strong>：桥接 (docker默认)</li>
+<li><strong>none</strong>：不配置网络</li>
+<li><strong>host</strong>：和宿主机共享网络</li>
+<li><strong>container</strong>：容器内网络连通 (直接互连，用的比较少，局限大)</li>
+</ul>
+</li>
+<li>
+<p><strong>创建网络</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
+</span></span></code></pre></div></li>
+<li>
+<p><strong>启动容器时指定网络</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>docker run -d -P --name name1 --net mynet tomcat 
+</span></span></code></pre></div></li>
+</ul>
+<p><strong>好处</strong>：不同的集群使用不同的网络(而不是全部基于docker0)，保证集群的安全和健康</p>
+<ul>
+<li>
+<p><strong>将容器连接到不同的网络</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 打通不同网络间的容器通信</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker network connect mynet containner01
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="8-docker镜像发布">8. Docker镜像发布</h2>
+<h3 id="81--发布到dockerhub">8.1.  发布到DockerHub</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 登录</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker login
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 推送到仓库</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>docker push USR/IMAGE[:tag]
+</span></span></code></pre></div><h3 id="82--发布到阿里云镜像仓库">8.2.  发布到阿里云镜像仓库</h3>
+<p>详见阿里云官网</p>
+<h2 id="9-docker可视化管理工具">9. Docker可视化管理工具</h2>
+<h3 id="91-portainer">9.1. Portainer</h3>
+<p>Portainer是一个可视化的容器镜像的图形管理工具，利用Portainer可以轻松构建，管理和维护Docker环境。 而且完全免费，基于容器化的安装方式，方便高效部署。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 拉取，启动portainer</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># ---拷贝是一个手动过程 未来可通过  -v 卷技术 实现容器主机同步</span>
-</span></span></code></pre></div><h3 id="25-作业练习">2.5 作业练习</h3>
-<h4 id="docker安装nginx">Docker安装Nginx</h4>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#008000"># 浏览器打开访问ip:9000即可进入面板</span>
+</span></span></code></pre></div><h2 id="10-练习用例">10. 练习用例</h2>
+<h3 id="101-docker安装nginx">10.1. Docker安装Nginx</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#008000"># 搜索镜像 (建议Docker Hub)</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>docker search nginx
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#008000"># 下载镜像</span>
@@ -304,7 +570,20 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>docker run -d  --name=<span style="color:#a31515">&#34;nginx0&#34;</span> -p 3344:80 nginx
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#008000"># 查看是否启动成功</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>curl localhost:3344    <span style="color:#008000"># 或者直接浏览器打开访问3344端口</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="102-构建自己的centos">10.2. 构建自己的centos</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#00f">FROM</span><span style="color:#a31515"> centos:7</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style=""></span><span style="color:#00f">MAINTAINER</span><span style="color:#a31515"> Jin&lt;497189xxx@qq.com&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style=""></span><span style="color:#00f">ENV</span> MYPATH /usr/local<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style=""></span><span style="color:#00f">WORKDIR</span><span style="color:#a31515"> $MYPATH</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style=""></span><span style="color:#00f">RUN</span> yum -y install vim<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style=""></span><span style="color:#00f">RUN</span> yum -y install net-tools<span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style=""></span><span style="color:#00f">EXPOSE</span><span style="color:#a31515"> 80</span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style=""></span><span style="color:#00f">CMD</span> echo $MYPATH<span style="">
+</span></span></span></code></pre></div>
         </div>
 
         
