@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 小小呆呆没有脑袋的博客</title>
+    <link>https://www.gujin.store/categories/</link>
+    <description>Recent content in Categories on 小小呆呆没有脑袋的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 28 Aug 2022 22:42:23 +0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习笔记</title>
+      <link>https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 28 Aug 2022 22:42:23 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://www.gujin.store/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 08 May 2022 17:43:59 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://www.gujin.store/categories/Web/</link>
+      <pubDate>Sun, 10 Apr 2022 22:31:27 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/Web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>硬件</title>
+      <link>https://www.gujin.store/categories/%E7%A1%AC%E4%BB%B6/</link>
+      <pubDate>Wed, 15 Dec 2021 17:03:33 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/%E7%A1%AC%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>论文阅读</title>
+      <link>https://www.gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 11 Nov 2021 15:08:31 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软件安装包</title>
+      <link>https://www.gujin.store/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+      <pubDate>Sun, 17 Oct 2021 02:21:12 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenGL</title>
+      <link>https://www.gujin.store/categories/OpenGL/</link>
+      <pubDate>Mon, 04 Oct 2021 23:06:33 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/OpenGL/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://www.gujin.store/categories/Docker/</link>
+      <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/Docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://www.gujin.store/categories/Git/</link>
+      <pubDate>Mon, 04 Oct 2021 16:58:55 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/Git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>https://www.gujin.store/categories/Latex/</link>
+      <pubDate>Sun, 13 Dec 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/categories/Latex/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

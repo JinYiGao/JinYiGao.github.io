@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on 小小呆呆没有脑袋的博客</title>
+    <link>https://www.gujin.store/categories/Web/</link>
+    <description>Recent content in Web on 小小呆呆没有脑袋的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 Apr 2022 22:31:27 +0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/Web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Css学习笔记</title>
+      <link>https://www.gujin.store/post/2022-4-10-csslearn/</link>
+      <pubDate>Sun, 10 Apr 2022 22:31:27 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2022-4-10-csslearn/</guid>
+      <description>之前总是零零散散学了一些css知识,但是很不成体系,用到的时候也总是去百度,因此决定系统地学习一下,本文记录了学习过程中的一些学习笔记..</description>
+    </item>
+    
+    <item>
+      <title>React全家桶学习笔记</title>
+      <link>https://www.gujin.store/post/2022-4-1-reactlearn/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:01 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2022-4-1-reactlearn/</guid>
+      <description>之前学过Vue,现在来学一下React,本文记录了学习过程中的一些学习笔记..</description>
+    </item>
+    
+    <item>
+      <title>Webpack5学习笔记</title>
+      <link>https://www.gujin.store/post/2022-3-17-webpacklearn/</link>
+      <pubDate>Thu, 17 Mar 2022 22:24:00 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/post/2022-3-17-webpacklearn/</guid>
+      <description>Webpack作为一款前端资源构建工具，对于前端工程师来说，是必须要掌握的，本文记录了自己学习Webpack过程中的一些笔记&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

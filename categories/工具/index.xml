@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 小小呆呆没有脑袋的博客</title>
+    <link>https://www.gujin.store/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 小小呆呆没有脑袋的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 08 May 2022 17:43:59 +0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些值得收藏的网站(持续更新)</title>
+      <link>https://www.gujin.store/tools/2022-5-8-websites/</link>
+      <pubDate>Sun, 08 May 2022 17:43:59 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/tools/2022-5-8-websites/</guid>
+      <description>收录了一些本人在平时学习生活中遇到的一些很有用的网站，防止以后忘了，特此记录一下，要是大家也有推荐的可以在评论区留言哦~~~</description>
+    </item>
+    
+    <item>
+      <title>常用软件 安装包大全</title>
+      <link>https://www.gujin.store/tools/package/</link>
+      <pubDate>Mon, 11 Oct 2021 17:27:32 +0800</pubDate>
+      
+      <guid>https://www.gujin.store/tools/package/</guid>
+      <description>本篇文章汇总了绝大部分软件安装包</description>
+    </item>
+    
+  </channel>
+</rss>
