@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000) - Jin&#39;s Blog</title><meta name="author" content="Jin">
+<meta name="author-link" content="https://img.gujin.store/img/favicon.ico">
+<meta name="description" content="QSplat论文阅读笔记" /><meta name="keywords" content='QSplat,, 论文阅读笔记' /><meta itemprop="name" content="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)">
+<meta itemprop="description" content="QSplat论文阅读笔记"><meta itemprop="datePublished" content="2021-11-11T15:08:31+08:00" />
+<meta itemprop="dateModified" content="2021-11-11T15:08:31+08:00" />
+<meta itemprop="wordCount" content="532"><meta itemprop="image" content="https://gujin.store/favicon.ico"/>
+<meta itemprop="keywords" content="论文阅读," /><meta property="og:title" content="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)" />
+<meta property="og:description" content="QSplat论文阅读笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gujin.store/posts/2021-11-11-qsplat-read-note/" /><meta property="og:image" content="https://gujin.store/favicon.ico"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-11T15:08:31+08:00" />
+<meta property="article:modified_time" content="2021-11-11T15:08:31+08:00" /><meta property="og:site_name" content="Jin&#39;s Blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gujin.store/favicon.ico"/>
+
+<meta name="twitter:title" content="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)"/>
+<meta name="twitter:description" content="QSplat论文阅读笔记"/>
+<meta name="application-name" content="Jin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Jin&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://gujin.store/posts/2021-11-11-qsplat-read-note/" /><link rel="prev" href="https://gujin.store/tools/package/vmware-15-5/" /><link rel="next" href="https://gujin.store/posts/2021-12-15-ad-learn-note1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/gujin.store\/posts\/2021-11-11-qsplat-read-note\/"
+    },"image": ["https:\/\/gujin.store\/favicon.ico"],"genre": "posts","keywords": "论文阅读","wordcount":  532 ,
+    "url": "https:\/\/gujin.store\/posts\/2021-11-11-qsplat-read-note\/","datePublished": "2021-11-11T15:08:31+08:00","dateModified": "2021-11-11T15:08:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": "JinYiGao","logo": "https:\/\/img.gujin.store\/img\/favicon.ico"},"author": {
+        "@type": "Person",
+        "name": "Jin"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="Jin&#39;s Blog"
+    title="Jin&#39;s Blog"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/tools/"
+                
+                
+              ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://github.com/JinYiGao"
+                title="GitHub"
+                rel="noopener noreferrer" target="_blank"
+              ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="/favicon.ico"
+    title="/favicon.ico"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/tools/"
+                  
+                  
+                ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://github.com/JinYiGao"
+                  title="GitHub"
+                  rel="noopener noreferrer" target="_blank"
+                ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://img.gujin.store/img/favicon.ico" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://img.gujin.store/img/profile_pic.jpg"
+    data-srcset="https://img.gujin.store/img/profile_pic.jpg, https://img.gujin.store/img/profile_pic.jpg 1.5x, https://img.gujin.store/img/profile_pic.jpg 2x"
+    data-sizes="auto"
+    alt="Jin"
+    title="Jin"/>&nbsp;Jin</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 论文阅读</a></span></div>
+      <div class="post-meta-line"><span title=2021-11-11&#32;15:08:31><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-11-11">2021-11-11</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 532 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-文章题目">· 文章题目</a></li>
+    <li><a href="#-研究背景">· 研究背景</a></li>
+    <li><a href="#-创新点">· 创新点</a></li>
+    <li><a href="#-研究方法">· 研究方法</a></li>
+    <li><a href="#-结论">· 结论</a></li>
+    <li><a href="#-个人感想">· 个人感想</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="-文章题目">· 文章题目</h2>
+<p><strong>QSplat: A Multiresolution Point Rendering System for Large Meshes</strong></p>
+<p><a href="/pdf/QSplat.pdf">点我下载</a></p>
+<h2 id="-研究背景">· 研究背景</h2>
+<p>随着 3D 扫描技术的发展，使得创建具有数亿个多边形的网格模型成为现实，对于这种大小的数据集来说，传统的用于显示，简化和渐进传输的算法是不切实际的。</p>
+<h2 id="-创新点">· 创新点</h2>
+<p>提出了一个用于表示和渐进渲染多边形网格的系统 QSplat，该系统主要特点是将<strong>基于边界球的多分辨率结构</strong>与基于点的渲染系统相结合。</p>
+<p>比基于多边形的系统有更低的预处理和渲染成本。</p>
+<h2 id="-研究方法">· 研究方法</h2>
+<ol>
+<li>
+<p><strong>数据结构</strong></p>
+<p>QSplat 使用一个包围球的层次结构用于可见性筛选，细节层次控制以及渲染。树的每个节点包含了球体中心坐标以及半径，法线，圆锥体宽度，还有一个可选的颜色。</p>
+</li>
+<li>
+<p><strong>算法</strong></p>
+<p>2.1 <strong>渲染算法</strong></p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20211119223048957.png" data-thumbnail="https://img.gujin.store/img/image-20211119223048957.png" data-sub-html="<h2>image-20211119223048957</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20211119223048957.png"
+      data-srcset="https://img.gujin.store/img/image-20211119223048957.png, https://img.gujin.store/img/image-20211119223048957.png 1.5x, https://img.gujin.store/img/image-20211119223048957.png 2x"
+      data-sizes="auto"
+      alt="image-20211119223048957"
+      title="image-20211119223048957"/>
+  </a></p>
+<p><strong>何时进行递归？</strong></p>
+<p>QSplat 根据屏幕上的投影大小来决定递归长度。即，如果球体面积投影到观察平面上超过一个阈值，节点就被细分，为了保持帧速率，通过在前一帧的实际渲染时间与期望渲染时间的比率来调整阈值。</p>
+<p>2.2 <strong>预处理算法</strong></p>
+<p>从三角网格开始，因为需要计算每个节点<strong>法向</strong>，也可以直接从点云构建 QSplat 的层次结构，但如果没有网格，必须将平面拟合到周围领域点来进行法向计算。</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20211119223742661.png" data-thumbnail="https://img.gujin.store/img/image-20211119223742661.png" data-sub-html="<h2>image-20211119223742661</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20211119223742661.png"
+      data-srcset="https://img.gujin.store/img/image-20211119223742661.png, https://img.gujin.store/img/image-20211119223742661.png 1.5x, https://img.gujin.store/img/image-20211119223742661.png 2x"
+      data-sizes="auto"
+      alt="image-20211119223742661"
+      title="image-20211119223742661"/>
+  </a></p>
+<p>该算法通过沿包围盒的最长轴线分割顶点集。</p>
+</li>
+</ol>
+<h2 id="-结论">· 结论</h2>
+<p>渲染适用于低端机器。</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20211119225027079.png" data-thumbnail="https://img.gujin.store/img/image-20211119225027079.png" data-sub-html="<h2>image-20211119225027079</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20211119225027079.png"
+      data-srcset="https://img.gujin.store/img/image-20211119225027079.png, https://img.gujin.store/img/image-20211119225027079.png 1.5x, https://img.gujin.store/img/image-20211119225027079.png 2x"
+      data-sizes="auto"
+      alt="image-20211119225027079"
+      title="image-20211119225027079"/>
+  </a></p>
+<h2 id="-个人感想">· 个人感想</h2>
+<p>构建层次结构需要计算每个节点法向，对于非三角网结构点云数据或者不含法线信息的点云计算费时。该算法暂时不支持点云编辑。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2021-11-11&#32;15:08:31>更新于 2021-11-11&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/posts/2021-11-11-qsplat-read-note/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gujin.store/posts/2021-11-11-qsplat-read-note/" data-title="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)" data-hashtags="论文阅读"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gujin.store/posts/2021-11-11-qsplat-read-note/" data-hashtag="论文阅读"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gujin.store/posts/2021-11-11-qsplat-read-note/" data-title="论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/' class="post-tag">论文阅读</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/tools/package/vmware-15-5/" class="post-nav-item" rel="prev" title="VMware 15.5 安装教程(附安装包资源)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>VMware 15.5 安装教程(附安装包资源)</a>
+      <a href="/posts/2021-12-15-ad-learn-note1/" class="post-nav-item" rel="next" title="Altium Designer 常用快捷键整理(持续更新~~)">Altium Designer 常用快捷键整理(持续更新~~)<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/alipay_qrcode.png"
+    data-srcset="/img/alipay_qrcode.png, /img/alipay_qrcode.png 1.5x, /img/alipay_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 支付宝"
+    title="Jin 支付宝"/><span data-animation>支付宝</span>
+          </div><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/wechat_donation_qrcode.png"
+    data-srcset="/img/wechat_donation_qrcode.png, /img/wechat_donation_qrcode.png 1.5x, /img/wechat_donation_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 微信"
+    title="Jin 微信"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://img.gujin.store/img/favicon.ico"target="_blank" rel="external nofollow noopener noreferrer">Jin</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">网站运行时间</span><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider">辽ICP备2021010117号</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/black/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"JinYiGao/blogtalks"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2019-12-18T16:15:22+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

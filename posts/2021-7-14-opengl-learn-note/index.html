@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>OpenGL 学习笔记 - Jin&#39;s Blog</title><meta name="author" content="Jin">
+<meta name="author-link" content="https://img.gujin.store/img/favicon.ico">
+<meta name="description" content="本人的OpenGL学习，基于learnopengl教程进行的知识点梳理，记录了一些常用的OpenGL API" /><meta name="keywords" content='OpenGL' /><meta itemprop="name" content="OpenGL 学习笔记">
+<meta itemprop="description" content="本人的OpenGL学习，基于learnopengl教程进行的知识点梳理，记录了一些常用的OpenGL API"><meta itemprop="datePublished" content="2021-10-04T23:06:33+08:00" />
+<meta itemprop="dateModified" content="2021-10-04T23:06:33+08:00" />
+<meta itemprop="wordCount" content="11835"><meta itemprop="image" content="https://gujin.store/favicon.ico"/>
+<meta itemprop="keywords" content="OpenGL," /><meta property="og:title" content="OpenGL 学习笔记" />
+<meta property="og:description" content="本人的OpenGL学习，基于learnopengl教程进行的知识点梳理，记录了一些常用的OpenGL API" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gujin.store/posts/2021-7-14-opengl-learn-note/" /><meta property="og:image" content="https://gujin.store/favicon.ico"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-04T23:06:33+08:00" />
+<meta property="article:modified_time" content="2021-10-04T23:06:33+08:00" /><meta property="og:site_name" content="Jin&#39;s Blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gujin.store/favicon.ico"/>
+
+<meta name="twitter:title" content="OpenGL 学习笔记"/>
+<meta name="twitter:description" content="本人的OpenGL学习，基于learnopengl教程进行的知识点梳理，记录了一些常用的OpenGL API"/>
+<meta name="application-name" content="Jin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Jin&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://gujin.store/posts/2021-7-14-opengl-learn-note/" /><link rel="prev" href="https://gujin.store/posts/2021-10-04-docker-study-note/" /><link rel="next" href="https://gujin.store/tools/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "OpenGL 学习笔记",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/gujin.store\/posts\/2021-7-14-opengl-learn-note\/"
+    },"image": ["https:\/\/gujin.store\/favicon.ico"],"genre": "posts","keywords": "OpenGL","wordcount":  11835 ,
+    "url": "https:\/\/gujin.store\/posts\/2021-7-14-opengl-learn-note\/","datePublished": "2021-10-04T23:06:33+08:00","dateModified": "2021-10-04T23:06:33+08:00","publisher": {
+      "@type": "Organization",
+      "name": "JinYiGao","logo": "https:\/\/img.gujin.store\/img\/favicon.ico"},"author": {
+        "@type": "Person",
+        "name": "Jin"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="Jin&#39;s Blog"
+    title="Jin&#39;s Blog"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/tools/"
+                
+                
+              ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://github.com/JinYiGao"
+                title="GitHub"
+                rel="noopener noreferrer" target="_blank"
+              ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="/favicon.ico"
+    title="/favicon.ico"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/tools/"
+                  
+                  
+                ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://github.com/JinYiGao"
+                  title="GitHub"
+                  rel="noopener noreferrer" target="_blank"
+                ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>OpenGL 学习笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://img.gujin.store/img/favicon.ico" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://img.gujin.store/img/profile_pic.jpg"
+    data-srcset="https://img.gujin.store/img/profile_pic.jpg, https://img.gujin.store/img/profile_pic.jpg 1.5x, https://img.gujin.store/img/profile_pic.jpg 2x"
+    data-sizes="auto"
+    alt="Jin"
+    title="Jin"/>&nbsp;Jin</a></span>
+          <span class="post-category">收录于 <a href="/categories/opengl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OpenGL</a>&ensp;<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 学习笔记</a></span></div>
+      <div class="post-meta-line"><span title=2021-10-04&#32;23:06:33><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-10-04">2021-10-04</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 11835 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 24 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="OpenGL 学习笔记">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-基本知识">1. 基本知识</a></li>
+    <li><a href="#2-opengl常用函数">2. OpenGL常用函数</a></li>
+    <li><a href="#3-qopenlgshaderprogram">3. QOpenLGShaderProgram</a></li>
+    <li><a href="#4-glsl">4. GLSL</a></li>
+    <li><a href="#5-textures-纹理">5. Textures 纹理</a>
+      <ul>
+        <li><a href="#51-纹理环绕方式">5.1 纹理环绕方式</a></li>
+        <li><a href="#52-纹理过滤">5.2 纹理过滤</a></li>
+        <li><a href="#53-多级渐进纹理">5.3 多级渐进纹理</a></li>
+        <li><a href="#54-纹理单元">5.4 纹理单元</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-坐标">6. 坐标</a>
+      <ul>
+        <li><a href="#61-坐标变换">6.1 坐标变换</a></li>
+        <li><a href="#62-坐标系统">6.2 坐标系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-lighting-光照">7. Lighting 光照</a>
+      <ul>
+        <li><a href="#71-材质">7.1 材质</a></li>
+        <li><a href="#72-光照贴图">7.2 光照贴图</a></li>
+        <li><a href="#73-投光物">7.3 投光物</a></li>
+        <li><a href="#74-多光源">7.4 多光源</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-模型加载">8. 模型加载</a></li>
+    <li><a href="#9-高级opengl">9. 高级OpenGL</a>
+      <ul>
+        <li><a href="#91-深度测试">9.1 深度测试</a></li>
+        <li><a href="#92-模板测试">9.2 模板测试</a></li>
+        <li><a href="#93-混合">9.3 混合</a></li>
+        <li><a href="#94-面剔除">9.4 面剔除</a></li>
+        <li><a href="#95-帧缓冲重要---------离屏渲染">9.5 帧缓冲(重要!!!)  &mdash;&mdash;-离屏渲染</a></li>
+        <li><a href="#96-立方体贴图">9.6 立方体贴图</a></li>
+        <li><a href="#97-高级数据">9.7 高级数据</a></li>
+        <li><a href="#98-高级glsl">9.8 高级GLSL</a>
+          <ul>
+            <li><a href="#981-glsl内建变量">9.8.1 GLSL内建变量</a></li>
+            <li><a href="#982-接口块">9.8.2 接口块</a></li>
+            <li><a href="#983-uniform缓冲对象uniform块">9.8.3 Uniform缓冲对象(Uniform块)</a></li>
+            <li><a href="#984-着色器缓存对象buffer">9.8.4 着色器缓存对象(buffer)</a></li>
+          </ul>
+        </li>
+        <li><a href="#99-几何着色器">9.9 几何着色器</a></li>
+        <li><a href="#910-实例化重要----------批量渲染">9.10 实例化(重要!!!) &mdash;&mdash;&mdash;批量渲染</a></li>
+        <li><a href="#911-抗锯齿">9.11 抗锯齿</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-高级光照">10. 高级光照</a></li>
+    <li><a href="#11-pbr">11. PBR</a></li>
+    <li><a href="#12-调试">12. 调试</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="opengl学习基于qopengl">OpenGL学习——基于QOpenGL</h1>
+<h2 id="1-基本知识">1. 基本知识</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># VAO 顶点数组对象(记录顶点状态信息，无法记录纹理状态)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># VBO 顶点缓冲对象</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># EBO 索引缓冲对象</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># VAO中记录了 ： </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. vertex attribute 的格式，由 glVertexAttribPointer 设置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. vertex attribute 对应的 VBO 的名字, 由一对 glBindBuffer 和 	    	   glVertexAttribPointer 设置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. #当前#绑定的 GL_ELEMENT_ARRAY_BUFFER 的名字，由 glBindBuffer 设置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#-----图形渲染管线-----</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 顶点数据——&gt;顶点着色器——&gt;（图元装配）——&gt;几何着色器(可选)——&gt;（光栅化）——&gt;片段着色器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ——&gt;（测试与混合）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># OpenGL仅当3D坐标在(-1.0——1.0)范围内时才会处理，即在标准化设备坐标范围内的坐标才会   最终渲染在屏幕上</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># OpenGL原生函数着色器编译部分略显繁琐，这里直接采用Qt封装好的着色器类来进行着色器的编   译。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------着色器程序------</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 着色器程序对象是多个着色器链接完成后的最终版本，即(顶点着色器+几何着色器(可选)+片段着   色器)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在渲染对象时需要激活着色器程序</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-opengl常用函数">2. OpenGL常用函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//开启深度测试 z缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//如果启用了深度缓冲，还应该在每个渲染迭代之前使用GL_DEPTH_BUFFER_BIT来清除深度缓冲，否则会仍在使用上一次渲染迭代中的写入的深度值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//创建VAO并绑定 用于存储之后设置的所有状态 下次绘制就直接启用VAO就行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glGenVertexArrays</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">VAO</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindVertexArray</span><span class="p">(</span><span class="n">VAO</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//创建缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glGenBuffers</span><span class="p">();</span> <span class="c1">// --- 只有在bind后才会真正创建Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glCreateBuffers</span><span class="p">();</span> <span class="c1">// --- 创建即生成Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//将缓冲区绑定到相应目标类型，即设置缓冲区类型，以后对该目标操作即对绑定到该目标的对象生效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">VBO</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 绑定缓冲时附带binding目标点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBufferBase</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="c1">// 绑定部分缓冲数据至bindding目标点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBufferRange</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">152</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//将顶点数据存入指定目标类型的缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vertices</span><span class="p">),</span><span class="n">vertices</span><span class="p">,</span><span class="n">GL_STATIC_DRAW</span><span class="p">)</span> <span class="c1">// 给指定目标的缓冲区添加数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glNamedBufferData</span><span class="p">(</span><span class="n">GLuint</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">GLsizeiptr</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">usage</span><span class="p">);</span> <span class="c1">//直接给指定的缓冲区添加数据，缓冲区可以不绑定到目标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glNamedBufferStorage</span><span class="p">(</span><span class="n">GLuint</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">GLsizeiptr</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">flag</span><span class="p">);</span> <span class="c1">// *Storage()不能对同一个buffer做两次。 *Data()可以。 *Storage()最后一个参数flag有GL_DYNAMIC_STORAGE_BIT则允许后续 *subdata（）更新数据。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//设置如何解析顶点数据
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  1.对应着色器中location 顶点数据将传到该位置
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  2.属性大小 vec3 or vec4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//设置启用顶点属性 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//清除颜色缓冲和深度缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//创建帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">fbo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenFramebuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//绑定为激活的帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindFramebuffer</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">,</span> <span class="n">fbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//定义了一个缓冲区数组，片段着色器数据的输出将写入其中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">GLenum</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">GL_COLOR_ATTACHMENT0</span><span class="p">,</span> <span class="n">GL_COLOR_ATTACHMENT1</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">glDrawBuffers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-qopenlgshaderprogram">3. QOpenLGShaderProgram</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//------该类可免去自己封装着色器类的过程------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//添加着色器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">addShaderFromSourceFile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//链接着色器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">link</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//使用着色器程序对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">bind</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//设置着色器中 uniform 的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">setUniformValue</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//不过还是建议自己封装一个着色器类，就用QOpenGLShaderProgram进行二次封装，以应对各种其他情况
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-glsl">4. GLSL</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// uniform 变量在着色器中全局使用
+</span></span></span><span class="line"><span class="cl"><span class="c1">//-----设置uniform变量值-----
+</span></span></span><span class="line"><span class="cl"><span class="c1">//原生OpenGL函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">glGetUniformLocation</span><span class="p">(</span><span class="n">ourShader</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s">&#34;texture1&#34;</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="c1">//QOpenGLShaderProgram封装
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">shderProgram</span><span class="o">-&gt;</span><span class="n">setUniformValue</span><span class="p">(</span><span class="s">&#34;uniformName&#34;</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//------------------纹理相关-----------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//内置函数 texture
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">texture</span><span class="p">(</span><span class="n">ourTexture1</span><span class="p">,</span><span class="n">TexCoord</span><span class="p">)</span> <span class="c1">//纹理采样
+</span></span></span><span class="line"><span class="cl"><span class="c1">//内置函数 mix
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mix</span><span class="p">(</span><span class="n">texture</span><span class="p">(),</span><span class="n">texture</span><span class="p">(),</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1">//按照0.8texture1+0.2texture2采样
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="c1">//------------------深度相关-----------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">gl_FragCoord</span> <span class="c1">//x和y分量代表片段的屏幕空间坐标 z分量代表片段真正深度值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="c1">//丢弃片段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">discard</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//纹理变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">sampler2D</span>  <span class="p">,</span>  <span class="n">samplerCube</span>
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-textures-纹理">5. Textures 纹理</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 在Qt中纹理图片的读取 可以用QImage读取，数据传入采用 img.bits()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 2D纹理坐标在x和y轴上，范围为0到1之间 ( &gt;1则默认重复纹理图像)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--1.生成纹理引用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">texture</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">texture</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--2.绑定到指定纹理类型目标，对该目标操作即可以对绑定到该目标上的对象生效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">texture</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--3.传入图片数据生成纹理
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第一个参数指定了纹理目标(Target)。设置为GL_TEXTURE_2D意味着会生成与当前绑定的纹理对象在同一个目标上的纹理（任何绑定到GL_TEXTURE_1D和GL_TEXTURE_3D的纹理不会受到影响）。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第二个参数为纹理指定多级渐远纹理的级别，如果你希望单独手动设置每个多级渐远纹理的级别的话。这里我们填0，也就是基本级别。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第三个参数告诉OpenGL我们希望把纹理储存为何种格式。我们的图像只有RGB值，因此我们也把纹理储存为RGB值。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第四个和第五个参数设置最终的纹理的宽度和高度。我们之前加载图像的时候储存了它们，所以我们使用对应的变量。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 下个参数应该总是被设为0（历史遗留的问题）。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第七第八个参数定义了源图的格式和数据类型。我们使用RGB值加载这个图像，并把它们储存为char(byte)数组，我们将会传入对应值。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 最后一个参数是真正的图像数据。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glTexImage2D</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenerateMipmap</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="51-纹理环绕方式">5.1 纹理环绕方式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 当纹理坐标设置在(0,0) (1,1)之外时，纹理重复方式</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>环绕方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_REPEAT</td>
+<td>对纹理的默认行为。重复纹理图像。</td>
+</tr>
+<tr>
+<td>GL_MIRRORED_REPEAT</td>
+<td>和GL_REPEAT一样，但每次重复图片是镜像放置的。</td>
+</tr>
+<tr>
+<td>GL_CLAMP_TO_EDGE</td>
+<td>纹理坐标会被约束在0到1之间，超出的部分会重复纹理坐标的边缘，产生一种边缘被拉伸的效果。</td>
+</tr>
+<tr>
+<td>GL_CLAMP_TO_BORDER</td>
+<td>超出的坐标为用户指定的边缘颜色。</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//使用glTexParameter*函数对单独的一个坐标轴(s t r)设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_S</span><span class="p">,</span> <span class="n">GL_MIRRORED_REPEAT</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_T</span><span class="p">,</span> <span class="n">GL_MIRRORED_REPEAT</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="52-纹理过滤">5.2 纹理过滤</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 设置纹理的采样方式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// GL_NEAREST 邻近过滤
+</span></span></span><span class="line"><span class="cl"><span class="c1">// GL_LINEAR  线性过滤
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 当进行放大(Magnify)和缩小(Minify)操作的时候可以设置纹理过滤的选项
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">GL_NEAREST</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="53-多级渐进纹理">5.3 多级渐进纹理</h3>
+<table>
+<thead>
+<tr>
+<th>过滤方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_NEAREST_MIPMAP_NEAREST</td>
+<td>使用最邻近的多级渐远纹理来匹配像素大小，并使用邻近插值进行纹理采样</td>
+</tr>
+<tr>
+<td>GL_LINEAR_MIPMAP_NEAREST</td>
+<td>使用最邻近的多级渐远纹理级别，并使用线性插值进行采样</td>
+</tr>
+<tr>
+<td>GL_NEAREST_MIPMAP_LINEAR</td>
+<td>在两个最匹配像素大小的多级渐远纹理之间进行线性插值，使用邻近插值进行采样</td>
+</tr>
+<tr>
+<td>GL_LINEAR_MIPMAP_LINEAR</td>
+<td>在两个邻近的多级渐远纹理之间使用线性插值，并使用线性插值进行采样</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//自动创建多级渐进纹理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glGenerateMipmaps</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//设置纹理过滤方式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR_MIPMAP_LINEAR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="54-纹理单元">5.4 纹理单元</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//---若只有一个纹理 则默认激活GL_TEXTURE0，
+</span></span></span><span class="line"><span class="cl"><span class="c1">//   glBindTexture默认对应GL_TEXTURE0
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---对于多纹理使用，必须:
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  1.然后定义哪个uniform采样器对应哪个纹理单元.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">shaderProgram</span><span class="o">-&gt;</span><span class="n">setuniformValue</span><span class="p">(</span><span class="s">&#34;texture1&#34;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">shaderProgram</span><span class="o">-&gt;</span><span class="n">setuniformValue</span><span class="p">(</span><span class="s">&#34;texture2&#34;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//  2.先绑定纹理对象到对应的纹理单元.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glActivateTexture</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="p">)</span><span class="c1">//激活纹理单元
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span><span class="n">texture1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">texture2</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-坐标">6. 坐标</h2>
+<h3 id="61-坐标变换">6.1 坐标变换</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 项目中采用Eigen库进行矩阵操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Translation3f</span> <span class="n">translation</span><span class="p">;</span><span class="c1">//平移 本质是一个3x1的矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Eigen</span><span class="o">::</span><span class="n">AngleAxisf</span> <span class="n">rotation</span><span class="p">;</span><span class="c1">//旋转
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">rotation</span> <span class="o">=</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">AngleAxisf</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="o">::</span><span class="n">UnitZ</span><span class="p">());</span><span class="c1">//设置旋转角和旋转轴
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Isometry3f</span> <span class="n">trans</span><span class="p">;</span><span class="c1">//欧式变换矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 1.Eigen: 列主序 OpenGL mat: 列主序
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2.Eigen Matrix 转 QMatrix
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4f</span> <span class="n">mat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">QMatrix4x4</span><span class="p">(</span><span class="n">mat</span><span class="p">.</span><span class="k">template</span> <span class="n">cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">().</span><span class="n">data</span><span class="p">(),</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//传入uniform 矩阵变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">shaderProgram</span><span class="o">-&gt;</span><span class="n">setUniformValue</span><span class="p">(</span><span class="s">&#34;transform&#34;</span><span class="p">,</span> <span class="n">QMatrix4x4</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="k">template</span> <span class="n">cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">().</span><span class="n">data</span><span class="p">()));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">data</span><span class="p">()</span> <span class="c1">//矩阵首地址   
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="62-坐标系统">6.2 坐标系统</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 模型矩阵 观察矩阵 投影矩阵 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 具体见camera.h和camera.cpp文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#在本程序Camera原理中，左右上下平移本质为改变Camera位置，旋转采用四元数通过改变观察矩阵(LookAt)实现</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-lighting-光照">7. Lighting 光照</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 冯氏光照模型(Phong)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 主要由三个分量组成: 1.环境光照 2.漫反射光照 3.镜面光照</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 漫反射光照计算 理论上是在世界坐标中进行，利用法向量和光线方向，计算得到顶点所对应的颜色.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 镜面反射计算 由于本程序Camera原理，应该在观察空间下进行，所有相关向量信息均需要乘以观察   矩阵转换到观察空间下.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="71-材质">7.1 材质</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"><span class="line"><span class="cl"><span class="c1">//物体材质信息</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Material</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">ambient</span><span class="p">;</span><span class="c1">//环境光照下物体反射的颜色，通常和物体本身颜色一致</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">diffuse</span><span class="p">;</span><span class="c1">//漫反射光照下物体的颜色，通常也为物体本身颜色</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">specular</span><span class="p">;</span><span class="c1">//镜面光照对物体的颜色影响，类似于specularstrength</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">shininess</span><span class="p">;</span><span class="c1">//反光度</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">uniform</span> <span class="n">Material</span> <span class="n">material</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Light</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">ambient</span><span class="p">;</span><span class="c1">//环境光</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">diffuse</span><span class="p">;</span><span class="c1">//漫反射光</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">specular</span><span class="p">;</span><span class="c1">//镜面反射光</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">uniform</span> <span class="n">Light</span> <span class="n">light</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//环境光照</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">ambient</span> <span class="o">=</span> <span class="n">material</span><span class="p">.</span><span class="n">ambient</span> <span class="o">*</span> <span class="n">light</span><span class="p">.</span><span class="n">ambient</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//漫反射光照计算 在世界坐标下进行</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">lightDir</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">lightPos</span> <span class="o">-</span> <span class="n">FragPos</span><span class="p">);</span><span class="c1">//光线方向</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span> <span class="n">lightDir</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">diffuse</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span> <span class="o">*</span> <span class="n">material</span><span class="p">.</span><span class="n">diffuse</span><span class="p">)</span> <span class="o">*</span> <span class="n">light</span><span class="p">.</span><span class="n">diffuse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//镜面反射 在观察空间下进行</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">viewDir</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="o">-</span><span class="k">vec3</span><span class="p">(</span><span class="n">view</span> <span class="o">*</span> <span class="k">vec4</span><span class="p">(</span><span class="n">FragPos</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">reflectDir</span> <span class="o">=</span> <span class="n">reflect</span><span class="p">(</span><span class="o">-</span><span class="k">vec3</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">view</span><span class="o">*</span><span class="k">vec4</span><span class="p">(</span><span class="n">lightPos</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">-</span> 	<span class="n">view</span><span class="o">*</span><span class="k">vec4</span><span class="p">(</span><span class="n">FragPos</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))),</span> <span class="n">mat3</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">inverse</span><span class="p">(</span><span class="n">view</span><span class="p">)))</span> <span class="o">*</span> <span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">viewDir</span><span class="p">,</span> <span class="n">reflectDir</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">),</span> 					<span class="n">material</span><span class="p">.</span><span class="n">shininess</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">specular</span> <span class="o">=</span> <span class="p">(</span><span class="n">material</span><span class="p">.</span><span class="n">specular</span> <span class="o">*</span> <span class="n">spec</span><span class="p">)</span> <span class="o">*</span> <span class="n">light</span><span class="p">.</span><span class="n">specular</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">ambient</span> <span class="o">+</span> <span class="n">diffuse</span> <span class="o">+</span> <span class="n">specular</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FragColor</span> <span class="o">=</span> <span class="k">vec4</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="72-光照贴图">7.2 光照贴图</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"><span class="line"><span class="cl"><span class="c1">//漫反射贴图</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//镜面光贴图</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//光源信息</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Light</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">ambient</span><span class="p">;</span><span class="c1">//环境光</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">diffuse</span><span class="p">;</span><span class="c1">//漫反射光</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">specular</span><span class="p">;</span><span class="c1">//镜面反射光</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">uniform</span> <span class="n">Light</span> <span class="n">light</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//材质贴图---漫反射贴图 镜面光贴图</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Material</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">sampler2D</span> <span class="n">diffuse</span><span class="p">;</span><span class="c1">//漫反射贴图</span>
+</span></span><span class="line"><span class="cl">    <span class="k">sampler2D</span> <span class="n">specular</span><span class="p">;</span><span class="c1">//镜面光贴图</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">shininess</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">uniform</span> <span class="n">Material</span> <span class="n">material</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="73-投光物">7.3 投光物</h3>
+<h3 id="74-多光源">7.4 多光源</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 目前不是特别重要 以后有需要再学...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="8-模型加载">8. 模型加载</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 这个可以先放一放 不是特别重要</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="9-高级opengl">9. 高级OpenGL</h2>
+<h3 id="91-深度测试">9.1 深度测试</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//开启深度测试 z缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//如果启用了深度缓冲，还应该在每个渲染迭代之前使用GL_DEPTH_BUFFER_BIT来清除深度缓冲，否则会仍在使用上一次渲染迭代中的写入的深度值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//清除颜色缓冲和深度缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//禁用深度缓冲写入 即 使用一个只读的深度缓冲 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//***只在深度测试被启用的时候才有效果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glDepthMask</span><span class="p">(</span><span class="n">GL_FALSE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//深度测试函数 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//即 通过修改比较运算符, 让我们来决定什么时候该通过或者丢弃一个片段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glDepthFunc</span><span class="p">(</span><span class="n">GL_LESS</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_ALWAYS</td>
+<td>永远通过深度测试</td>
+</tr>
+<tr>
+<td>GL_NEVER</td>
+<td>永远不通过深度测试</td>
+</tr>
+<tr>
+<td>GL_LESS</td>
+<td>在片段深度值小于缓冲的深度值时通过测试</td>
+</tr>
+<tr>
+<td>GL_EQUAL</td>
+<td>在片段深度值等于缓冲区的深度值时通过测试</td>
+</tr>
+<tr>
+<td>GL_LEQUAL</td>
+<td>在片段深度值小于等于缓冲区的深度值时通过测试</td>
+</tr>
+<tr>
+<td>GL_GREATER</td>
+<td>在片段深度值大于缓冲区的深度值时通过测试</td>
+</tr>
+<tr>
+<td>GL_NOTEQUAL</td>
+<td>在片段深度值不等于缓冲区的深度值时通过测试</td>
+</tr>
+<tr>
+<td>GL_GEQUAL</td>
+<td>在片段深度值大于等于缓冲区的深度值时通过测试</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-模板测试">9.2 模板测试</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//其本质原理类比于模板操作
+</span></span></span><span class="line"><span class="cl"><span class="c1">//通过设置一个viewport的模板值，即模板缓冲，基于一定的规则 来决定缓冲对应的片段是否应该被绘制.以及模板测试时缓冲的内容应该如何更新.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//模板缓冲操作允许我们在渲染片段时将模板缓冲设定为一个特定的值。通过在渲染时修改模板缓冲的内容，我们写入了模板缓冲。在同一个（或者接下来的）渲染迭代中，我们可以读取这些值，来决定丢弃还是保留某个片段。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//启用模板测试
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_STENCIL_TEST</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//每次渲染迭代前 清除模板缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glClear</span><span class="p">(</span><span class="n">GL_STENCIL_BUFFER_BIT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">glStencilMask</span><span class="p">(</span><span class="mh">0xFF</span><span class="p">);</span> <span class="c1">// 每一位写入模板缓冲时都保持原样(正常写入)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glStencilMask</span><span class="p">(</span><span class="mh">0x00</span><span class="p">);</span> <span class="c1">// 每一位在写入模板缓冲时都会变成0(禁用写入)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------模板函数------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ---该函数决定了以何种规则进行比较，以确定模板测试是否通过
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glStencilFunc</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">func</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">ref</span><span class="p">,</span> <span class="n">GLuint</span> <span class="n">mask</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 1.func：设置模板测试函数(Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和glStencilFunc函数的ref值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL和GL_ALWAYS。它们的语义和深度缓冲的函数类似。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2.ref：设置了模板测试的参考值(Reference Value)。模板缓冲的内容将会与这个值进行比较。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 3.mask：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与(AND)运算。初始情况下所有位都为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ---该函数决定了模板测试通过或失败时该如何更新模板缓冲值 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glStencilOp</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">sfail</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">dpfail</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">dppass</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 1.sfail：模板测试失败时采取的行为。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2.dpfail：模板测试通过，但深度测试失败时采取的行为。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 3.dppass：模板测试和深度测试都通过时采取的行为。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// *行为及其描述见下表:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// #默认情况下glStencilOp是设置为(GL_KEEP, GL_KEEP, GL_KEEP)的，所以不论任何测试的结果是如何，模板缓冲都会保留它的值
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>行为</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_KEEP</td>
+<td>保持当前储存的模板值</td>
+</tr>
+<tr>
+<td>GL_ZERO</td>
+<td>将模板值设置为0</td>
+</tr>
+<tr>
+<td>GL_REPLACE</td>
+<td>将模板值设置为glStencilFunc函数设置的<code>ref</code>值</td>
+</tr>
+<tr>
+<td>GL_INCR</td>
+<td>如果模板值小于最大值则将模板值加1</td>
+</tr>
+<tr>
+<td>GL_INCR_WRAP</td>
+<td>与GL_INCR一样，但如果模板值超过了最大值则归零</td>
+</tr>
+<tr>
+<td>GL_DECR</td>
+<td>如果模板值大于最小值则将模板值减1</td>
+</tr>
+<tr>
+<td>GL_DECR_WRAP</td>
+<td>与GL_DECR一样，但如果模板值小于0则将其设置为最大值</td>
+</tr>
+<tr>
+<td>GL_INVERT</td>
+<td>按位翻转当前的模板缓冲值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-混合">9.3 混合</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// ***用于渲染多个透明度级别的纹理图像
+</span></span></span><span class="line"><span class="cl"><span class="c1">//启用混合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_BLEND</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//混合函数 ---设置源和目标因子值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBlendFunc</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">sfactor</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">dfactor</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GL_ZERO</code></td>
+<td>因子等于0</td>
+</tr>
+<tr>
+<td><code>GL_ONE</code></td>
+<td>因子等于1</td>
+</tr>
+<tr>
+<td><code>GL_SRC_COLOR</code></td>
+<td>因子等于源颜色向量C¯source</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_SRC_COLOR</code></td>
+<td>因子等于1−C¯source</td>
+</tr>
+<tr>
+<td><code>GL_DST_COLOR</code></td>
+<td>因子等于目标颜色向量C¯destination</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_DST_COLOR</code></td>
+<td>因子等于1−C¯destination</td>
+</tr>
+<tr>
+<td><code>GL_SRC_ALPHA</code></td>
+<td>因子等于C¯sourceC¯source的alphaalpha分量</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_SRC_ALPHA</code></td>
+<td>因子等于1−1− C¯sourceC¯source的alphaalpha分量</td>
+</tr>
+<tr>
+<td><code>GL_DST_ALPHA</code></td>
+<td>因子等于C¯destinationC¯destination的alphaalpha分量</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_DST_ALPHA</code></td>
+<td>因子等于1−1− C¯destinationC¯destination的alphaalpha分量</td>
+</tr>
+<tr>
+<td><code>GL_CONSTANT_COLOR</code></td>
+<td>因子等于常数颜色向量C¯constant</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_CONSTANT_COLOR</code></td>
+<td>因子等于1−C¯constant</td>
+</tr>
+<tr>
+<td><code>GL_CONSTANT_ALPHA</code></td>
+<td>因子等于C¯constantC¯constant的alphaalpha分量</td>
+</tr>
+<tr>
+<td><code>GL_ONE_MINUS_CONSTANT_ALPHA</code></td>
+<td>因子等于1−1− C¯constantC¯constant的alphaalpha分量</td>
+</tr>
+</tbody>
+</table>
+<h3 id="94-面剔除">9.4 面剔除</h3>
+<p>面剔除含义: 渲染正向面 ， 丢弃背向面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//启用面剔除
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_CULL_FACE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//设置需要剔除的面类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glCullFace</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// GL_BACK：只剔除背向面。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// GL_FRONT：只剔除正向面。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// GL_FRONT_AND_BACK：剔除正向面和背向面。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//设置正向面的定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glFrontFace</span><span class="p">(</span><span class="n">GL_CCW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 逆时针 --GL_CCW
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 顺时针 --GL_CW
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="95-帧缓冲重要---------离屏渲染">9.5 帧缓冲(重要!!!)  &mdash;&mdash;-离屏渲染</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 帧缓冲 = 颜色缓冲 + 深度缓冲 + 模板缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1">//glfw 或者 QOpenGLWidget在创建窗口的时候会生成默认的帧缓冲.=屏幕
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//**** QOpenGL默认屏幕帧缓冲与原生OpenGL不同 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     原生OpenGL默认为0； 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//     QOpenGL为defaultFrameBufferObject()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 其本质是经过离屏渲染后将场景作为纹理绘制到默认帧缓冲(屏幕)上.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//创建帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">fbo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenFramebuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//绑定为激活的帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindFramebuffer</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">,</span> <span class="n">fbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//也可以使用GL_READ_FRAMEBUFFER或GL_DRAW_FRAMEBUFFER，将一个帧缓冲分别绑定到读取目标或写入目标。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 绑定到GL_READ_FRAMEBUFFER的帧缓冲将会使用在所有像是glReadPixels的读取操作中;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 而绑定到GL_DRAW_FRAMEBUFFER的帧缓冲将会被用作渲染、清除等写入操作的目标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="c1">//---------------------------------------***一个完整的帧缓冲需要满足以下的条件：-------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  1.附加至少一个缓冲（颜色、深度或模板缓冲）。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  2.至少有一个颜色附件(Attachment)。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  3.所有的附件都必须是完整的（保留了内存）。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  4.每个缓冲都应该有相同的样本数。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 检查帧缓冲是否完整
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glCheckFramebufferStatus</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//***通常的规则是，如果你不需要从一个缓冲中采样数据，那么对这个缓冲使用渲染缓冲对象会是明智的选择。如果你需要从缓冲中采样颜色或深度值等数据，那么你应该选择纹理附件.   
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> 
+</span></span><span class="line"><span class="cl"><span class="c1">//---------------------------------------------1. 纹理附件-----------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 即 创建一个纹理 并附加到帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 创建一个纹理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">texture</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">texture</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">texture</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">glTexImage2D</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 将上述创建的纹理 附加到帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glFramebufferTexture2D</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">,</span> <span class="n">GL_COLOR_ATTACHMENT0</span><span class="p">,</span> <span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// glFrameBufferTexture2D有以下的参数：
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1.target：帧缓冲的目标（绘制、读取或者两者皆有）
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2.attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 3.textarget：你希望附加的纹理类型
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 4.texture：要附加的纹理本身
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 5.level：多级渐远纹理的级别。我们将它保留为0。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***也可以将深度和模板缓冲附加为一个单独的纹理到帧缓冲,可以单独分别附加，也可以合并为一个纹理进行附加.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">GL_DEPTH_COMPONENT</span>
+</span></span><span class="line"><span class="cl"><span class="n">GL_STENCIL_ATTACHMENT</span>
+</span></span><span class="line"><span class="cl"><span class="n">GL_DEPTH_STENCIL_ATTACHMENT</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//------------------------------------------2. 渲染缓冲对象附件-------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//*** 渲染缓冲对象是只写的 ***
+</span></span></span><span class="line"><span class="cl"><span class="c1">//创建渲染缓冲对象 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">rbo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenRenderbuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//绑定 让之后所有的渲染缓冲操作影响当前的rbo
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindRenderbuffer</span><span class="p">(</span><span class="n">GL_RENDERBUFFER</span><span class="p">,</span> <span class="n">rbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//创建一个深度和模板渲染缓冲对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glRenderbufferStorage</span><span class="p">(</span><span class="n">GL_RENDERBUFFER</span><span class="p">,</span> <span class="n">GL_DEPTH24_STENCIL8</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//附加渲染缓冲对象到帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glFramebufferRenderbuffer</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">,</span> <span class="n">GL_DEPTH_STENCIL_ATTACHMENT</span><span class="p">,</span> <span class="n">GL_RENDERBUFFER</span><span class="p">,</span> <span class="n">rbo</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ========================================== 相关函数 ==================================================
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 直接复制帧缓冲 到屏幕缓冲 不需要重新绑定屏幕帧缓冲 即可显示图形
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBlitNamedFramebuffer</span><span class="p">(</span><span class="n">fboEDL</span><span class="o">-&gt;</span><span class="n">fbo</span><span class="p">,</span><span class="n">defaultFramebufferObject</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fboEDL</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">fboEDL</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1536</span><span class="p">,</span> <span class="mi">864</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="96-立方体贴图">9.6 立方体贴图</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//  应用 —— 天空盒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//创建立方体贴图纹理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">textureID</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">textureID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_CUBE_MAP</span><span class="p">,</span> <span class="n">textureID</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>纹理目标</th>
+<th>方位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_POSITIVE_X</code></td>
+<td>右</td>
+</tr>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_NEGATIVE_X</code></td>
+<td>左</td>
+</tr>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_POSITIVE_Y</code></td>
+<td>上</td>
+</tr>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</code></td>
+<td>下</td>
+</tr>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_POSITIVE_Z</code></td>
+<td>后</td>
+</tr>
+<tr>
+<td><code>GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</code></td>
+<td>前</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//纹理目标其背后对应int值依次递增
+</span></span></span><span class="line"><span class="cl"><span class="c1">//设置立方体贴图每个面纹理数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glTexImage2D</span><span class="p">(</span><span class="n">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//立方体贴图纹理采样器
+</span></span></span><span class="line"><span class="cl"><span class="c1">// --采样时需要给定一个方向向量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">uniform</span> <span class="n">samplerCube</span> <span class="n">cubemap</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="97-高级数据">9.7 高级数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//插入或更新部分缓冲内存  ----必须先调用glBufferData
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBufferSubData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span> <span class="c1">// 范围： [24, 24 + sizeof(data)]
+</span></span></span><span class="line"><span class="cl"><span class="c1">//*** 分块读取顶点属性 ***
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 填充缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBufferSubData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">positions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBufferSubData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">normals</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">normals</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBufferSubData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">normals</span><span class="p">),</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">tex</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">tex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 设置顶点属性读取
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">positions</span><span class="p">)));</span>  
+</span></span><span class="line"><span class="cl"><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">normals</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//返回当前绑定缓冲目标对应的缓冲变量内存指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glMapBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">GL_WRITE_ONLY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 复制数据到缓冲内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">memcpy</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//复制缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">glCopyBufferSubData</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">readtarget</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">writetarget</span><span class="p">,</span> <span class="n">GLintptr</span> <span class="n">readoffset</span><span class="p">,</span><span class="n">GLintptr</span> <span class="n">writeoffset</span><span class="p">,</span> <span class="n">GLsizeiptr</span> <span class="n">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***但如果我们想读写数据的两个不同缓冲都为顶点数组缓冲该怎么办呢？我们不能同时将两个缓冲绑定到同一个缓冲目标上。正是出于这个原因，OpenGL提供给我们另外两个缓冲目标，叫做GL_COPY_READ_BUFFER和GL_COPY_WRITE_BUFFER。我们接下来就可以将需要的缓冲绑定到这两个缓冲目标上，并将这两个目标作为readtarget和writetarget参数。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="98-高级glsl">9.8 高级GLSL</h3>
+<h4 id="981-glsl内建变量">9.8.1 GLSL内建变量</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"><span class="line"><span class="cl"><span class="c1">//============================GLSL内建变量=============================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//----------------------------顶点着色器变量----------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//---顶点着色器的裁剪空间输出位置向量</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_Position</span>   
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//***必须先启用***</span>
+</span></span><span class="line"><span class="cl"><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_PROGRAM_POINT_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//---设置渲染的点大小 (默认禁用)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_PointSize</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//正在绘制顶点的当前ID</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***当（使用glDrawElements）进行索引渲染的时候，这个变量会存储正在绘制顶点的当前索引。当（使用glDrawArrays）不使用索引进行绘制的时候，这个变量会储存从渲染调用开始的已处理顶点数量(每调用一次Draw重新计数)。***</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_VertexID</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//当前渲染的实例ID</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_InstanceID</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//----------------------------片段着色器变量----------------------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***gl_FragCoord的z分量等于对应片段的深度值, x和y分量是片段的窗口空间(Window-space)坐标，其原点为窗口的左下角***</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_FragCoord</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//bool变量，如果当前片段是正向面的一部分那么就是true，否则就是false</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_FrontFacing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//设置片段的深度值</span>
+</span></span><span class="line"><span class="cl"><span class="n">gl_FragDepth</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***然而，由我们自己设置深度值有一个很大的缺点，只要我们在片段着色器中对gl_FragDepth进行写入，OpenGL就会（像深度测试小节中讨论的那样）禁用所有的提前深度测试(Early Depth Testing)。它被禁用的原因是，OpenGL无法在片段着色器运行之前得知片段将拥有的深度值，因为片段着色器可能会完全修改这个深度值。***</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//但可以进行一定程度的调和</span>
+</span></span><span class="line"><span class="cl"><span class="n">layout</span> <span class="p">(</span><span class="n">depth_</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">out</span> <span class="k">float</span> <span class="n">gl_FragDepth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">condition</span><span class="err">可以为下表中的值</span><span class="o">:</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>条件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>any</code></td>
+<td>默认值。提前深度测试是禁用的，你会损失很多性能</td>
+</tr>
+<tr>
+<td><code>greater</code></td>
+<td>你只能让深度值比<code>gl_FragCoord.z</code>更大</td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>你只能让深度值比<code>gl_FragCoord.z</code>更小</td>
+</tr>
+<tr>
+<td><code>unchanged</code></td>
+<td>如果你要写入<code>gl_FragDepth</code>，你将只能写入<code>gl_FragCoord.z</code>的值</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"></code></pre></td></tr></table>
+</div>
+</div><h4 id="982-接口块">9.8.2 接口块</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//================================接口块================================
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 类似C/C++结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 例如
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Light</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vec3</span> <span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vec3</span> <span class="n">ambient</span><span class="p">;</span><span class="c1">//环境光
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vec3</span> <span class="n">diffuse</span><span class="p">;</span><span class="c1">//漫反射光
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vec3</span> <span class="n">specular</span><span class="p">;</span><span class="c1">//镜面反射光
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">uniform</span> <span class="n">Light</span> <span class="n">light</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="n">Light</span> <span class="n">light_out</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="983-uniform缓冲对象uniform块">9.8.3 Uniform缓冲对象(Uniform块)</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//=============================Uniform缓冲对象============================
+</span></span></span><span class="line"><span class="cl"><span class="c1">//------------------------------uniform Block块布局----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//***Uniform块的内容是储存在一个缓冲对象中的，它实际上只是一块预留内存。因为这块内存并不会保存它具体保存的是什么类型的数据，我们还需要告诉OpenGL内存的哪一部分对应着着色器中的哪一个uniform变量***
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---Uniform块---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">layout</span> <span class="p">(</span><span class="n">std140</span><span class="p">)</span> <span class="n">uniform</span> <span class="n">ExampleBlock</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vec3</span>  <span class="n">vector</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mat4</span>  <span class="n">matrix</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span>  <span class="n">boolean</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span>   <span class="n">integer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//每个变量都有一个基准对齐量(Base Alignment)，它等于一个变量在Uniform块中所占据的空间（包括填充量(Padding)），这个基准对齐量是使用std140布局的规则计算出来的。接下来，对每个变量，我们再计算它的对齐偏移量(Aligned Offset)，它是一个变量从块起始位置的字节偏移量。一个变量的对齐字节偏移量必须等于基准对齐量的倍数。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">layout</span> <span class="p">(</span><span class="n">std140</span><span class="p">)</span> <span class="n">uniform</span> <span class="n">ExampleBlock</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                     <span class="c1">// 基准对齐量       // 对齐偏移量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">float</span> <span class="n">value</span><span class="p">;</span>     <span class="c1">// 4               // 0 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vec3</span> <span class="n">vector</span><span class="p">;</span>     <span class="c1">// 16              // 16  (必须是16的倍数，所以 4-&gt;16)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">mat4</span> <span class="n">matrix</span><span class="p">;</span>     <span class="c1">// 16              // 32  (列 0)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                     <span class="c1">// 16              // 48  (列 1)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                     <span class="c1">// 16              // 64  (列 2)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                     <span class="c1">// 16              // 80  (列 3)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">float</span> <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// 16              // 96  (values[0])
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                     <span class="c1">// 16              // 112 (values[1])
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                     <span class="c1">// 16              // 128 (values[2])
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">bool</span> <span class="n">boolean</span><span class="p">;</span>    <span class="c1">// 4               // 144
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">integer</span><span class="p">;</span>     <span class="c1">// 4               // 148
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------使用Uniform缓冲----------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">// * 首先跟其他缓冲一样必须在程序中创建
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">uboExampleBlock</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glGenBuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">uboExampleBlock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">GL_STATIC_DRAW</span><span class="p">);</span> <span class="c1">// 分配152字节的内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//***如何才能让OpenGL知道哪个Uniform缓冲对应的是哪个Uniform块呢？***
+</span></span></span><span class="line"><span class="cl"><span class="c1">//在OpenGL上下文中，定义了一些绑定点(Binding Point)，我们可以将一个Uniform缓冲链接至它。在创建Uniform缓冲之后，我们将它绑定到其中一个绑定点上，并将着色器中的Uniform块绑定到相同的绑定点，把它们连接到一起。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//将Uniform块绑定到一个特定的绑定点
+</span></span></span><span class="line"><span class="cl"><span class="c1">//先查询着色器中Uniform块索引，绑定到绑定点2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">lights_index</span> <span class="o">=</span> <span class="n">glGetUniformBlockIndex</span><span class="p">(</span><span class="n">shaderA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="s">&#34;Lights&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="n">glUniformBlockBinding</span><span class="p">(</span><span class="n">shaderA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">lights_index</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//再将Uniform缓冲绑定到相同的绑定点2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBufferBase</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="c1">// 或
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBufferRange</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">152</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//***从OpenGL 4.2版本起，也可以添加一个布局标识符，显式地将Uniform块的绑定点储存在着色器中，这样就不用再调用glGetUniformBlockIndex和glUniformBlockBinding了。***
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 例如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">layout</span><span class="p">(</span><span class="n">std140</span><span class="p">,</span> <span class="n">binding</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="n">uniform</span> <span class="n">Lights</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">//填充或者更新Uniform缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="n">uboExampleBlock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// GLSL中的bool是4字节的，所以我们将它存为一个integer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBufferSubData</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_UNIFORM_BUFFER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="984-着色器缓存对象buffer">9.8.4 着色器缓存对象(buffer)</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//处理大型结构化数据块，这时可以用一个buffer类型缓存变量来存储数据，着色器中定义缓存变量方法为将变量放置到一个块接口中，使用buffer关键字声明。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 例如
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">layout</span><span class="p">(</span><span class="n">std</span> <span class="mi">430</span><span class="p">,</span> <span class="n">binging</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">buffer</span> <span class="n">BufferObject</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">mode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vec4</span> <span class="n">points</span><span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// *** 着色器缓存对象与Uniform块最大区别在于: 着色器存储缓存对象可以在着色器中读写，通过缓存块写入的存储缓存的内容也可以被其他着色器请求使用，并且可以通过程序进行回读。 ***
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 与 GL_SHADER_STORAGE_BUFFER 相对应
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="99-几何着色器">9.9 几何着色器</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"><span class="line"><span class="cl"><span class="c1">// 顶点着色器和片段着色器之间 可选的一个着色器</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="910-实例化重要----------批量渲染">9.10 实例化(重要!!!) &mdash;&mdash;&mdash;批量渲染</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 使用一次渲染调用来绘制多个物体, 节省每次绘制物体时CPU-&gt;GPU的通信
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//使用实例化渲染 将glDrawArrays和glDrawElements改为如下API:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glDrawArraysInstanced</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">glDrawElementsInstanced</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//这个函数本身并没有什么用。渲染同一个物体一千次对我们并没有什么用处，每个物体都是完全相同的，而且还在同一个位置。我们只能看见一个物体!出于这个原因，GLSL在顶点着色器中嵌入了另一个内建变量，gl_InstanceID。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//在使用实例化渲染调用时，gl_InstanceID会从0开始，在每个实例被渲染时递增1。比如说，我们正在渲染第43个实例，那么顶点着色器中它的gl_InstanceID将会是42。因为每个实例都有唯一的ID，我们可以建立一个数组，将ID与位置值对应起来，将每个实例放置在世界的不同位置。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// *** 例如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#version 330 core
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">in</span> <span class="n">vec2</span> <span class="n">aPos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="n">in</span> <span class="n">vec3</span> <span class="n">aColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="n">vec3</span> <span class="n">fColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">uniform</span> <span class="n">vec2</span> <span class="n">offsets</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vec2</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">gl_InstanceID</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gl_Position</span> <span class="o">=</span> <span class="n">vec4</span><span class="p">(</span><span class="n">aPos</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fColor</span> <span class="o">=</span> <span class="n">aColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">gl_InstanceID</span> <span class="c1">//当前渲染实例ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//-----------------------------实例化数组---------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//虽然上述实现在目前的情况下能够正常工作，但是如果我们要渲染远超过100个实例的时候，我们最终会超过最大能够发送至着色器的uniform数据大小上限。它的一个代替方案是实例化数组(Instanced Array).
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//告诉OpenGL什么时候更新顶点属性，以下例子表明位于顶点位置2的顶点属性是一个实例化数组，每渲染一个实例更新一次顶点属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glVertexAttribDivisor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="911-抗锯齿">9.11 抗锯齿</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//多重采样抗锯齿(MSAA)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_MULTISAMPLE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// *** 离屏MSAA *** ---帧缓冲---
+</span></span></span><span class="line"><span class="cl"><span class="c1">//----------------------------多重采样纹理附件-------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//用glTexImage2DMultisample来替代glTexImage2D，它的纹理目标是GL_TEXTURE_2D_MULTISAPLE
+</span></span></span><span class="line"><span class="cl"><span class="c1">//创建多重采样纹理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D_MULTISAMPLE</span><span class="p">,</span> <span class="n">tex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glTexImage2DMultisample</span><span class="p">(</span><span class="n">GL_TEXTURE_2D_MULTISAMPLE</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D_MULTISAMPLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//附加纹理到帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glFramebufferTexture2D</span><span class="p">(</span><span class="n">GL_FRAMEBUFFER</span><span class="p">,</span> <span class="n">GL_COLOR_ATTACHMENT0</span><span class="p">,</span> <span class="n">GL_TEXTURE_2D_MULTISAMPLE</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//---------------------------多重采样渲染缓冲对象---------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//创建多重采样渲染缓冲对象 并指定存储
+</span></span></span><span class="line"><span class="cl"><span class="c1">//指定样本数为4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glRenderbufferStorageMultisample</span><span class="p">(</span><span class="n">GL_RENDERBUFFER</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">GL_DEPTH24_STENCIL8</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//渲染到多重采样帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1">// *** 渲染到多重采样帧缓冲对象的过程都是自动的。只要在帧缓冲绑定时绘制任何东西，光栅器就会负责所有的多重采样运算。最终会得到一个多重采样颜色缓冲以及/或深度和模板缓冲。因为多重采样缓冲有一点特别，不能直接将它们的缓冲图像用于其他运算，比如在着色器中对它们进行采样。因此不能直接在屏幕中以纹理方式进行显示，需要先缩小或者还愿图像。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//多重采样帧缓冲还原
+</span></span></span><span class="line"><span class="cl"><span class="c1">//glBlitFramebuffer将一个帧缓冲中的某个区域复制到另一个帧缓冲中，并且将多重采样缓冲还原
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindFramebuffer</span><span class="p">(</span><span class="n">GL_READ_FRAMEBUFFER</span><span class="p">,</span> <span class="n">multisampledFBO</span><span class="p">);</span> <span class="c1">//帧缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBindFramebuffer</span><span class="p">(</span><span class="n">GL_DRAW_FRAMEBUFFER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//屏幕缓冲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glBlitFramebuffer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">,</span> <span class="n">GL_NEAREST</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// *** 但如果想要使用多重采样帧缓冲的纹理输出来做像是后期处理这样的事情呢？我们不能直接在片段着色器中使用多重采样的纹理。但我们能做的是将多重采样缓冲位块传送到一个没有使用多重采样纹理附件的FBO中。然后用这个普通的颜色附件来做后期处理，从而达到我们的目的。然而，这也意味着我们需要生成一个新的FBO，作为中介帧缓冲对象，将多重采样缓冲还原为一个能在着色器中使用的普通2D纹理。***
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// *** 将一个多重采样的纹理图像不进行还原直接传入着色器也是可行的。GLSL提供了这样的选项，让我们能够对纹理图像的每个子样本进行采样，所以我们可以创建我们自己的抗锯齿算法。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 例如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">uniform</span> <span class="n">sampler2DMS</span> <span class="n">screenTextureMS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//获取每个子样本颜色值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vec4</span> <span class="n">colorSample</span> <span class="o">=</span> <span class="n">texelFetch</span><span class="p">(</span><span class="n">screenTextureMS</span><span class="p">,</span> <span class="n">TexCoords</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// 第4个子样本
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="10-高级光照">10. 高级光照</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//暂时先放一放
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="11-pbr">11. PBR</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//暂时先放一放
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="12-调试">12. 调试</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 返回错误标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glGetError</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>标记</th>
+<th>代码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL_NO_ERROR</td>
+<td>0</td>
+<td>自上次调用glGetError以来没有错误</td>
+</tr>
+<tr>
+<td>GL_INVALID_ENUM</td>
+<td>1280</td>
+<td>枚举参数不合法</td>
+</tr>
+<tr>
+<td>GL_INVALID_VALUE</td>
+<td>1281</td>
+<td>值参数不合法</td>
+</tr>
+<tr>
+<td>GL_INVALID_OPERATION</td>
+<td>1282</td>
+<td>一个指令的状态对指令的参数不合法</td>
+</tr>
+<tr>
+<td>GL_STACK_OVERFLOW</td>
+<td>1283</td>
+<td>压栈操作造成栈上溢(Overflow)</td>
+</tr>
+<tr>
+<td>GL_STACK_UNDERFLOW</td>
+<td>1284</td>
+<td>弹栈操作时栈在最低点（译注：即栈下溢(Underflow)）</td>
+</tr>
+<tr>
+<td>GL_OUT_OF_MEMORY</td>
+<td>1285</td>
+<td>内存调用操作无法调用（足够的）内存</td>
+</tr>
+<tr>
+<td>GL_INVALID_FRAMEBUFFER_OPERATION</td>
+<td>1286</td>
+<td>读取或写入一个不完整的帧缓冲</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2021-10-04&#32;23:06:33>更新于 2021-10-04&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/posts/2021-7-14-opengl-learn-note/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gujin.store/posts/2021-7-14-opengl-learn-note/" data-title="OpenGL 学习笔记" data-hashtags="OpenGL"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gujin.store/posts/2021-7-14-opengl-learn-note/" data-hashtag="OpenGL"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gujin.store/posts/2021-7-14-opengl-learn-note/" data-title="OpenGL 学习笔记"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/opengl/' class="post-tag">OpenGL</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/2021-10-04-docker-study-note/" class="post-nav-item" rel="prev" title="Docker 学习笔记"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Docker 学习笔记</a>
+      <a href="/tools/" class="post-nav-item" rel="next" title="常用软件 安装包大全">常用软件 安装包大全<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/alipay_qrcode.png"
+    data-srcset="/img/alipay_qrcode.png, /img/alipay_qrcode.png 1.5x, /img/alipay_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 支付宝"
+    title="Jin 支付宝"/><span data-animation>支付宝</span>
+          </div><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/wechat_donation_qrcode.png"
+    data-srcset="/img/wechat_donation_qrcode.png, /img/wechat_donation_qrcode.png 1.5x, /img/wechat_donation_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 微信"
+    title="Jin 微信"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://img.gujin.store/img/favicon.ico"target="_blank" rel="external nofollow noopener noreferrer">Jin</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">网站运行时间</span><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider">辽ICP备2021010117号</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/black/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"JinYiGao/blogtalks"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2019-12-18T16:15:22+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

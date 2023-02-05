@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>React on 小小呆呆没有脑袋的博客</title>
-    <link>https://www.gujin.store/tags/React/</link>
-    <description>Recent content in React on 小小呆呆没有脑袋的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:01 +0800</lastBuildDate><atom:link href="https://www.gujin.store/tags/React/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>React全家桶学习笔记</title>
-      <link>https://www.gujin.store/post/2022-4-1-reactlearn/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:01 +0800</pubDate>
-      
-      <guid>https://www.gujin.store/post/2022-4-1-reactlearn/</guid>
-      <description>之前学过Vue,现在来学一下React,本文记录了学习过程中的一些学习笔记..</description>
-    </item>
-    
-  </channel>
+    <title>React - 标签 - Jin&#39;s Blog</title>
+    <link>https://gujin.store/tags/react/</link>
+    <description>React - 标签 - Jin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Sat, 02 Apr 2022 00:00:01 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/tags/react/" rel="self" type="application/rss+xml" /><item>
+  <title>React全家桶学习笔记</title>
+  <link>https://gujin.store/posts/2022-4-1-reactlearn/</link>
+  <pubDate>Sat, 02 Apr 2022 00:00:01 &#43;0800</pubDate>
+  <author>Jin</author>
+  <guid>https://gujin.store/posts/2022-4-1-reactlearn/</guid>
+  <description><![CDATA[之前学过Vue,现在来学一下React,本文记录了学习过程中的一些学习笔记..]]></description>
+</item>
+</channel>
 </rss>

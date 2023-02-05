@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>计算机网络 on 小小呆呆没有脑袋的博客</title>
-    <link>https://www.gujin.store/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
-    <description>Recent content in 计算机网络 on 小小呆呆没有脑袋的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Apr 2022 11:56:58 +0800</lastBuildDate><atom:link href="https://www.gujin.store/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>计算机网络学习笔记</title>
-      <link>https://www.gujin.store/post/2022-4-28-csnetwork/</link>
-      <pubDate>Thu, 28 Apr 2022 11:56:58 +0800</pubDate>
-      
-      <guid>https://www.gujin.store/post/2022-4-28-csnetwork/</guid>
-      <description>自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&amp;hellip;</description>
-    </item>
-    
-  </channel>
+    <title>计算机网络 - 标签 - Jin&#39;s Blog</title>
+    <link>https://gujin.store/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>计算机网络 - 标签 - Jin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Thu, 28 Apr 2022 11:56:58 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
+  <title>计算机网络学习笔记</title>
+  <link>https://gujin.store/posts/2022-4-28-csnetwork/</link>
+  <pubDate>Thu, 28 Apr 2022 11:56:58 &#43;0800</pubDate>
+  <author>Jin</author>
+  <guid>https://gujin.store/posts/2022-4-28-csnetwork/</guid>
+  <description><![CDATA[自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;]]></description>
+</item>
+</channel>
 </rss>

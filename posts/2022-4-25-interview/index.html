@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>面经学习(持续更新) - Jin&#39;s Blog</title><meta name="author" content="Jin">
+<meta name="author-link" content="https://img.gujin.store/img/favicon.ico">
+<meta name="description" content="不看面经是真的找不到实习，现在互联网求职真的太卷了，各种原理，底层，手撕代码，这里记录一下自己看过的所有面经吧&hellip;" /><meta name="keywords" content='面经,, 求职,, C&#43;&#43;,, 前端' /><meta itemprop="name" content="面经学习(持续更新)">
+<meta itemprop="description" content="不看面经是真的找不到实习，现在互联网求职真的太卷了，各种原理，底层，手撕代码，这里记录一下自己看过的所有面经吧&hellip;"><meta itemprop="datePublished" content="2022-04-25T15:51:06+08:00" />
+<meta itemprop="dateModified" content="2022-04-25T15:51:06+08:00" />
+<meta itemprop="wordCount" content="16727"><meta itemprop="image" content="https://gujin.store/favicon.ico"/>
+<meta itemprop="keywords" content="面经," /><meta property="og:title" content="面经学习(持续更新)" />
+<meta property="og:description" content="不看面经是真的找不到实习，现在互联网求职真的太卷了，各种原理，底层，手撕代码，这里记录一下自己看过的所有面经吧&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gujin.store/posts/2022-4-25-interview/" /><meta property="og:image" content="https://gujin.store/favicon.ico"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-25T15:51:06+08:00" />
+<meta property="article:modified_time" content="2022-04-25T15:51:06+08:00" /><meta property="og:site_name" content="Jin&#39;s Blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gujin.store/favicon.ico"/>
+
+<meta name="twitter:title" content="面经学习(持续更新)"/>
+<meta name="twitter:description" content="不看面经是真的找不到实习，现在互联网求职真的太卷了，各种原理，底层，手撕代码，这里记录一下自己看过的所有面经吧&hellip;"/>
+<meta name="application-name" content="Jin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Jin&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://gujin.store/posts/2022-4-25-interview/" /><link rel="prev" href="https://gujin.store/posts/2022-4-10-csslearn/" /><link rel="next" href="https://gujin.store/posts/2022-4-28-csnetwork/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "面经学习(持续更新)",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/gujin.store\/posts\/2022-4-25-interview\/"
+    },"image": ["https:\/\/gujin.store\/favicon.ico"],"genre": "posts","keywords": "面经","wordcount":  16727 ,
+    "url": "https:\/\/gujin.store\/posts\/2022-4-25-interview\/","datePublished": "2022-04-25T15:51:06+08:00","dateModified": "2022-04-25T15:51:06+08:00","publisher": {
+      "@type": "Organization",
+      "name": "JinYiGao","logo": "https:\/\/img.gujin.store\/img\/favicon.ico"},"author": {
+        "@type": "Person",
+        "name": "Jin"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="Jin&#39;s Blog"
+    title="Jin&#39;s Blog"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/tools/"
+                
+                
+              ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://github.com/JinYiGao"
+                title="GitHub"
+                rel="noopener noreferrer" target="_blank"
+              ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="/favicon.ico"
+    title="/favicon.ico"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/tools/"
+                  
+                  
+                ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://github.com/JinYiGao"
+                  title="GitHub"
+                  rel="noopener noreferrer" target="_blank"
+                ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>面经学习(持续更新)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://img.gujin.store/img/favicon.ico" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://img.gujin.store/img/profile_pic.jpg"
+    data-srcset="https://img.gujin.store/img/profile_pic.jpg, https://img.gujin.store/img/profile_pic.jpg 1.5x, https://img.gujin.store/img/profile_pic.jpg 2x"
+    data-sizes="auto"
+    alt="Jin"
+    title="Jin"/>&nbsp;Jin</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 学习笔记</a></span></div>
+      <div class="post-meta-line"><span title=2022-04-25&#32;15:51:06><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-25">2022-04-25</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 16727 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 34 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="面经学习(持续更新)">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-计算机网络">1. 计算机网络</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#简述静态路由和动态路由">简述静态路由和动态路由</a></li>
+            <li><a href="#简述-tcp-三次握手和四次挥手的过程">简述 TCP 三次握手和四次挥手的过程</a></li>
+            <li><a href="#说说-tcp-2-次握手行不行为什么要-3-次">说说 TCP 2 次握手行不行？为什么要 3 次</a></li>
+            <li><a href="#简述-tcp-和-udp-的区别它们的头部结构是什么样的">简述 TCP 和 UDP 的区别，它们的头部结构是什么样的</a></li>
+            <li><a href="#简述tcp超时重传"><strong>简述TCP超时重传</strong></a></li>
+            <li><a href="#说说tcp可靠性保证"><strong>说说TCP可靠性保证</strong></a></li>
+            <li><a href="#说说从系统层面上udp如何保证尽量可靠">说说从系统层面上，UDP如何保证尽量可靠</a></li>
+            <li><a href="#说说-http-的方法有哪些">说说 HTTP 的方法有哪些</a></li>
+            <li><a href="#说说-get-请求和-post-请求的区别">说说 GET 请求和 POST 请求的区别</a></li>
+            <li><a href="#说说-cookie-和-session-的关系和区别是什么">说说 Cookie 和 Session 的关系和区别是什么</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2-操作系统">2. 操作系统</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#说说进程通信的方式有哪些"><strong>说说进程通信的方式有哪些？</strong></a></li>
+            <li><a href="#说说进程同步的方式"><strong>说说进程同步的方式？</strong></a></li>
+            <li><a href="#说说进程有多少种状态"><strong>说说进程有多少种状态？</strong></a></li>
+            <li><a href="#说说多线程和多进程的不同">说说多线程和多进程的不同？</a></li>
+            <li><a href="#说说进程线程协程是什么区别是什么">说说进程、线程、协程是什么，区别是什么？</a></li>
+            <li><a href="#请你说说并发和并行">请你说说并发和并行</a></li>
+            <li><a href="#说说linux进程调度算法及策略有哪些">说说Linux进程调度算法及策略有哪些</a></li>
+            <li><a href="#简述自旋锁和互斥锁的使用场景">简述自旋锁和互斥锁的使用场景</a></li>
+            <li><a href="#简述网络七层参考模型每一层的作用">简述网络七层参考模型，每一层的作用？</a></li>
+            <li><a href="#简述mmap的原理和使用场景"><strong>简述mmap的原理和使用场景</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-数据库">3. 数据库</a></li>
+    <li><a href="#4-算法与数据结构">4. 算法与数据结构</a>
+      <ul>
+        <li><a href="#41-排序">4.1. 排序</a>
+          <ul>
+            <li><a href="#说一下你知道的排序算法及其复杂度">说一下你知道的排序算法及其复杂度</a></li>
+          </ul>
+        </li>
+        <li><a href="#42-哈希">4.2. 哈希</a>
+          <ul>
+            <li><a href="#请说说hash表的实现">请说说hash表的实现</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5-c-研发">5. C++ 研发</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#介绍一下c11的新特性">介绍一下C++11的新特性？</a></li>
+            <li><a href="#导入c函数的关键字是什么c编译时和c有什么不同">导入C函数的关键字是什么？C++编译时和C有什么不同？</a></li>
+            <li><a href="#c-struct-和-class-区别">C++ struct 和 class 区别？</a></li>
+            <li><a href="#简述-c从代码到可执行二进制文件的过程">简述 C++从代码到可执行二进制文件的过程</a></li>
+            <li><a href="#说说什么是野指针怎么产生的如何避免">说说什么是野指针，怎么产生的，如何避免？</a></li>
+            <li><a href="#简述-c的内存管理">简述 C++的内存管理</a></li>
+            <li><a href="#malloc-和局部变量分配在堆还是栈">malloc 和局部变量分配在堆还是栈？</a></li>
+            <li><a href="#说说-new-和-malloc-的区别各自底层实现原理">说说 new 和 malloc 的区别，各自底层实现原理</a></li>
+            <li><a href="#一个程序有哪些段">一个程序有哪些段？</a></li>
+            <li><a href="#简述-data段和-bss段的区别">简述 .data段和 .bss段的区别</a></li>
+            <li><a href="#为什么要将data和bss分开存储">为什么要将.data和.bss分开存储</a></li>
+            <li><a href="#简述一下面向对象的三大特征">简述一下面向对象的三大特征</a></li>
+            <li><a href="#简述一下-c-的重载和重写以及它们的区别">简述一下 C++ 的重载和重写，以及它们的区别</a></li>
+            <li><a href="#简述一下-c-中的多态">简述一下 C++ 中的多态</a></li>
+            <li><a href="#说说-c-中什么是菱形继承问题如何解决">说说 C++ 中什么是菱形继承问题，如何解决</a></li>
+            <li><a href="#为什么继承时父类析构函数必须定义为虚函数"><strong>为什么继承时父类析构函数必须定义为虚函数？</strong></a></li>
+            <li><a href="#说说-push_back-和-emplace_back-的区别">说说 push_back 和 emplace_back 的区别</a></li>
+            <li><a href="#请你回答一下智能指针有没有内存泄露的情况">请你回答一下智能指针有没有内存泄露的情况</a></li>
+            <li><a href="#简述一下-c11-中四种类型转换">简述一下 C++11 中四种类型转换</a></li>
+            <li><a href="#说说-static-关键字的作用">说说 static 关键字的作用</a></li>
+            <li><a href="#说说全局变量和全局静态变量的区别">说说全局变量和全局静态变量的区别？</a></li>
+            <li><a href="#c中指针占多少字节">C++中指针占多少字节？</a></li>
+            <li><a href="#说说静态变量什么时候初始化">说说静态变量什么时候初始化？</a></li>
+            <li><a href="#说说内联函数和宏函数的区别">说说内联函数和宏函数的区别</a></li>
+            <li><a href="#说说内联函数和函数的区别内联函数的作用">说说内联函数和函数的区别，内联函数的作用</a></li>
+            <li><a href="#说说-const-和-define-的区别">说说 const 和 define 的区别</a></li>
+            <li><a href="#简述-c有几种传值方式之间的区别是什么">简述 C++有几种传值方式，之间的区别是什么？</a></li>
+            <li><a href="#说说-c的抽象类与接口">说说 C++的抽象类与接口？</a></li>
+            <li><a href="#介绍一下c智能指针">介绍一下C++智能指针？</a></li>
+            <li><a href="#c空类占多少字节类中含有函数占多少字节">C++空类占多少字节？类中含有函数占多少字节？</a></li>
+            <li><a href="#指针自增和引用自增有什么区别">指针自增和引用自增有什么区别？</a></li>
+            <li><a href="#c空类编译器会默认加上哪些成员函数">C++空类编译器会默认加上哪些成员函数？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6-图形学相关">6. 图形学相关</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#如何判断一个点在多边形内部">如何判断一个点在多边形内部</a></li>
+            <li><a href="#如何判断一个多边形是凸多边形">如何判断一个多边形是凸多边形</a></li>
+            <li><a href="#讲讲叉乘法求多边形面积">讲讲叉乘法求多边形面积</a></li>
+            <li><a href="#什么是齐次坐标">什么是齐次坐标</a></li>
+            <li><a href="#齐次坐标能做什么它有什么好处">齐次坐标能做什么？它有什么好处？</a></li>
+            <li><a href="#齐次坐标怎么去区分位置和方向">齐次坐标怎么去区分位置和方向？</a></li>
+            <li><a href="#如何判断射线与球体相交">如何判断射线与球体相交？</a></li>
+            <li><a href="#说一下gpu渲染管线">说一下GPU渲染管线</a></li>
+            <li><a href="#ndc是什么">NDC是什么？</a></li>
+            <li><a href="#顶点着色器的作用">顶点着色器的作用</a></li>
+            <li><a href="#片元着色器的作用">片元着色器的作用</a></li>
+            <li><a href="#片元是什么和像素有什么不同">片元是什么？和像素有什么不同？</a></li>
+            <li><a href="#phone模型有哪些光照分量说一下它们的作用是什么">Phone模型有哪些光照分量？说一下它们的作用是什么？</a></li>
+            <li><a href="#伽马校正是什么为什么要有伽马校正">伽马校正是什么？为什么要有伽马校正？</a></li>
+            <li><a href="#编写shader时有哪些注意优化的点">编写shader时，有哪些注意优化的点？</a></li>
+            <li><a href="#如何选择mipmap使用哪一层">如何选择mipmap使用哪一层？</a></li>
+            <li><a href="#了解哪些抗锯齿方法">了解哪些抗锯齿方法？</a></li>
+            <li><a href="#如何理解opengl-context">如何理解OpenGL Context？</a></li>
+            <li><a href="#什么是法线矩阵有什么用">什么是法线矩阵，有什么用？</a></li>
+            <li><a href="#阴影图如何实现">阴影图如何实现？</a></li>
+            <li><a href="#关于深度测试有什么优化">关于深度测试，有什么优化？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#7-前端求职">7. 前端求职</a>
+      <ul>
+        <li><a href="#71-html">7.1. Html</a></li>
+        <li><a href="#72-css">7.2. CSS</a>
+          <ul>
+            <li><a href="#清除浮动">清除浮动</a></li>
+          </ul>
+        </li>
+        <li><a href="#73-js">7.3. JS</a>
+          <ul>
+            <li><a href="#js-数据类型区别">JS 数据类型，区别</a></li>
+            <li><a href="#讲讲-letconstvar-的区别">讲讲 let，const，var 的区别</a></li>
+            <li><a href="#objectassign-的理解">Object.assign 的理解</a></li>
+            <li><a href="#map-和-foreach-的区别">map 和 forEach 的区别</a></li>
+            <li><a href="#foreach-如何跳出循环">forEach 如何跳出循环？</a></li>
+            <li><a href="#for-of-可以遍历哪些对象">for of 可以遍历哪些对象</a></li>
+            <li><a href="#讲讲-for-in-的作用">讲讲 for in 的作用</a></li>
+            <li><a href="#讲讲对-javascript-中-arguments-的理解">讲讲对 javascript 中 arguments 的理解？</a></li>
+            <li><a href="#promise-和-async-await-区别">promise 和 async await 区别</a></li>
+            <li><a href="#js-文件加载中-defer-和-async-区别">js 文件加载中 defer 和 async 区别</a></li>
+            <li><a href="#讲一讲-js-的事件循环机制event-loop">讲一讲 JS 的事件循环机制？(Event Loop)</a></li>
+            <li><a href="#讲讲你对宏任务和微任务的理解">讲讲你对宏任务和微任务的理解？</a></li>
+            <li><a href="#call-appy-bind-的作用和区别">call appy bind 的作用和区别？</a></li>
+            <li><a href="#this-指向普通函数箭头函数">this 指向（普通函数、箭头函数）</a></li>
+            <li><a href="#一个-function-new-会发生什么">一个 function new 会发生什么？</a></li>
+            <li><a href="#es6-中-5-种遍历对象属性的方法">ES6 中 5 种遍历对象属性的方法</a></li>
+            <li><a href="#es6-与-es5-继承的区别">ES6 与 ES5 继承的区别</a></li>
+            <li><a href="#constructor-的理解">constructor 的理解</a></li>
+          </ul>
+        </li>
+        <li><a href="#74-浏览器">7.4. 浏览器</a>
+          <ul>
+            <li><a href="#cookie-sessionstorage-localstorage-区别">cookie sessionStorage localStorage 区别</a></li>
+            <li><a href="#如何写一个会过期的-localstorage说说想法">如何写一个会过期的 localStorage，说说想法</a></li>
+            <li><a href="#localstorage-能跨域吗">localStorage 能跨域吗？</a></li>
+            <li><a href="#localstorage-有哪些限制">localstorage 有哪些限制？</a></li>
+            <li><a href="#浏览器输入-url-发生了什么">浏览器输入 URL 发生了什么？</a></li>
+            <li><a href="#浏览器如何渲染页面的">浏览器如何渲染页面的？</a></li>
+            <li><a href="#重绘重排的区别">重绘、重排的区别？</a></li>
+            <li><a href="#引发重排的操作有哪些">引发重排的操作有哪些？</a></li>
+            <li><a href="#如何避免重绘和重排">如何避免重绘和重排？</a></li>
+            <li><a href="#浏览器垃圾回收机制">浏览器垃圾回收机制</a></li>
+            <li><a href="#token-能放在-cookie-中吗">token 能放在 cookie 中吗？</a></li>
+            <li><a href="#cookie-是什么">cookie 是什么？</a></li>
+            <li><a href="#cookie-能做什么">cookie 能做什么？</a></li>
+          </ul>
+        </li>
+        <li><a href="#75-vue">7.5. Vue</a></li>
+        <li><a href="#76-react">7.6. React</a></li>
+        <li><a href="#77-其他">7.7. 其他</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="1-计算机网络">1. 计算机网络</h2>
+<ul>
+<li>
+<h4 id="简述静态路由和动态路由">简述静态路由和动态路由</h4>
+<ol>
+<li>静态路由是由系统管理员设计和构建的路由表规定的路由，适用于网关数量有限的场合，且网络拓扑结构不经常变化的网络，其缺点是不能动态地适用网络状况变化，当网络状况变化后必须由管理员修改路由表</li>
+<li>动态路由是由路由选择协议动态构建的，路由协议之间通过交换各自的路由信息实时更新路由表的内容，其缺点是路由广播更新信息将占据大量的网络带宽。</li>
+</ol>
+</li>
+<li>
+<h4 id="简述-tcp-三次握手和四次挥手的过程">简述 TCP 三次握手和四次挥手的过程</h4>
+<p><strong>三次握手</strong></p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439" data-thumbnail="https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439"
+      data-srcset="https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439, https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439 1.5x, https://img.gujin.store/img/AB3FC1B1325FA341A39644BA061FA439 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+<ol>
+<li>第一次握手：建立连接时，客户端向服务器发送 SYN 包（seq=x），请求建立连接，等待确认</li>
+<li>第二次握手：服务端收到客户端的 SYN 包，回一个 ACK 包（ack=x+1）确认收到，同时发送一个 SYN 包（seq=y）给客户端</li>
+<li>第三次握手：客户端收到 SYN+ACK 包，再回一个 ACK 包（ack=y+1）告诉服务端已经收到</li>
+</ol>
+<p>三次握手完成，建立连接。</p>
+<p><strong>四次挥手</strong></p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD" data-thumbnail="https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD"
+      data-srcset="https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD, https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD 1.5x, https://img.gujin.store/img/2F42938B52A4B6494AA9CD8FCE658EBD 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+<ol>
+<li>客户端发送 FIN 包（FIN=1）给服务端，告诉它自己的数据已经发送完毕，请求终止连接，此时客户端不发送数据，但还能接收数据</li>
+<li>服务端收到 FIN 包，回一个 ACK 包给客户端告诉它已经收到包了，此时还没有断开 socket 连接，而是等待剩下的数据传输完毕</li>
+<li>服务端等待数据传输完毕后，向客户端发送 FIN 包，表明可以断开连接</li>
+<li>客户端收到后，回一个 ACK 包表明确认收到，等待一段时间，确保服务端不再有数据发过来，然后彻底断开连接</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-tcp-2-次握手行不行为什么要-3-次">说说 TCP 2 次握手行不行？为什么要 3 次</h4>
+<ol>
+<li>为了实现可靠数据传输， TCP 协议的通信双方， 都必须维护一个序列号， 以标识发送出去的数据包中， 哪些是已经被对方收到的。 三次握手的过程即是通信双方相互告知序列号起始值， 并确认对方已经收到了序列号起始值的必经步骤</li>
+<li>如果只是两次握手， 至多只有连接发起方的起始序列号能被确认， 另一方选择的序列号则得不到确认</li>
+</ol>
+<p>简而言之，3 次握手能够保证客户端和服务端均确认对方能够接受到自己发出去的包</p>
+</li>
+<li>
+<h4 id="简述-tcp-和-udp-的区别它们的头部结构是什么样的">简述 TCP 和 UDP 的区别，它们的头部结构是什么样的</h4>
+<ol>
+<li>TCP 是<strong>面向连接</strong>的，而 UDP 是<strong>无连接</strong>的</li>
+<li>TCP 保证数据按序发送，按序到达，提供超时重传来保证可靠性；但是 UDP 不保证按序到达，甚至不保证到达，只是努力交付，即便是按序发送的序列，也不保证按序送到</li>
+<li>TCP 协议所需资源多，TCP 首部需 20 个字节（不算可选项），UDP 首部字段只需 8 个字节</li>
+<li>TCP 有<strong>流量控制和拥塞控</strong>制，UDP 没有，网络拥堵不会影响发送端的发送速率</li>
+<li>TCP 是<strong>一对一的连接</strong>，而 UDP 则可以支持<strong>一对一，多对多，一对多</strong>的通信</li>
+<li>TCP 面向的是<strong>字节流</strong>的服务，UDP 面向的是<strong>报文</strong>的服务</li>
+</ol>
+</li>
+<li>
+<h4 id="简述tcp超时重传"><strong>简述TCP超时重传</strong></h4>
+<p>TCP要求在发送端每发送一个报文段，就启动一个<strong>定时器</strong>并等待确认信息；若在定时器超时前数据未能被确认，TCP就认为报文已丢失，进行超时重传。</p>
+</li>
+<li>
+<h4 id="说说tcp可靠性保证"><strong>说说TCP可靠性保证</strong></h4>
+<p>TCP主要提供了<strong>校验和</strong>、<strong>序列号和确认应答</strong>、<strong>超时重传</strong>、<strong>最大消息长度</strong>、<strong>滑动窗口</strong>等方法实现可靠传输</p>
+</li>
+<li>
+<h4 id="说说从系统层面上udp如何保证尽量可靠">说说从系统层面上，UDP如何保证尽量可靠</h4>
+<p>在应用层模仿传输层TCP的可靠性保证，</p>
+<ul>
+<li>添加seq/ack机制，确保数据发送到对端</li>
+<li>添加发送和接受缓冲区，针对用户超时重传</li>
+<li>添加超时重传机制</li>
+</ul>
+</li>
+<li>
+<h4 id="说说-http-的方法有哪些">说说 HTTP 的方法有哪些</h4>
+<ul>
+<li>
+<p><strong>GET</strong>： 用于请求访问已经被 URI（统一资源标识符）识别的资源，可以通过 URL 传参给服务器</p>
+</li>
+<li>
+<p><strong>POST</strong>：用于传输信息给服务器，主要功能与 GET 方法类似，但一般推荐使用 POST 方式。</p>
+</li>
+<li>
+<p><strong>PUT</strong>： 传输文件，报文主体中包含文件内容，保存到对应 URI 位置。</p>
+</li>
+<li>
+<p><strong>HEAD</strong>： 获得报文首部，与 GET 方法类似，只是不返回报文主体，一般用于验证 URI 是否有效。</p>
+</li>
+<li>
+<p><strong>DELETE</strong>：删除文件，与 PUT 方法相反，删除对应 URI 位置的文件。</p>
+</li>
+<li>
+<p><strong>OPTIONS</strong>：查询相应 URI 支持的 HTTP 方法。</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="说说-get-请求和-post-请求的区别">说说 GET 请求和 POST 请求的区别</h4>
+<ol>
+<li>GET 请求在 URL 中传送的参数是有长度限制的，而 POST 没有。</li>
+<li>GET 比 POST 更不安全，因为参数直接暴露在 URL 上，所以不能用来传递敏感信息。</li>
+<li>GET 参数通过 URL 传递，POST 放在 Request body 中。</li>
+<li>GET 请求参数会被完整保留在浏览器历史记录里，而 POST 中的参数不会被保留。</li>
+<li>GET 请求只能进行 url 编码，而 POST 支持多种编码方式。</li>
+<li>GET 请求会被浏览器主动 cache，而 POST 不会，除非手动设置。</li>
+<li>GET 产生的 URL 地址可以被 Bookmark，而 POST 不可以。</li>
+<li>GET 在浏览器回退时是无害的，而 POST 会再次提交请求。</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-cookie-和-session-的关系和区别是什么">说说 Cookie 和 Session 的关系和区别是什么</h4>
+<ol>
+<li>
+<p>cookie 数据存放在客户的浏览器上，session 数据放在服务器上。</p>
+</li>
+<li>
+<p>cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗 考虑到安全应当使用 session</p>
+</li>
+<li>
+<p>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能 考虑到减轻服务器性能方面，应当使用 COOKIE</p>
+</li>
+<li>
+<p>单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 cookie</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>-</p>
+<h2 id="2-操作系统">2. 操作系统</h2>
+<ul>
+<li>
+<h4 id="说说进程通信的方式有哪些"><strong>说说进程通信的方式有哪些？</strong></h4>
+<ol>
+<li><strong>管道</strong>：包括无名管道和命名管道，无名管道半双工，只能用于具有亲缘关系的进程的直接通信(父子进程或者兄弟进程)，可以看做是一种特殊的文件；命名管道可以允许无亲缘关系进程间的通信</li>
+<li><strong>系统IPC</strong>
+<ul>
+<li><strong>消息队列</strong>：消息的链表，放在内核中。消息队列独立于发送与接收进程，进程终止时，消息队列及其内容并不会被删除；消息队列可以实现消息的随机查询，可以按照消息的类型读取</li>
+<li><strong>信号量</strong>：一个计数器，可以用来控制多个进程对共享资源的访问。可以用于实现进程间的互斥与同步</li>
+<li><strong>信号</strong>：用于通知接受进程某个事件的发生</li>
+<li><strong>内存共享</strong>：使多个进程访问同一块内存空间</li>
+</ul>
+</li>
+<li><strong>Socket</strong>：用于不同主机直接的通信</li>
+</ol>
+</li>
+<li>
+<h4 id="说说进程同步的方式"><strong>说说进程同步的方式？</strong></h4>
+<ol>
+<li><strong>信号量</strong></li>
+<li><strong>管道</strong></li>
+<li><strong>消息队列</strong></li>
+</ol>
+</li>
+<li>
+<h4 id="说说进程有多少种状态"><strong>说说进程有多少种状态？</strong></h4>
+<ul>
+<li><strong>创建</strong></li>
+<li><strong>就绪</strong></li>
+<li><strong>运行</strong></li>
+<li><strong>阻塞</strong></li>
+<li><strong>终止</strong></li>
+</ul>
+</li>
+<li>
+<h4 id="说说多线程和多进程的不同">说说多线程和多进程的不同？</h4>
+<p>（1）一个线程从属于一个进程；一个进程可以包含多个线程。</p>
+<p>（2）一个线程挂掉，对应的进程挂掉，多线程也挂掉；一个进程挂掉，不会影响其他进程，多进程稳定。</p>
+<p>（3）进程系统开销显著大于线程开销；线程需要的系统资源更少。</p>
+<p>（4）多个进程在执行时拥有各自独立的内存单元，多个线程共享进程的内存，如代码段、数据段、扩展段；但每个线程拥有自己的栈段和寄存器组。</p>
+<p>（5）多进程切换时需要刷新 TLB 并获取新的地址空间，然后切换硬件上下文和内核栈；多线程切换时只需要切换硬件上下文和内核栈。</p>
+<p>（6）通信方式不一样。</p>
+<p>（7）多进程适应于多核、多机分布；多线程适用于多核</p>
+</li>
+<li>
+<h4 id="说说进程线程协程是什么区别是什么">说说进程、线程、协程是什么，区别是什么？</h4>
+<ol>
+<li><strong>进程</strong>：进程则是程序的运行实例，包括程序计数器、寄存器和变量的当前值</li>
+<li><strong>线程</strong>：微进程，一个进程里更小粒度的执行单元。一个进程里包含多个线程并发执行任务</li>
+<li><strong>协程</strong>：协程是微线程，在子程序内部执行，可在子程序内部中断，转而执行别的子程序，在适当的时候再返回来接着执行</li>
+</ol>
+<p><strong>区别</strong>：</p>
+<ol>
+<li>
+<p><strong>线程与进程的区别</strong>：</p>
+<ul>
+<li>一个线程从属于一个进程；一个进程可以包含多个线程</li>
+<li>一个线程挂掉，对应的进程挂掉；一个进程挂掉，不会影响其他进程</li>
+<li>进程是<strong>系统资源调度</strong>的最小单位；线程<strong>CPU 调度</strong>的最小单位</li>
+<li>进程系统开销显著大于线程开销；线程需要的系统资源更少</li>
+<li>进程在执行时拥有独立的内存单元，多个线程共享进程的内存，如代码段、数据段、扩展段；但每个线程拥有自己的栈段和寄存器组</li>
+<li>进程切换时需要刷新 TLB 并获取新的地址空间，然后切换硬件上下文和内核栈，线程切换时只需要切换硬件上下文和内核栈</li>
+<li>通信方式不一样</li>
+<li>进程适应于多核、多机分布；线程适用于多核</li>
+</ul>
+</li>
+<li>
+<p><strong>线程与协程的区别：</strong></p>
+<ul>
+<li>
+<p>协程执行效率极高。协程直接操作栈基本没有内核切换的开销，所以上下文的切换非常快，切换开销比线程更小</p>
+</li>
+<li>
+<p>协程不需要多线程的锁机制，因为多个协程从属于一个线程，不存在同时写变量冲突，效率比线程高</p>
+</li>
+<li>
+<p>一个线程可以有多个协程</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="请你说说并发和并行">请你说说并发和并行</h4>
+<ol>
+<li><strong>并发</strong>：对于单个 CPU，在一个时刻只有一个进程在运行，但是线程的切换时间则减少到纳秒数量级，多个任务不停来回快速切换，如系统的时间片轮转</li>
+<li><strong>并行</strong>：对于多核 CPU，多个进程同时运行</li>
+</ol>
+<p>并发是逻辑上的同时发生，而并行是物理上的同时发生</p>
+</li>
+<li>
+<h4 id="说说linux进程调度算法及策略有哪些">说说Linux进程调度算法及策略有哪些</h4>
+<ul>
+<li>先来先服务调度算法</li>
+<li>短作业(进程)优先调度算法</li>
+<li>高优先级优先调度算法</li>
+<li>时间片轮转法</li>
+<li>多级反馈队列调度算法</li>
+</ul>
+</li>
+<li>
+<h4 id="简述自旋锁和互斥锁的使用场景">简述自旋锁和互斥锁的使用场景</h4>
+<ol>
+<li>
+<p><strong>互斥锁</strong>用于临界区持锁时间比较长的操作</p>
+</li>
+<li>
+<p><strong>自旋锁就</strong>主要用在临界区持锁时间非常短且 CPU 资源不紧张的情况下</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="简述网络七层参考模型每一层的作用">简述网络七层参考模型，每一层的作用？</h4>
+<table>
+<thead>
+<tr>
+<th>OSI 七层模型</th>
+<th>功能</th>
+<th>对应的网络协议</th>
+<th style="text-align:center">TCP/IP 四层概念模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>文件传输，文件管理，电子邮件的信息处理</td>
+<td>HTTP、TFTP, FTP, NFS, WAIS、SMTP</td>
+<td style="text-align:center">应用层</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>确保一个系统的应用层发送的消息可以被另一个系统的应用层读取，编码转换，数据解析，管理数据的解密和加密。</td>
+<td>Telnet, Rlogin, SNMP, Gopher</td>
+<td style="text-align:center">应用层</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>负责在网络中的两节点建立，维持和终止通信。</td>
+<td>SMTP, DNS</td>
+<td style="text-align:center">应用层</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>定义一些传输数据的协议和端口。</td>
+<td>TCP, UDP</td>
+<td style="text-align:center">传输层</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>控制子网的运行，如逻辑编址，分组传输，路由选择</td>
+<td>IP, ICMP, ARP, RARP, AKP, UUCP</td>
+<td style="text-align:center">网络层</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>主要是对物理层传输的比特流包装，检测保证数据传输的可靠性，将物理层接收的数据进行 MAC（媒体访问控制）地址的封装和解封装</td>
+<td>FDDI, Ethernet, Arpanet, PDN, SLIP, PPP，STP。HDLC,SDLC,帧中继</td>
+<td style="text-align:center">数据链路层</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>定义物理设备的标准，主要对物理连接方式，电气特性，机械特性等制定统一标准。</td>
+<td>IEEE 802.1A, IEEE 802.2 到 IEEE 802.</td>
+<td style="text-align:center">数据链路层</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<h4 id="简述mmap的原理和使用场景"><strong>简述mmap的原理和使用场景</strong></h4>
+<p><strong>mmap是一种内存映射文件的方法</strong>，即讲一个文件或其他对象映射到进程的地址空间，实现文件磁盘地址和进程虚拟地址的映射关系。进程可以通过指针的方式读写操作这段内存，而系统会自动回写到文件磁盘，即完成对文件的操作而不必再调用read，write等系统调用。并且，由于内核空间对这段区域的修改也直接反映用户空间，从而可以实现不同进程间的文件共享。</p>
+<p><strong>使用场景</strong>：</p>
+<ol>
+<li>对同一块内存频繁读写操作</li>
+<li>实现用户空间和内核空间的高效交互</li>
+<li>提供进程间共享内存及相互通信</li>
+<li>实现高效的大规模的数据传输</li>
+</ol>
+</li>
+</ul>
+<h2 id="3-数据库">3. 数据库</h2>
+<h2 id="4-算法与数据结构">4. 算法与数据结构</h2>
+<h3 id="41-排序">4.1. 排序</h3>
+<ul>
+<li>
+<h4 id="说一下你知道的排序算法及其复杂度">说一下你知道的排序算法及其复杂度</h4>
+<p><a class="lightgallery" href="https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E" data-thumbnail="https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E"
+      data-srcset="https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E, https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E 1.5x, https://img.gujin.store/img/311436_1552474444160_93CF294B0FB45C83DC616C5700184F2E 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+</li>
+</ul>
+<h3 id="42-哈希">4.2. 哈希</h3>
+<ul>
+<li>
+<h4 id="请说说hash表的实现">请说说hash表的实现</h4>
+<p>hash表的实现主要包括构造哈希和处理哈希冲突两个方面</p>
+<p><strong>构造哈希</strong>的方法包括：</p>
+<ul>
+<li>直接定址法</li>
+<li>除留余数法</li>
+<li>平方取中法</li>
+<li>随机数法</li>
+<li>数学分析法</li>
+</ul>
+<p><strong>解决哈希冲突</strong>的方法包括：</p>
+<ul>
+<li>开放定址法、再哈希法、链地址法、建立公共溢出区等方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-c-研发">5. C++ 研发</h2>
+<ul>
+<li>
+<h4 id="介绍一下c11的新特性">介绍一下C++11的新特性？</h4>
+<ul>
+<li>auto &amp; decltype</li>
+<li>智能指针</li>
+<li>nullptr</li>
+<li>Lambda匿名函数</li>
+<li>右值引用(move和移动构造函数)</li>
+<li>&hellip;&hellip;</li>
+</ul>
+</li>
+<li>
+<h4 id="导入c函数的关键字是什么c编译时和c有什么不同">导入C函数的关键字是什么？C++编译时和C有什么不同？</h4>
+<p><strong>关键字</strong>：<strong>extern  “C”</strong>，作用是为了正确实现C++代码调用其他C代码，加上后会指示编译器对这部分代码按照C语言进行编译</p>
+<p><strong>C++和C编译区别</strong>：由于C++支持函数重载，因此编译器编译函数过程中会将函数参数类型也加到编译后的代码中，而不仅仅是函数名；而C不支持函数重载，编译时一般只包括函数名</p>
+</li>
+<li>
+<h4 id="c-struct-和-class-区别">C++ struct 和 class 区别？</h4>
+<ol>
+<li>
+<p>struct 一般用于描述一个数据结构集合，而 class 是对一个对象数据的封装</p>
+</li>
+<li>
+<p>struct 中默认的访问控制权限是 public 的，而 class 中默认的访问控制权限是 private 的</p>
+</li>
+<li>
+<p>在继承关系中，struct 默认是公有继承，而 class 是私有继承</p>
+</li>
+<li>
+<p>class 关键字可以用于定义模板参数，就像 typename，而 struct 不能用于定义模板参数</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="简述-c从代码到可执行二进制文件的过程">简述 C++从代码到可执行二进制文件的过程</h4>
+<p><strong>预编译、编译、汇编、链接</strong></p>
+</li>
+<li>
+<h4 id="说说什么是野指针怎么产生的如何避免">说说什么是野指针，怎么产生的，如何避免？</h4>
+<p><strong>野指针</strong>：指针指向位置不可知</p>
+<p><strong>产生原因</strong>：释放内存后指针没有及时置空，仍然指向该内存，可能出现非法访问</p>
+<p><strong>避免</strong>：初始化置 NULL；指针释放后置 NULL；使用智能指针</p>
+</li>
+<li>
+<h4 id="简述-c的内存管理">简述 C++的内存管理</h4>
+<p>在 C++中，内存被分为 5 个区，分别是堆、栈、自由存储区、全局/静态存储区、常量存储区</p>
+<p><strong>栈</strong>，由操作系统分配释放，在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。</p>
+<p><strong>堆</strong>，就是那些由 new 或者 malloc 分配的内存块，一般一个 new 就要对应一个 delete，malloc 对应 free。</p>
+<p><strong>代码区</strong>，存放程序执行的 cpu 指令，如函数的二进制体。</p>
+<p><strong>全局/静态存储区</strong>，全局变量和静态变量被分配到同一块内存中</p>
+<p><strong>常量存储区</strong>，这里面存放的是常量。</p>
+</li>
+<li>
+<h4 id="malloc-和局部变量分配在堆还是栈">malloc 和局部变量分配在堆还是栈？</h4>
+<p>malloc 是在<strong>堆上分配内存</strong>，需要程序员自己回收内存；</p>
+<p>局部变量是在<strong>栈中分配内存</strong>，超过作用域就自动回收</p>
+</li>
+<li>
+<h4 id="说说-new-和-malloc-的区别各自底层实现原理">说说 new 和 malloc 的区别，各自底层实现原理</h4>
+<ol>
+<li>new 是<strong>操作符</strong>，而 malloc 是<strong>函数</strong></li>
+<li>new 在调用的时候先分配内存，再调用构造函数，释放的时候调用析构函数；而 malloc 没有构造函数和析构函数</li>
+<li>malloc 需要给定申请内存的大小，返回的指针需要强转；new 会调用构造函数，不用指定内存的大小，返回指针不用强转</li>
+<li>new 可以被重载；malloc 不行</li>
+<li>new 分配内存更直接和安全</li>
+<li>new 发生错误抛出异常，malloc 返回 null</li>
+</ol>
+</li>
+<li>
+<h4 id="一个程序有哪些段">一个程序有哪些段？</h4>
+<p><a class="lightgallery" href="https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB" data-thumbnail="https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB"
+      data-srcset="https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB, https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB 1.5x, https://img.gujin.store/img/798C7A2D023204559B62F88B54E35CBB 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+<p>如上图，从低地址到高地址，一个程序由 .text代码段，.data数据段，bss段，堆，共享区，栈等组成。</p>
+</li>
+<li>
+<h4 id="简述-data段和-bss段的区别">简述 .data段和 .bss段的区别</h4>
+<p>.data段存储已初始化的全局变量；.bss段存储未初始化的全局变量</p>
+</li>
+<li>
+<h4 id="为什么要将data和bss分开存储">为什么要将.data和.bss分开存储</h4>
+<p>为了节省磁盘空间，.bss不占用实际的磁盘空间</p>
+</li>
+<li>
+<h4 id="简述一下面向对象的三大特征">简述一下面向对象的三大特征</h4>
+<p><strong>封装、继承、多态</strong></p>
+<p><strong>封装</strong>：将数据和操作数据的方法进行有机结合，隐藏对象的属性和实现细节，仅对外公开接口来和对象进行 交互。</p>
+<p><strong>继承</strong>：可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
+<p>三种继承方式</p>
+<table>
+<thead>
+<tr>
+<th>继承方式</th>
+<th>private 继承</th>
+<th>protected 继承</th>
+<th>public 继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基类的 private 成员</td>
+<td>不可见</td>
+<td>不可见</td>
+<td>不可见</td>
+</tr>
+<tr>
+<td>基类的 protected 成员</td>
+<td>变为 private 成员</td>
+<td>仍为 protected 成员</td>
+<td>仍为 protected 成员</td>
+</tr>
+<tr>
+<td>基类的 public 成员</td>
+<td>变为 private 成员</td>
+<td>变为 protected 成员</td>
+<td>仍为 public 成员仍为 public 成员</td>
+</tr>
+</tbody>
+</table>
+<p><strong>多态</strong>：用父类型别的指针指向其子类的实例，然后通过父类的指针调用实际子类的成员函数。实现多态，有二种方式，重写，重载。</p>
+</li>
+<li>
+<h4 id="简述一下-c-的重载和重写以及它们的区别">简述一下 C++ 的重载和重写，以及它们的区别</h4>
+<ol>
+<li>
+<p><strong>重写</strong></p>
+<p>是指派生类中存在重新定义的函数。其函数名，参数列表，返回值类型，所有都必须同基类中被重写的函数一致。只有函数体不同（花括号内），当父类指针指向子类实例时，父类指针调用时会调用派生类的重写函数，不会调用被重写函数。重写的基类中被重写的函数<strong>必须有 virtual</strong>修饰。</p>
+<p>不加 virtual 时，子类实现的是覆盖，用基类指针调用时，调用的是基类函数，用子类指针调用时，调用的是子类函数。</p>
+</li>
+<li>
+<p><strong>重载</strong></p>
+<p>具有不同参数列（参数的类型，个数，顺序不同）的同名函数，根据参数列表确定调用哪个函数，重载不关心函数返回类型。</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="简述一下-c-中的多态">简述一下 C++ 中的多态</h4>
+<ol>
+<li><strong>静态多态</strong>：编译器在编译期间完成的，编译器会根据实参类型来推断该调用哪个函数，如果有对应的函数，就调用，没有则在编译时报错。（函数重载）</li>
+<li><strong>动态多态</strong>：其实要实现动态多态，需要几个条件——即动态绑定条件：（函数重写）
+<ol>
+<li>虚函数。基类中必须有虚函数，在派生类中必须重写虚函数。</li>
+<li>通过基类类型的指针或引用来调用虚函数。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-c-中什么是菱形继承问题如何解决">说说 C++ 中什么是菱形继承问题，如何解决</h4>
+<p><a class="lightgallery" href="https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE" data-thumbnail="https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE"
+      data-srcset="https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE, https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE 1.5x, https://img.gujin.store/img/669F46EC1CA09D9F687FFD9A8EC4CFEE 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+<p><strong>菱形继承即多个类继承了同一个公共基类，而这些派生类又同时被一个类继承</strong></p>
+<p>当 D 调用 A 类中方法时编译器会报错，指向不明确，因为在 B 和 C 中都保存了一份 A 类的数据成员与方法</p>
+<p><strong>解决</strong>：</p>
+<ol>
+<li>使用域限定需要访问的函数</li>
+<li>使用<strong>虚继承</strong>，此时 B 和 C 内保存的是 A 类数据方法成员的偏移地址，共享同一块内存</li>
+</ol>
+</li>
+<li>
+<h4 id="为什么继承时父类析构函数必须定义为虚函数"><strong>为什么继承时父类析构函数必须定义为虚函数？</strong></h4>
+<p>因为如果不定义为虚函数，则当父类指针指向子类实例时，最后销毁时只会调用父类析构函数，而不会调用子类析构函数，可能造成内存泄漏。</p>
+<p>而当父类析构函数定义为虚函数时，由于触发多态，最终销毁调用的则是子类析构函数，同时编译器在子类析构函数中插入父类析构函数，最终实现了先调用子类析构函数再调用父类析构函数。</p>
+</li>
+<li>
+<h4 id="说说-push_back-和-emplace_back-的区别">说说 push_back 和 emplace_back 的区别</h4>
+<p>如果要将一个临时变量 push 到容器的末尾，push_back()需要先构造临时对象，再将这个对象拷贝到容器 的末尾，而 emplace_back()则直接在容器的末尾构造对象，这样就省去了拷贝的过程。</p>
+</li>
+<li>
+<h4 id="请你回答一下智能指针有没有内存泄露的情况">请你回答一下智能指针有没有内存泄露的情况</h4>
+<ol>
+<li>
+<p>智能指针发生内存泄露的情况</p>
+<p>当两个对象同时使用一个 shared_ptr 成员变量指向对方，会造成循环引用，使引用计数失效，从而导致内存泄露。</p>
+</li>
+<li>
+<p>智能指针的内存泄漏如何解决？ 为了解决循环引用导致的内存泄漏，引入了弱指针 weak_ptr，weak_ptr 的构造函数不会修改引用计数的值，从而不会对对象的内存进行管理，其类似一个普通指针，但是不会指向引用计数的共享内存，但是可以检测到所管理的对象是否已经被释放，从而避免非法访问。</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="简述一下-c11-中四种类型转换">简述一下 C++11 中四种类型转换</h4>
+<p>C++中四种类型转换分别为<strong>const_cast、static_cast、dynamic_cast、reinterpret_cast</strong></p>
+<ol>
+<li>
+<p><strong>const_cast</strong></p>
+<p>将 const 变量转为非 const</p>
+</li>
+<li>
+<p><strong>static_cast</strong></p>
+<p>最常用，可以用于各种隐式转换，比如非 const 转 const，static_cast 可以用于类向上转换，但向下转换能成功但是不安全。</p>
+</li>
+<li>
+<p><strong>dynamic_cast</strong></p>
+<p>只能用于含有虚函数的类转换，用于类向上和向下转换</p>
+<p><strong>向上转换</strong>：指子类向基类转换。</p>
+<p><strong>向下转换</strong>：指基类向子类转换。</p>
+<p>这两种转换，子类包含父类，当父类转换成子类时可能出现非法内存访问的问题。</p>
+</li>
+<li>
+<p><strong>reinterpret_cast</strong></p>
+<p>reinterpret_cast 可以做任何类型的转换，不过不对转换结果保证，容易出问题。</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-static-关键字的作用">说说 static 关键字的作用</h4>
+<ol>
+<li>
+<p><strong>定义全局静态变量或者局部静态变量</strong></p>
+<p>静态变量在程序中只初始化一次，全局静态变量只能在<strong>本源文件</strong>中使用；局部静态变量只能在<strong>函数作用域</strong>内使用，但是函数执行完毕后，局部静态变量的内存区域并不会被释放，以后函数再次执行时仍然访问该内存区域。</p>
+</li>
+<li>
+<p><strong>定义静态函数</strong></p>
+<p>静态函数只能在本源文件中使用</p>
+</li>
+<li>
+<p><strong>定义类中静态成员变量</strong></p>
+<p>使用静态数据成员，它既可以被当成全局变量去存储，但又被隐藏在类的内部，类中静态 static 数据成员拥有一块单独存储区，不管创建了多少该类对象，均共享同一块静态存储区</p>
+</li>
+<li>
+<p><strong>定义类中静态成员函数</strong></p>
+<p>与静态数据成员类似</p>
+</li>
+</ol>
+<p>静态全局变量和静态局部变量都在静态存储区，直到程序结束才回收内存</p>
+</li>
+<li>
+<h4 id="说说全局变量和全局静态变量的区别">说说全局变量和全局静态变量的区别？</h4>
+<p>声明在函数体外的变量被编译器视为全局变量，其在整个文件的任何地方都可以使用它，可以在其他源文件中使用<strong>extern</strong>关键字引入；全局变量的声明放在头文件，利用 extern 声明，定义放在 cpp 文件，如果定义与声明均放在头文件，其他文件引入头文件时会造成重复定义</p>
+<p>全局静态变量只初始化一次，且只能在<strong>本源文件</strong>中使用</p>
+</li>
+<li>
+<h4 id="c中指针占多少字节">C++中指针占多少字节？</h4>
+<p>指针存储的就是地址，因此在 32 位系统中，指针占用 4 字节；在 64 位系统中，指针占用 8 字节</p>
+</li>
+<li>
+<h4 id="说说静态变量什么时候初始化">说说静态变量什么时候初始化？</h4>
+<p>对于 C 语言的全局和静态变量，初始化发生在任何代码执行之前，属于编译期初始化</p>
+<p>而 C++标准规定，全局或静态对象当且仅当对象首次用到时才进行构造</p>
+</li>
+<li>
+<h4 id="说说内联函数和宏函数的区别">说说内联函数和宏函数的区别</h4>
+<ol>
+<li>
+<p><strong>宏定义不是函数</strong>，但是使用起来像函数。预处理器用复制宏代码的方式代替函数的调用，省去了函数压栈退栈过程，提高了效率；<strong>而内联函数本质上是一个函数</strong>，内联函数一般用于函数体的代码比较简单的函数，不能包含复杂的控制语句，while、switch，并且内联函数本身不能直接调用自身。</p>
+</li>
+<li>
+<p><strong>宏函数</strong>是在<strong>预编译</strong>的时候把所有的宏名用宏体来替换，简单的说就是<strong>字符串替换</strong> ；<strong>而内联函数</strong>则是在<strong>编译</strong>的时候进行<strong>代码插入</strong>，编译器会在每处调用内联函数的地方直接把内联函数的内容展开，这样可以省去函数的调用的开销，提高效率</p>
+</li>
+<li>
+<p><strong>宏定义</strong>是没有类型检查的，无论对还是错都是直接替换；<strong>而内联函数</strong>在编译的时候会进行类型的检查，内联函数满足函数的性质，比如有返回值、参数列表等</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="说说内联函数和函数的区别内联函数的作用">说说内联函数和函数的区别，内联函数的作用</h4>
+<ol>
+<li>
+<p>内联函数比普通函数多了关键字<strong>inline</strong></p>
+</li>
+<li>
+<p>内联函数避免了函数调用的<strong>开销</strong>；普通函数有调用的开销</p>
+</li>
+<li>
+<p>普通函数在被调用的时候，需要<strong>寻址（函数入口地址）</strong>；内联函数不需要寻址</p>
+</li>
+<li>
+<p>内联函数有一定的限制，内联函数体要求<strong>代码简单</strong>，不能包含复杂的结构控制语句；</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-const-和-define-的区别">说说 const 和 define 的区别</h4>
+<p>const 用于定义常量；而 define 用于定义宏，而宏也可以用于定义常量。都用于常量定义时，它们的区别有：</p>
+<ol>
+<li>
+<p>const 生效于编译的阶段；define 生效于预处理阶段</p>
+</li>
+<li>
+<p>const 定义的常量，在 C 语言中是存储在内存中、需要额外的内存空间的；define 定义的常量，运行时是直接的操作数，并不会存放在内存中</p>
+</li>
+<li>
+<p>const 定义的常量是带类型的；define 定义的常量不带类型。因此 define 定义的常量不利于类型检查</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="简述-c有几种传值方式之间的区别是什么">简述 C++有几种传值方式，之间的区别是什么？</h4>
+<p>传参方式有这三种：<strong>值传递、引用传递、指针传递</strong></p>
+<ol>
+<li>
+<p>值传递：形参即使在函数体内值发生变化，也不会影响实参的值；</p>
+</li>
+<li>
+<p>引用传递：形参在函数体内值发生变化，会影响实参的值；</p>
+</li>
+<li>
+<p>指针传递：在指针指向没有发生改变的前提下，形参在函数体内值发生变化，会影响实参的值</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="说说-c的抽象类与接口">说说 C++的抽象类与接口？</h4>
+<p><strong>抽象类</strong>：</p>
+<ol>
+<li>C++中没有抽象类的概念，通过纯虚函数实现抽象类</li>
+<li>一个 C++类中<strong>存在纯虚函数</strong>就成为了抽象类</li>
+<li>抽象类只能用作父亲<strong>被继承</strong></li>
+<li>子类必须<strong>实现纯虚函数</strong>的具体功能，如果子类<strong>没有实现纯虚函数</strong>，则<strong>子类成为抽象类</strong></li>
+</ol>
+<p><strong>接口</strong>：</p>
+<ol>
+<li>类中<strong>没有</strong>定义任何的<strong>成员变量</strong></li>
+<li>所有的<strong>成员函数都是公有的</strong></li>
+<li>所有的<strong>成员函数都是纯虚函数</strong></li>
+<li>接口是一种<strong>特殊的抽象类</strong></li>
+</ol>
+</li>
+<li>
+<h4 id="介绍一下c智能指针">介绍一下C++智能指针？</h4>
+<p>C++引入了智能指针来更好地管理堆内存，智能指针使用了一种叫做RAII的技术对普通指针进行封装，RAII获取一个资源，一定在构造函数中获取，在析构函数中释放。</p>
+<p>C++里有四个指针：</p>
+<ul>
+<li>
+<p><strong>auto_ptr</strong></p>
+<p>auto_ptr没有考虑引用计数，因此一个指针对象只能由一个auto_ptr所拥有，拷贝赋值的时候会转移对象所有权，原auto_ptr不可用</p>
+</li>
+<li>
+<p><strong>unique_ptr</strong></p>
+<p>规定一个智能指针独占一块内存资源，当两个智能指针指向同一块内存时，编译报错</p>
+</li>
+<li>
+<p><strong>shared_ptr</strong></p>
+<p>维护了一个引用计数，使用拷贝构造函数和赋值拷贝函数时，引用计数加1，当对象被释放时，引用计数减1，当引用计数为0时，释放资源</p>
+</li>
+<li>
+<p><strong>weak_ptr</strong></p>
+<p>weak_ptr是弱引用，weak_ptr的构造和析构不会引起引用计数的增加或减少，用于解决shared_ptr对象互相引用时资源得不到释放的情况</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="c空类占多少字节类中含有函数占多少字节">C++空类占多少字节？类中含有函数占多少字节？</h4>
+<p>C++空类占1个字节，因为空类同样能被实例化，为了能够让对象实例能够互相区别，编译器会给空类隐含加上1字节占位，这样空类实例化后就会拥有独一无二的内存地址，但是当空类作为基类时，类的大小就优化为0了。</p>
+<p>类中含有普通函数，则不占用类的大小，如果是空类则仍为1字节；若类中含有虚函数，则在32位系统中，类占4字节，因为存在一个虚表指针vfptr</p>
+</li>
+<li>
+<h4 id="指针自增和引用自增有什么区别">指针自增和引用自增有什么区别？</h4>
+<p>简单的来说，引用自增是指引用对象本身值自增，指针自增是指指向下一段内存地址</p>
+</li>
+<li>
+<h4 id="c空类编译器会默认加上哪些成员函数">C++空类编译器会默认加上哪些成员函数？</h4>
+<p>构造函数、拷贝构造函数、赋值构造函数，析构函数、取址运算符和const取址运算符。</p>
+</li>
+<li></li>
+</ul>
+<h2 id="6-图形学相关">6. 图形学相关</h2>
+<ul>
+<li>
+<h4 id="如何判断一个点在多边形内部">如何判断一个点在多边形内部</h4>
+<ul>
+<li>
+<p><strong>面积和判别法</strong></p>
+<p>判断目标点与多边形每条边组成三角形面积和是否等于该多边形</p>
+</li>
+<li>
+<p><strong>夹角和判别法</strong></p>
+<p>判断目标点和所有边的夹角和是否为360度，为360度则在多边形内部</p>
+</li>
+<li>
+<p><strong>引射线法</strong></p>
+<p>从目标点出发引出一条射线，看这条射线和多边形所有边的交点数目，如果有奇数个交点，则点在多边形内部</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="如何判断一个多边形是凸多边形">如何判断一个多边形是凸多边形</h4>
+<ul>
+<li>
+<p><strong>角度法</strong></p>
+<p>判断每个顶点对应的内角是否小于180度</p>
+</li>
+<li>
+<p><strong>凸包法</strong></p>
+<p>计算的凸包的顶点数和原始多边形顶点数相同，则为凸多边形</p>
+</li>
+<li>
+<p><strong>定点凹凸性法</strong></p>
+<p>对顶点依次计算向量叉乘，如果出现符号相反则为凹多边形</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="讲讲叉乘法求多边形面积">讲讲叉乘法求多边形面积</h4>
+<p>固定一个顶点，依次与其他顶点连线，计算三角形面积为叉乘向量模除以2，依次将三角形面积相加即为多边形面积</p>
+</li>
+<li>
+<h4 id="什么是齐次坐标">什么是齐次坐标</h4>
+<p>齐次坐标就是将一个原本是n维的向量用一个n+1维向量来表示</p>
+</li>
+<li>
+<h4 id="齐次坐标能做什么它有什么好处">齐次坐标能做什么？它有什么好处？</h4>
+<p>三维笛卡尔坐标和矩阵的乘法只能实现三维坐标的缩放和旋转</p>
+<p>而齐次坐标可以实现三维坐标的旋转、缩放和平移，这种变换称为仿射变换，不属于线性变换</p>
+</li>
+<li>
+<h4 id="齐次坐标怎么去区分位置和方向">齐次坐标怎么去区分位置和方向？</h4>
+<p>（x, y, z, 1）表示一个点；（x, y, z, 0）表示一个向量，这样子表示在坐标转换中很方便，向量没有位置的概念而点有位置的概念</p>
+</li>
+<li>
+<h4 id="如何判断射线与球体相交">如何判断射线与球体相交？</h4>
+<ol>
+<li>射线起点在球内则相交</li>
+<li>计算球心到射线的距离，小于球体半径则相交</li>
+</ol>
+</li>
+<li>
+<h4 id="说一下gpu渲染管线">说一下GPU渲染管线</h4>
+<p>顶点数据-&gt;顶点着色器-&gt;图元装配-&gt;(曲面细分着色器)-&gt;几何着色器(可选)-&gt;光栅化-&gt;片段着色器-&gt;测试与混合</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/pipeline.png" data-thumbnail="https://img.gujin.store/img/pipeline.png" data-sub-html="<h2>img</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/pipeline.png"
+      data-srcset="https://img.gujin.store/img/pipeline.png, https://img.gujin.store/img/pipeline.png 1.5x, https://img.gujin.store/img/pipeline.png 2x"
+      data-sizes="auto"
+      alt="img"
+      title="img"/>
+  </a></p>
+</li>
+<li>
+<h4 id="ndc是什么">NDC是什么？</h4>
+<p>标准化设备坐标，[-1, 1]</p>
+</li>
+<li>
+<h4 id="顶点着色器的作用">顶点着色器的作用</h4>
+<p>在顶点着色器中声明所有输入的顶点属性，对其进行处理，输出gl_Position，同时可以指定顶点大小等参数，或者输出其他变量供后面片段着色器使用</p>
+</li>
+<li>
+<h4 id="片元着色器的作用">片元着色器的作用</h4>
+<p>对片元进行控制，如计算片元最后的颜色输出，丢弃片元等</p>
+</li>
+<li>
+<h4 id="片元是什么和像素有什么不同">片元是什么？和像素有什么不同？</h4>
+<p>片元包含了<strong>颜色，深度和纹理数据</strong>，比像素多了许多信息</p>
+</li>
+<li>
+<h4 id="phone模型有哪些光照分量说一下它们的作用是什么">Phone模型有哪些光照分量？说一下它们的作用是什么？</h4>
+<ul>
+<li>
+<p>环境光照</p>
+<p>模拟环境光，永远给物体一些颜色</p>
+</li>
+<li>
+<p>漫反射光照</p>
+<p>模拟光源对物体的方向性影像，物体某一部分越对着光源则越亮</p>
+</li>
+<li>
+<p>镜面光照</p>
+<p>模拟有光泽物体上出现的亮点</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="伽马校正是什么为什么要有伽马校正">伽马校正是什么？为什么要有伽马校正？</h4>
+<p>早期的CRT显示器存在非线性输出问题，简单来说给定一个0.5的输入，显示器输出并不是0.5，而是约等于0.218，输入与输出之间存在一个指数大概为2.2的幂次关系，为了能够得到正确的输出，需要对输入进行补偿，方法就是对输入进行一次指数为1/2.2的幂次运算，这个补偿过程就是伽马校正。</p>
+<p>同时，伽马校正还可以改善图像的输出质量。</p>
+</li>
+<li>
+<h4 id="编写shader时有哪些注意优化的点">编写shader时，有哪些注意优化的点？</h4>
+<p>注意数据传输，特别是CPU端到GPU端的传输，注意有些可能带来额外开销的指令，如discard</p>
+</li>
+<li>
+<h4 id="如何选择mipmap使用哪一层">如何选择mipmap使用哪一层？</h4>
+<p>计算一个像素与其所覆盖的纹理区域的面积比例进行选定</p>
+</li>
+<li>
+<h4 id="了解哪些抗锯齿方法">了解哪些抗锯齿方法？</h4>
+<ul>
+<li>超级采样抗锯齿（SSAA）</li>
+<li>多重采样抗锯齿（MSAA）</li>
+<li>可编程过滤抗锯齿（CFAA）</li>
+</ul>
+</li>
+<li>
+<h4 id="如何理解opengl-context">如何理解OpenGL Context？</h4>
+<p>OpenGL的Context记录了OpenGL渲染所需要的所有信息们可以理解为一个巨大的结构体，比如记录了当前绘制使用的颜色，使用哪一块buffer进行绘制，绘制的参数等等。</p>
+<p>OpenGL的绘制命令都是在当前的Context上，Current Context是一个线程私有的变量。</p>
+</li>
+<li>
+<h4 id="什么是法线矩阵有什么用">什么是法线矩阵，有什么用？</h4>
+<p><strong>法线矩阵</strong>被定义为「模型矩阵左上角3x3部分的逆矩阵的转置矩阵」</p>
+<p>如果模型矩阵执行了不等比缩放，顶点改变会导致法向量不再垂直于表面，这样在后面应用法向量进行光照计算时，结果会出问题，因此需要利用法线矩阵对其进行修复。</p>
+</li>
+<li>
+<h4 id="阴影图如何实现">阴影图如何实现？</h4>
+<p>先将顶点变换到光源空间，生成深度图，然后渲染时将在视点空间内的点逐个变换到光源空间与深度图进行比较。</p>
+</li>
+<li>
+<h4 id="关于深度测试有什么优化">关于深度测试，有什么优化？</h4>
+<p>在fs之前进行提前深度测试，但是这么做无法修改片段深度</p>
+</li>
+<li></li>
+</ul>
+<h2 id="7-前端求职">7. 前端求职</h2>
+<h3 id="71-html">7.1. Html</h3>
+<h3 id="72-css">7.2. CSS</h3>
+<ul>
+<li>
+<h4 id="清除浮动">清除浮动</h4>
+<p>清除浮动其实叫做闭合浮动更合适，因为是把浮动的元素圈起来，让父元素闭合出口和入口不让他们出来影响其他的元素</p>
+<p>对于有些情况，我们希望父元素不要指定高度，让子元素自动撑开父元素。</p>
+<p>但是如果不指定父元素高度，子元素浮动以后，因为脱离标准流，父元素高度则会变为 0，这不是我们希望的情况。</p>
+<p>清除浮动主要是利用 <code>clear:both</code>属性来做的</p>
+<ol>
+<li>
+<p><strong>额外标签法</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">1.
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;clear:both&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">2. .clear { clear:both }
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;clear&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">3..clear{ clear:both }
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">br</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;clear&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--也可以使用br等别的块级元素来清除浮动--&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>overflow</strong></p>
+<p>给父级元素添加 overflow 样式方法</p>
+<p><code>overflow: hidden</code></p>
+</li>
+<li>
+<p><strong>父级伪元素法</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">clear</span><span class="p">:</span> <span class="kc">both</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">visibility</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="err">*</span><span class="n">zoom</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>父级添加双伪元素</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">before</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">table</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">clear</span><span class="p">:</span> <span class="kc">both</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">clearfix</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="err">*</span><span class="n">zoom</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+</li>
+</ul>
+<p>-</p>
+<h3 id="73-js">7.3. JS</h3>
+<ul>
+<li>
+<h4 id="js-数据类型区别">JS 数据类型，区别</h4>
+<p><strong>基本数据类型</strong></p>
+<p>Number，String，Boolean，null，undefined，symbol，bigint（后两个为 ES6 新增）</p>
+<p><strong>引用数据类型</strong></p>
+<p>object，function（<strong>proto</strong> Function.prototype）</p>
+<p>object：普通对象，数组对象，正则对象，日期对象，Math 数学函数对象</p>
+<p><strong>区别</strong></p>
+<ol>
+<li>
+<p>基本数据类型是直接存储在栈中的简单数据段，占据空间小、大小固定</p>
+</li>
+<li>
+<p>引用数据类型是存储在堆内存中，占据空间大、大小不固定</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="讲讲-letconstvar-的区别">讲讲 let，const，var 的区别</h4>
+<p><strong>var</strong> ——ES5 变量声明方式</p>
+<ol>
+<li>在变量未赋值时，变量 undefined（为使用声明变量时也为 undefined）</li>
+<li>作用域——var 的作用域为方法作用域；只要在方法内定义了，整个方法内的定义变量后的代码都可以使用</li>
+</ol>
+<p><strong>let</strong>——ES6 变量声明方式</p>
+<ol>
+<li>在变量为声明前直接使用会报错</li>
+<li>作用域——let 为块作用域——通常 let 比 var 范围要小</li>
+<li>let 禁止重复声明变量，否则会报错；var 可以重复声明</li>
+</ol>
+<p><strong>const</strong>——ES6 变量声明方式</p>
+<ol>
+<li>
+<p>const 为常量声明方式；声明变量时必须初始化，在后面出现的代码中不能再修改该常量的值</p>
+</li>
+<li>
+<p>const 实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="objectassign-的理解">Object.assign 的理解</h4>
+<p>作用：Object.assign 可以实现对象的合并。</p>
+<p>语法：Object.assign(target, &hellip;sources)</p>
+<p>理解：</p>
+<ol>
+<li>
+<p>Object.assign 会将 source 里面的可枚举属性复制到 target，如果和 target 的已有属性重名，则会覆盖。后续的 source 会覆盖前面的 source 的同名属性</p>
+</li>
+<li>
+<p>Object.assign 复制的是属性值，如果属性值是一个引用类型，那么复制的其实是引用地址，就会存在引用共享的问题。即 Object.assign 为<strong>浅拷贝</strong></p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="map-和-foreach-的区别">map 和 forEach 的区别</h4>
+<p>相同点：</p>
+<ol>
+<li>都是循环遍历数组中的每一项</li>
+<li>每次执行匿名函数都支持三个参数，参数分别为 item（当前每一项），index（索引值），arr（原数组）</li>
+<li>匿名函数中的 this 都是指向 window</li>
+<li>只能遍历数组</li>
+</ol>
+<p>不同点：</p>
+<ol>
+<li>
+<p>map()会分配内存空间存储新数组并返回，forEach()不会返回数据。</p>
+</li>
+<li>
+<p>forEach()允许 callback 更改原始数组的元素。map()返回新的数组。</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="foreach-如何跳出循环">forEach 如何跳出循环？</h4>
+<p>在回调函数中使用<strong>thorw Error</strong>抛出异常，在外部使用<strong>try catch</strong>捕获即可</p>
+</li>
+<li>
+<h4 id="for-of-可以遍历哪些对象">for of 可以遍历哪些对象</h4>
+<p>for..of..: 它是 es6 新增的一个遍历方法，但<strong>只限于迭代器(iterator)</strong>, 所以普通的对象用 for..of 遍历
+是会报错的。</p>
+<p>可迭代的对象：包括<strong>Array, Map, Set, String, TypedArray, arguments</strong>对象等等</p>
+<p>可以中断循环</p>
+</li>
+<li>
+<h4 id="讲讲-for-in-的作用">讲讲 for in 的作用</h4>
+<p>遍历对象自身的和继承的<strong>可枚举的属性</strong>，也就是说会包括那些原型链上的属性。</p>
+<p>如果想要仅迭代自身的属性，那么在使用 <code>for...in</code> 的同时还需要配合 <code>getOwnPropertyNames()</code> 或 <code>hasOwnProperty()</code>。</p>
+<p>可以中断循环</p>
+</li>
+<li>
+<h4 id="讲讲对-javascript-中-arguments-的理解">讲讲对 javascript 中 arguments 的理解？</h4>
+<p>在 js 中，我们在调用有参数的函数时，当往这个调用的有参函数传参时，js 会把所传的参数全部存到一个叫 arguments 的对象里面。它是一个<strong>类数组数据</strong></p>
+</li>
+<li>
+<h4 id="promise-和-async-await-区别">promise 和 async await 区别</h4>
+<p><strong>Promise</strong> 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大，简单</p>
+<p><strong>async await</strong>也是异步编程的一种解决方案，他遵循的是 Generator 函数的语法糖，他拥有内置执行器，不需要额外的调用直接会自动执行并输出结果，它返回的是一个 Promise 对象</p>
+<p><strong>区别</strong>：</p>
+<ol>
+<li>
+<p>Promise 的出现解决了传统 callback 函数导致的“地域回调”问题，但它的语法导致了它向纵向发展行成了一个回调链，遇到复杂的业务场景，这样的语法显然也是不美观的。而 async await 代码看起来会简洁些，使得异步代码看起来像同步代码，await 的本质是可以提供等同于”同步效果“的等待异步返回能力的语法糖，只有这一句代码执行完，才会执行下一句</p>
+</li>
+<li>
+<p>async await 与 Promise 一样，是非阻塞的</p>
+</li>
+<li>
+<p>async await 是基于 Promise 实现的，可以说是改良版的 Promise，它不能用于普通的回调函数</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="js-文件加载中-defer-和-async-区别">js 文件加载中 defer 和 async 区别</h4>
+<p>区别主要在于一个执行时间,defer 会在文档解析完之后执行,并且多个 defer 会按照顺序执行；</p>
+<p>而 async 则是在 js 加载好之后就会执行,并且多个 async,哪个加载好就执行哪个</p>
+<p>在没有 defer 或者 async 的情况下：会立即执行脚本,所以通常建议把 script 放在 body 最后；</p>
+<p>async：有 async 的话,加载和渲染后续文档元素的过程将和 script.js 的<strong>加载与执行</strong>并行进行（异步）。
+但是多个 js 文件的加载顺序不会按照书写顺序进行</p>
+<p>derer：有 derer 的话,加载后续文档元素的过程将和 script.js 的<strong>加载</strong>并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成,并且多个 defer 会按照顺序进行加载</p>
+</li>
+<li>
+<h4 id="讲一讲-js-的事件循环机制event-loop">讲一讲 JS 的事件循环机制？(Event Loop)</h4>
+<ol>
+<li>
+<p>所有任务都在主线程上执行，形成一个执行栈(Execution Context Stack)</p>
+</li>
+<li>
+<p>在主线程之外还存在一个任务队列(Task Queen),系统把异步任务放到任务队列中，然后主线程继续执行后续的任务</p>
+</li>
+<li>
+<p>一旦执行栈中所有的任务执行完毕，系统就会读取任务队列。如果这时异步任务已结束等待状态，就会从任务队列进入执行栈，恢复执行</p>
+</li>
+<li>
+<p>主线程不断重复上面的第三步</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="讲讲你对宏任务和微任务的理解">讲讲你对宏任务和微任务的理解？</h4>
+<p>在 JS 事件循环机制中，任务队列内的任务分为两种类型：</p>
+<p><strong>宏任务</strong>：宏任务是指 Event Loop 在<strong>每个阶段</strong>执行的任务</p>
+<p><strong>微任务</strong>：微任务是指 Event Loop 在<strong>每个阶段之间</strong>执行的任务</p>
+<p>微任务优先于宏任务执行</p>
+<p>举个例子：</p>
+<p>宏任务队列包含任务: A1, A2 , A3</p>
+<p>微任务队列包含任务: B1, B2 , B3</p>
+<p>执行顺序为，首先执行宏任务队列开头的任务，也就是 A1 任务，执行完毕后，在执行微任务队列里的所有任务，也就是依次执行 B1, B2 , B3，执行完后清空微任务队中的任务，接着执行宏任务中的第二个任务 A2，依次循环</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220501233137147.png" data-thumbnail="https://img.gujin.store/img/image-20220501233137147.png" data-sub-html="<h2>image-20220501233137147</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220501233137147.png"
+      data-srcset="https://img.gujin.store/img/image-20220501233137147.png, https://img.gujin.store/img/image-20220501233137147.png 1.5x, https://img.gujin.store/img/image-20220501233137147.png 2x"
+      data-sizes="auto"
+      alt="image-20220501233137147"
+      title="image-20220501233137147"/>
+  </a></p>
+<p>宏任务包括：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">script<span class="o">(</span>主程序代码<span class="o">)</span>,setTimeout, setInterval, setImmediate, I/O, UI rendering
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>微任务包括：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">process.nextTick, Promises, Object.observe, MutationObserver
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<h4 id="call-appy-bind-的作用和区别">call appy bind 的作用和区别？</h4>
+<p>都可以改变函数内部的 this 指向</p>
+<p><strong>区别</strong>：</p>
+<ol>
+<li>
+<p>call 和 apply 会调用函数，并且改变函数内部 this 指向</p>
+</li>
+<li>
+<p>call 和 apply 传递的参数不一样，call 传递参数 arg1,arg2&hellip;形式 apply 必须数组形式[arg]</p>
+</li>
+<li>
+<p>bind 不会马上调用函数，可以改变函数内部 this 指向</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="this-指向普通函数箭头函数">this 指向（普通函数、箭头函数）</h4>
+<ol>
+<li>
+<p><strong>普通函数中的 this</strong></p>
+<p>谁调用了函数或者方法，那么这个函数或者对象中的 this 就指向谁</p>
+</li>
+<li>
+<p><strong>匿名函数中的 this</strong></p>
+<p>匿名函数的执行具有全局性，所以匿名函数中的 this 指向是 window，而不是调用该匿名函数的对象</p>
+</li>
+<li>
+<p><strong>箭头函数中的 this</strong></p>
+<ul>
+<li>
+<p>箭头函数中的 this 是在函数定义的时候就确定下来的，而不是在函数调用的时候确定的；</p>
+</li>
+<li>
+<p>箭头函数中的 this 指向父级作用域的执行上下文；</p>
+</li>
+<li>
+<p>箭头函数无法使用 apply、call 和 bind 方法改变 this 指向，因为其 this 值在函数定义的时候就被确定下来</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="一个-function-new-会发生什么">一个 function new 会发生什么？</h4>
+<ol>
+<li>创建空对象；
+var obj = {};</li>
+<li>设置新对象的 constructor 属性为构造函数的名称，设置新对象的<strong>proto</strong>属性指向构造函数的 prototype 对象；
+obj.<strong>proto</strong> = ClassA.prototype;
+扩展了新对象的原型链。</li>
+<li>使用新对象调用函数，函数中的 this 被指向新实例对象：
+classA.call(obj);　　//{}.构造函数();</li>
+<li>返回 this 指针。当存在显示的返回时，返回 return 后面的内容。新建的空对象作废</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">ttt</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;jjj&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;yy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">ttt</span><span class="p">();</span> <span class="c1">// this指向window
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ttt</span><span class="p">();</span> <span class="c1">// this指向obj{}对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span> <span class="c1">// 返回return内容, 新对象作废
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<h4 id="es6-中-5-种遍历对象属性的方法">ES6 中 5 种遍历对象属性的方法</h4>
+<p><strong>for-in——自身和继承的可枚举属性（除 Symbol）</strong></p>
+<p><strong>Object.keys()——自身非继承的可枚举属性（除 Symbol）</strong></p>
+<p><strong>Object.getOwnPropertyNames()——自身所有属性键名（包括不可枚举、除 Symbol）</strong></p>
+<p><strong>Object.getOwnPropertySymbols()——自身的所有 Symbol 属性的键名</strong></p>
+<p><strong>Reflect.ownKeys()——自身的所有键名</strong></p>
+</li>
+<li>
+<h4 id="es6-与-es5-继承的区别">ES6 与 ES5 继承的区别</h4>
+<p>ES6 中有类 class 的概念，类 class 的继承是通过 extends 来实现的，ES5 中是通过设置构造函数的 prototype 属性，来实现继承的</p>
+<p>ES6 与 ES5 中的继承有 2 个区别：</p>
+<ol>
+<li>
+<p>ES6 中子类会继承父类的属性</p>
+</li>
+<li>
+<p>super() 与 A.call(this) 是不同的，在继承原生构造函数的情况下，体现得很明显，ES6 中的子类实例可以继承原生构造函数实例的内部属性(super)，而在 ES5 中做不到</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="constructor-的理解">constructor 的理解</h4>
+<ol>
+<li>
+<p>创建的每个函数都有一个 prototype（原型）对象，这个属性是一个指针，指向一个对象</p>
+</li>
+<li>
+<p>默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性是一个指向 prototype 属性所在函数的指针</p>
+</li>
+<li>
+<p>当调用构造函数创建一个新实例后，该实例的内部将包含一个指针（继承自构造函数的 prototype），指向构造函数的 prototype 原型对象</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="74-浏览器">7.4. 浏览器</h3>
+<ul>
+<li>
+<h4 id="cookie-sessionstorage-localstorage-区别">cookie sessionStorage localStorage 区别</h4>
+<p><strong>共同点</strong>：都是保存在浏览器端、且同源的</p>
+<p><strong>区别</strong>：</p>
+<ol>
+<li>
+<p>cookie 数据始终在同源的 http 请求中携带（即使不需要），即 cookie 在浏览器和服务器间来回传递，而 sessionStorage 和 localStorage 不会自动把数据发送给服务器，仅在本地保存。cookie 数据还有路径（path）的概念，可以限制 cookie 只属于某个路径下</p>
+</li>
+<li>
+<p>存储大小限制也不同，cookie 数据不能超过 4K，同时因为每次 http 请求都会携带 cookie、所以 cookie 只适合保存很小的数据，如会话标识。sessionStorage 和 localStorage 虽然也有存储大小的限制，但比 cookie 大得多，可以达到 5M 或更大</p>
+</li>
+<li>
+<p>数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭之前有效；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie：只在设置的 cookie 过期时间之前有效，即使窗口关闭或浏览器关闭</p>
+</li>
+<li>
+<p>作用域不同，sessionStorage 不在不同的浏览器窗口中共享，即使是同一个页面；localstorage 在所有同源窗口中都是共享的；cookie 也是在所有同源窗口中都是共享的</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="如何写一个会过期的-localstorage说说想法">如何写一个会过期的 localStorage，说说想法</h4>
+<p><strong>惰性删除 和 定时删除</strong></p>
+<ol>
+<li>
+<p>惰性删除是指，某个键值过期后，该键值不会被马上删除，而是等到下次被使用的时候，才会被检查到过期，此时才能得到删除</p>
+</li>
+<li>
+<p>定时删除是指，每隔一段时间执行一次删除操作，并通过限制删除操作执行的次数和频率，来减少删除操作对 CPU 的长期占用。另一方面定时删除也有效的减少了因惰性删除带来的对 localStorage 空间的浪费</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="localstorage-能跨域吗">localStorage 能跨域吗？</h4>
+<p>不能</p>
+</li>
+<li>
+<h4 id="localstorage-有哪些限制">localstorage 有哪些限制？</h4>
+<ol>
+<li>
+<p>浏览器的版本不统一，并且在 IE8 以上的 IE 版本才支持 localStorage 这个属性</p>
+</li>
+<li>
+<p>目前所有的浏览器中都会把 localStorage 的值类型限定为 string 类型，这个在对我们日常比较常见的 JSON 对象类型需要一些转换</p>
+</li>
+<li>
+<p>localStorage 在浏览器的隐私模式下面是不可读取的</p>
+</li>
+<li>
+<p>localStorage 本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡</p>
+</li>
+<li>
+<p>localStorage 不能被爬虫抓取到</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="浏览器输入-url-发生了什么">浏览器输入 URL 发生了什么？</h4>
+<ol>
+<li>
+<p>URL 解析</p>
+</li>
+<li>
+<p>DNS 查询</p>
+</li>
+<li>
+<p>TCP 连接</p>
+</li>
+<li>
+<p>处理请求</p>
+</li>
+<li>
+<p>接受响应</p>
+</li>
+<li>
+<p>渲染页面</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="浏览器如何渲染页面的">浏览器如何渲染页面的？</h4>
+<ol>
+<li>
+<p>HTML 被 HTML 解析器解析成 DOM 树；</p>
+</li>
+<li>
+<p>CSS 被 CSS 解析器解析成 CSSOM 树；</p>
+</li>
+<li>
+<p>结合 DOM 树和 CSSOM 树，生成一棵渲染树(Render Tree)，这一过程称为 Attachment；</p>
+</li>
+<li>
+<p>生成布局(flow)，浏览器在屏幕上“画”出渲染树中的所有节点</p>
+</li>
+<li>
+<p>将布局绘制(paint)在屏幕上，显示出整个页面。</p>
+<p>不同的浏览器内核不同，所以渲染过程不太一样</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="重绘重排的区别">重绘、重排的区别？</h4>
+<ol>
+<li>
+<p>重排(Reflow)：当渲染树的一部分必须更新并且节点的尺寸发生了变化，浏览器会使渲染树中受到影响的部分失效，并重新构造渲染树。</p>
+</li>
+<li>
+<p>重绘(Repaint)：是在一个元素的外观被改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现新的外观。比如改变某个元素的背景色、文字颜色、边框颜色等等</p>
+<p><strong>区别</strong>：<strong>重绘不一定需要重排（比如颜色的改变），重排必然导致重绘（比如改变网页位置）</strong></p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="引发重排的操作有哪些">引发重排的操作有哪些？</h4>
+<ol>
+<li>
+<p>添加、删除可见的 dom</p>
+</li>
+<li>
+<p>元素的位置改变</p>
+</li>
+<li>
+<p>元素的尺寸改变(外边距、内边距、边框厚度、宽高、等几何属性)</p>
+</li>
+<li>
+<p>页面渲染初始化</p>
+</li>
+<li>
+<p>浏览器窗口尺寸改变</p>
+</li>
+<li>
+<p>获取某些属性。当获取一些属性时，浏览器为取得正确的值也会触发重排,它会导致队列刷新，这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="如何避免重绘和重排">如何避免重绘和重排？</h4>
+<ol>
+<li>
+<p>不要一条一条地修改 DOM 的样式。可以先定义好 css 的 class，然后修改 DOM 的 className</p>
+</li>
+<li>
+<p>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量</p>
+</li>
+<li>
+<p>为动画的 HTML 元件使用 fixed 或 absolute 的 position，那么修改他们的 CSS 是不会 reflow 的</p>
+</li>
+<li>
+<p>千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局</p>
+</li>
+<li>
+<p>不要在布局信息改变的时候做查询（会导致渲染队列强制刷新）</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="浏览器垃圾回收机制">浏览器垃圾回收机制</h4>
+<p>浏览器的 Javascript 具有自动垃圾回收机制，<strong>垃圾收集器会定期（周期性）找出那些不再继续使用的变量，然后释放其内存</strong>。但是这个过程不是实时的，因为其开销比较大并且 GC 时停止响应其他操作，所以垃圾回收器会按照固定的时间间隔周期性的执行</p>
+<p>通常情况下有两种实现方式：<strong>标记清除</strong>和<strong>引用计数</strong>。引用计数不太常用，标记清除较为常用</p>
+<ol>
+<li>
+<p><strong>标记清除</strong></p>
+<p>js 中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”，</p>
+</li>
+<li>
+<p><strong>引用计数</strong></p>
+<p>引用计数的含义是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数就是 1。如果同一个值又被赋给另一个变量，则该值的引用次数加 1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减 1。当这个值的引用次数变成 0 时，则说明没有办法再访问这个值了，因而就可以将其占用的内存空间回收回来</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="token-能放在-cookie-中吗">token 能放在 cookie 中吗？</h4>
+<p>能</p>
+</li>
+<li>
+<h4 id="cookie-是什么">cookie 是什么？</h4>
+<ol>
+<li>
+<p>cookie 是存储于访问者计算机中的变量。每当一台计算机通过浏览器来访问某个页面时，那么就可以通过 JavaScript 来创建和读取 cookie</p>
+</li>
+<li>
+<p>实际上 cookie 是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个 cookie 可用。因此，cookie 可以跨越一个域名下的多个网页，但不能跨越多个域名使用</p>
+</li>
+<li>
+<p><strong>不同浏览器 cookie 不共享</strong>，不同浏览器对 cookie 的实现也不一样。即保存在一个浏览器中的 cookie 到另外一个浏览器是不能获取的</p>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="cookie-能做什么">cookie 能做什么？</h4>
+<ul>
+<li>
+<p>用户在第一次登录某个网站时，要输入用户名密码，如果觉得很麻烦，下次登录时不想输入了，那么就在第一次登录时将登录信息存放在 cookie 中。下次登录时我们就可以直接获取 cookie 中的用户名密码来进行登录。（<strong>自动登录</strong>）</p>
+<p>PS:虽然 浏览器将信息保存在 cookie 中是加密了，但是可能还是会造成不安全的信息泄露</p>
+</li>
+<li>
+<p>类似于购物车性质的功能，第一次用户将某些商品放入购物车了，但是临时有事，将电脑关闭了，下次再次进入此网站，我们可以通过读取 cookie 中的信息，恢复购物车中的物品。（<strong>购物车信息保存</strong>）</p>
+<p>PS：实际操作中，这种方法很少用了，基本上都是将这些信息存储在数据库中。然后通过查询数据库的信息来恢复购物车里的物品</p>
+</li>
+<li>
+<p>页面之间的传值。在实际开发中，我们往往会通过一个页面跳转到另外一个页面。后端服务器我们可以通过数据库，session 等来传递页面所需要的值。但是在浏览器端，我们可以将数据保存在 cookie 中，然后在另外页面再去获取 cookie 中的数据。（<strong>页面间传值</strong>）</p>
+<p>PS：这里要注意 cookie 的时效性，不然会造成获取 cookie 中数据的混乱。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="75-vue">7.5. Vue</h3>
+<h3 id="76-react">7.6. React</h3>
+<h3 id="77-其他">7.7. 其他</h3>
+<ul>
+<li>
+<ol start="4">
+<li></li>
+</ol>
+</li>
+<li></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-04-25&#32;15:51:06>更新于 2022-04-25&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/posts/2022-4-25-interview/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gujin.store/posts/2022-4-25-interview/" data-title="面经学习(持续更新)" data-hashtags="面经"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gujin.store/posts/2022-4-25-interview/" data-hashtag="面经"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gujin.store/posts/2022-4-25-interview/" data-title="面经学习(持续更新)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E9%9D%A2%E7%BB%8F/' class="post-tag">面经</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/2022-4-10-csslearn/" class="post-nav-item" rel="prev" title="Css学习笔记"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Css学习笔记</a>
+      <a href="/posts/2022-4-28-csnetwork/" class="post-nav-item" rel="next" title="计算机网络学习笔记">计算机网络学习笔记<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/alipay_qrcode.png"
+    data-srcset="/img/alipay_qrcode.png, /img/alipay_qrcode.png 1.5x, /img/alipay_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 支付宝"
+    title="Jin 支付宝"/><span data-animation>支付宝</span>
+          </div><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/wechat_donation_qrcode.png"
+    data-srcset="/img/wechat_donation_qrcode.png, /img/wechat_donation_qrcode.png 1.5x, /img/wechat_donation_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 微信"
+    title="Jin 微信"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://img.gujin.store/img/favicon.ico"target="_blank" rel="external nofollow noopener noreferrer">Jin</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">网站运行时间</span><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider">辽ICP备2021010117号</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/black/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"JinYiGao/blogtalks"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2019-12-18T16:15:22+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,139 @@
+# SolidWorks 2017 安装教程(附安装包资源)
+
+
+## · 软件介绍
+Solidworks是一款功能强大的三维机械设计软件系统，有功能强大、易学易用和技术创新三大特点，这使得SolidWorks 成为领先的、主流的三维CAD解决方案。自1995年问世以来，以其优异的性能、易用性和创新性，极大地提高了机械工程师的设计效率，在与同类软件的激烈竞争中已经确立其市场地位，成为三维机械设计软件的标准。
+
+## · 软件下载
+为了方便大家下载，博主已将全版本的SolidWorks完整安装文件整理至网盘，由于某些原因，分享网盘链接容易失效，到时候一篇篇博文的链接改过来太麻烦了。所以全版本链接统一放在公众号，如有需要的朋友微信搜索关注公众号: 【**呆呆外卖生活助手**】，并在后台回复关键词: 【**SW**】(建议复制)即可。
+
+(特别声明: 安装包获取方式有很多，这一步非必须，大家凭喜好关注即可！)
+
+![image-20211015221451291](https://img.gujin.store/img/image-20211015221451291.png)
+
+## · 安装教程
+
+1.鼠标右键解压到“SolidWorks2017”
+
+![img](https://img.gujin.store/img/v2-cec320e820500c9917ce21ab4e2adedd_720w.png)
+
+2.安装之前，**先断网**。打开【破解文件】文件夹，选中【SW.Activator_CHS】，鼠标右击选择“以管理员身份运行”
+
+![img](https://img.gujin.store/img/v2-23a7007d027ac8d355282e934c2d9617_720w.png)
+
+3.选择1.设置序列号，选择强制本地激活序列号，点击“接受序列号”
+
+![img](https://img.gujin.store/img/v2-160c1b059bc5c11b54a97946738fd1d4_720w.png)
+
+4.点击“是”
+
+![img](https://img.gujin.store/img/v2-8c6f04c895c9d053c28a4949df89dab6_720w.png)
+
+5.点击“确定”
+
+![img](https://img.gujin.store/img/v2-c7447767ba99cc0203cbc165ba4109da_720w.png)
+
+6.选择2.激活许可，点击“激活许可”
+
+![img](https://img.gujin.store/img/v2-532376fc7de377b7de34f1d684f58fc2_720w.png)
+
+![img](https://img.gujin.store/img/v2-2405716ce3751175bbb43765362f7595_720w.png)
+
+7.点击“是”
+
+![img](https://img.gujin.store/img/v2-83278a17337ebe53be1ad9a07aafd24f_720w.png)
+
+8.点击“是”
+
+![img](https://img.gujin.store/img/v2-221ddfbc5ad13b4f7992d7e02acf4dcf_720w.png)
+
+9.点击“OK”
+
+![img](https://img.gujin.store/img/v2-eee07b831854e030fc4703b87fe0582e_720w.png)
+
+10.双击打开【Solidworks2017】文件夹，选中【setup】，鼠标右击选择“以管理员身份运行”
+
+![img](https://img.gujin.store/img/v2-c2a5b98908d76fa121f112f78024ec53_720w.png)
+
+11.点击“确定”
+
+![img](https://img.gujin.store/img/v2-3d31574d5b646045d160ada364377b91_720w.png)
+
+12.选择单机安装，点击“下一步”
+
+![img](https://img.gujin.store/img/v2-e6630d7397649299b3c073e48050382c_720w.png)
+
+13.点击“下一步”
+
+![img](https://img.gujin.store/img/v2-15b2a80a81db721700712603289e7705_720w.png)
+
+14.点击“取消”
+
+![img](https://img.gujin.store/img/v2-e54eeebaf66dd784361f30c4a12a6a4e_720w.png)
+
+15.更改软件安装路径，建议安装到C盘以外的磁盘，勾选我接受条款，点击“现在安装”
+
+![img](https://img.gujin.store/img/v2-bc9a585880c7203fec8578caaab7faca_720w.png)
+
+16.软件正在安装，请耐心等待
+
+![img](https://img.gujin.store/img/v2-c17172291efd7eabae98909284604605_720w.png)
+
+17.点击“完成”
+
+![img](https://img.gujin.store/img/v2-921ce8f806631a21efa8cba3c513bf70_720w.png)
+
+18.选中【SW.Activator_CHS】，鼠标右击选择“以管理员身份运行”
+
+![img](https://img.gujin.store/img/v2-23a7007d027ac8d355282e934c2d9617_720w.png)
+
+19.选择3.复制装载器，点击“复制装载”
+
+![img](https://img.gujin.store/img/v2-25dcb662442fca2df043254fe3e7420a_720w.png)
+
+20.点击“是”
+
+![img](https://img.gujin.store/img/v2-4b0cf0db6d726e961dcaa0177a63576c_720w.png)
+
+21.点击“OK”
+
+![img](https://img.gujin.store/img/v2-f62be6906ee0975c4a38becda2cdd385_720w.png)
+
+22.选择4.X系列产品激活，点击“激活Xpress产品”
+
+![img](https://img.gujin.store/img/v2-e80e9dbc80f5c0ed836b23552ae3ce56_720w.png)
+
+23.点击“是”
+
+![img](https://img.gujin.store/img/v2-8204f2dc7b6b8f63a8945bcc0cc7fb52_720w.png)
+
+24.点击“OK”
+
+![img](https://img.gujin.store/img/v2-7ca446e5cf62ab6ba551ee92236424d4_720w.png)
+
+25.双击图标运行软件
+
+![img](https://img.gujin.store/img/v2-8dc9cba364c889b87d96f82f22193f23_720w.png)
+
+26.点击“接受”
+
+![img](https://img.gujin.store/img/v2-557d7c33a0fde2368b1a8336573e3a8f_720w.png)
+
+27.安装结束
+
+
+
+
+> 声明: 
+>
+> 1. 本篇文章所提供的下载文件均在网络收集，不可用于商业用途，请于下载后24小时之内删除，如需体验更多乐趣，请支持正版！
+>
+> 2. 欢迎关注公众号：【**呆呆外卖生活助手**】 ，ID:『DDZhuSh』，获取更多生活帮助！
+>
+> 3. 更多实用软件请  [点我查看](/tools)
+
+---
+
+> 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
+> URL: https://gujin.store/tools/package/sw-2017/  
+

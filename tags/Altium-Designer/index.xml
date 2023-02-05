@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Altium Designer on 小小呆呆没有脑袋的博客</title>
-    <link>https://www.gujin.store/tags/Altium-Designer/</link>
-    <description>Recent content in Altium Designer on 小小呆呆没有脑袋的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Dec 2021 17:03:33 +0800</lastBuildDate><atom:link href="https://www.gujin.store/tags/Altium-Designer/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Altium Designer 常用快捷键整理(持续更新~~)</title>
-      <link>https://www.gujin.store/post/2021-12-15-ad-learn-note1/</link>
-      <pubDate>Wed, 15 Dec 2021 17:03:33 +0800</pubDate>
-      
-      <guid>https://www.gujin.store/post/2021-12-15-ad-learn-note1/</guid>
-      <description>因为学习研究的需要，身为一名测绘人，干起了电气的事，自学了一段时间的PCB设计，主要用的Altium Designer这款软件，下面记录了一些设计PCB过程中十分有用的功能快捷键，以及一些设计小技巧~~~</description>
-    </item>
-    
-  </channel>
+    <title>Altium Designer - 标签 - Jin&#39;s Blog</title>
+    <link>https://gujin.store/tags/altium-designer/</link>
+    <description>Altium Designer - 标签 - Jin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Wed, 15 Dec 2021 17:03:33 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/tags/altium-designer/" rel="self" type="application/rss+xml" /><item>
+  <title>Altium Designer 常用快捷键整理(持续更新~~)</title>
+  <link>https://gujin.store/posts/2021-12-15-ad-learn-note1/</link>
+  <pubDate>Wed, 15 Dec 2021 17:03:33 &#43;0800</pubDate>
+  <author>Jin</author>
+  <guid>https://gujin.store/posts/2021-12-15-ad-learn-note1/</guid>
+  <description><![CDATA[因为学习研究的需要，身为一名测绘人，干起了电气的事，自学了一段时间的PCB设计，主要用的Altium Designer这款软件，下面记录了一些设计PCB过程中十分有用的功能快捷键，以及一些设计小技巧~~~]]></description>
+</item>
+</channel>
 </rss>

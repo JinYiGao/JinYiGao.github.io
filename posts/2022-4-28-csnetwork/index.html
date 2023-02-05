@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机网络学习笔记 - Jin&#39;s Blog</title><meta name="author" content="Jin">
+<meta name="author-link" content="https://img.gujin.store/img/favicon.ico">
+<meta name="description" content="自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;" /><meta name="keywords" content='计算机网络,tcp/ip,udp' /><meta itemprop="name" content="计算机网络学习笔记">
+<meta itemprop="description" content="自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;"><meta itemprop="datePublished" content="2022-04-28T11:56:58+08:00" />
+<meta itemprop="dateModified" content="2022-04-28T11:56:58+08:00" />
+<meta itemprop="wordCount" content="6492"><meta itemprop="image" content="https://gujin.store/favicon.ico"/>
+<meta itemprop="keywords" content="计算机网络," /><meta property="og:title" content="计算机网络学习笔记" />
+<meta property="og:description" content="自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gujin.store/posts/2022-4-28-csnetwork/" /><meta property="og:image" content="https://gujin.store/favicon.ico"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-28T11:56:58+08:00" />
+<meta property="article:modified_time" content="2022-04-28T11:56:58+08:00" /><meta property="og:site_name" content="Jin&#39;s Blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gujin.store/favicon.ico"/>
+
+<meta name="twitter:title" content="计算机网络学习笔记"/>
+<meta name="twitter:description" content="自学了一波计算机网络，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;"/>
+<meta name="application-name" content="Jin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Jin&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://gujin.store/posts/2022-4-28-csnetwork/" /><link rel="prev" href="https://gujin.store/posts/2022-4-25-interview/" /><link rel="next" href="https://gujin.store/posts/tools/2022-5-8-websites/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络学习笔记",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/gujin.store\/posts\/2022-4-28-csnetwork\/"
+    },"image": ["https:\/\/gujin.store\/favicon.ico"],"genre": "posts","keywords": "计算机网络","wordcount":  6492 ,
+    "url": "https:\/\/gujin.store\/posts\/2022-4-28-csnetwork\/","datePublished": "2022-04-28T11:56:58+08:00","dateModified": "2022-04-28T11:56:58+08:00","publisher": {
+      "@type": "Organization",
+      "name": "JinYiGao","logo": "https:\/\/img.gujin.store\/img\/favicon.ico"},"author": {
+        "@type": "Person",
+        "name": "Jin"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="Jin&#39;s Blog"
+    title="Jin&#39;s Blog"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/tools/"
+                
+                
+              ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://github.com/JinYiGao"
+                title="GitHub"
+                rel="noopener noreferrer" target="_blank"
+              ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Jin&#39;s Blog"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/favicon.ico"
+    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
+    data-sizes="auto"
+    alt="/favicon.ico"
+    title="/favicon.ico"/><span class="header-title-text">Jin&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fas fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fas fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/tools/"
+                  
+                  
+                ><i class="fas fa-tools fa-fw fa-sm" aria-hidden="true"></i> 工具</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fas fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fas fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fas fa-user fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://github.com/JinYiGao"
+                  title="GitHub"
+                  rel="noopener noreferrer" target="_blank"
+                ><i class='fab fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>计算机网络学习笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://img.gujin.store/img/favicon.ico" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://img.gujin.store/img/profile_pic.jpg"
+    data-srcset="https://img.gujin.store/img/profile_pic.jpg, https://img.gujin.store/img/profile_pic.jpg 1.5x, https://img.gujin.store/img/profile_pic.jpg 2x"
+    data-sizes="auto"
+    alt="Jin"
+    title="Jin"/>&nbsp;Jin</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 学习笔记</a></span></div>
+      <div class="post-meta-line"><span title=2022-04-28&#32;11:56:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-28">2022-04-28</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 6492 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 13 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="计算机网络学习笔记">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-计算机网络基本概念">1. 计算机网络基本概念</a></li>
+    <li><a href="#2-常见计算机网络体系结构">2. 常见计算机网络体系结构</a></li>
+    <li><a href="#3-物理层概述">3. 物理层概述</a></li>
+    <li><a href="#4-数据链路层概述">4. 数据链路层概述</a>
+      <ul>
+        <li><a href="#41-媒体接入控制">4.1. 媒体接入控制</a></li>
+        <li><a href="#42-mac-地址ip-地址以及-arp-协议">4.2. MAC 地址、IP 地址以及 ARP 协议</a></li>
+        <li><a href="#43-集线器与交换机的区别">4.3. 集线器与交换机的区别</a></li>
+        <li><a href="#44-以太网交换机生成树协议-stp">4.4. 以太网交换机生成树协议 STP</a></li>
+        <li><a href="#45-虚拟局域网-vlan">4.5. 虚拟局域网 VLAN</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-网络层概述">5. 网络层概述</a>
+      <ul>
+        <li><a href="#51-分类编址的-ipv4-地址">5.1. 分类编址的 IPv4 地址</a></li>
+        <li><a href="#52-划分子网的-ipv4-地址和子网掩码">5.2. 划分子网的 IPv4 地址和子网掩码</a></li>
+        <li><a href="#53-无分类编址的-ipv4-地址">5.3. 无分类编址的 IPv4 地址</a></li>
+        <li><a href="#54-ip-数据报的发送和转发过程">5.4. IP 数据报的发送和转发过程</a></li>
+        <li><a href="#55-路由选择协议路由信息协议-rip">5.5. 路由选择协议——路由信息协议 RIP</a></li>
+        <li><a href="#56-路由选择协议开放最短路径优先-ospf-算法">5.6. 路由选择协议——开放最短路径优先 OSPF 算法</a></li>
+        <li><a href="#57-边界网关协议-bgp-基本工作原理">5.7. 边界网关协议 BGP 基本工作原理</a></li>
+        <li><a href="#58-ip-协议ipv4-数据报首部格式">5.8. IP 协议——IPv4 数据报首部格式</a></li>
+        <li><a href="#59-网际控制报文协议-icmp">5.9. 网际控制报文协议 ICMP</a></li>
+        <li><a href="#510-虚拟专用网-vpn-和网络地址转换-nat">5.10. 虚拟专用网 VPN 和网络地址转换 NAT</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-运输层概述">6. 运输层概述</a>
+      <ul>
+        <li><a href="#61-tcp-和-udp-对比">6.1. TCP 和 UDP 对比</a></li>
+        <li><a href="#62-tcp-的流量控制">6.2. TCP 的流量控制</a></li>
+        <li><a href="#63-tcp-的拥塞控制">6.3. TCP 的拥塞控制</a></li>
+        <li><a href="#64-tcp-可靠传输的实现">6.4. TCP 可靠传输的实现</a></li>
+        <li><a href="#65-tcp-运输连接管理">6.5. TCP 运输连接管理</a></li>
+        <li><a href="#66-tcp-报文段首部格式">6.6. TCP 报文段首部格式</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-应用层概述">7. 应用层概述</a>
+      <ul>
+        <li><a href="#71-动态主机配置协议-dhcp">7.1. 动态主机配置协议 DHCP</a></li>
+        <li><a href="#72-万维网-www">7.2. 万维网 WWW</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="1-计算机网络基本概念">1. 计算机网络基本概念</h2>
+<p>定义：一些互相连接的、自治的计算机的集合</p>
+<p>分类：<a class="lightgallery" href="https://img.gujin.store/img/image-20220619222934793.png" data-thumbnail="https://img.gujin.store/img/image-20220619222934793.png" data-sub-html="<h2>image-20220619222934793</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220619222934793.png"
+      data-srcset="https://img.gujin.store/img/image-20220619222934793.png, https://img.gujin.store/img/image-20220619222934793.png 1.5x, https://img.gujin.store/img/image-20220619222934793.png 2x"
+      data-sizes="auto"
+      alt="image-20220619222934793"
+      title="image-20220619222934793"/>
+  </a></p>
+<p>性能指标：速率、带宽、吞吐量、时延、时延带宽积、往返时间、利用率、丢包率</p>
+<h2 id="2-常见计算机网络体系结构">2. 常见计算机网络体系结构</h2>
+<p><strong>OSI 体系结构</strong></p>
+<p>法律上的国际标准</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220619225736470.png" data-thumbnail="https://img.gujin.store/img/image-20220619225736470.png" data-sub-html="<h2>image-20220619225736470</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220619225736470.png"
+      data-srcset="https://img.gujin.store/img/image-20220619225736470.png, https://img.gujin.store/img/image-20220619225736470.png 1.5x, https://img.gujin.store/img/image-20220619225736470.png 2x"
+      data-sizes="auto"
+      alt="image-20220619225736470"
+      title="image-20220619225736470"/>
+  </a></p>
+<p><strong>TCP/IP 体系结构</strong></p>
+<p>事实上的国际标准</p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220619225807454.png" data-thumbnail="https://img.gujin.store/img/image-20220619225807454.png" data-sub-html="<h2>image-20220619225807454</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220619225807454.png"
+      data-srcset="https://img.gujin.store/img/image-20220619225807454.png, https://img.gujin.store/img/image-20220619225807454.png 1.5x, https://img.gujin.store/img/image-20220619225807454.png 2x"
+      data-sizes="auto"
+      alt="image-20220619225807454"
+      title="image-20220619225807454"/>
+  </a></p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220619230352528.png" data-thumbnail="https://img.gujin.store/img/image-20220619230352528.png" data-sub-html="<h2>image-20220619230352528</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220619230352528.png"
+      data-srcset="https://img.gujin.store/img/image-20220619230352528.png, https://img.gujin.store/img/image-20220619230352528.png 1.5x, https://img.gujin.store/img/image-20220619230352528.png 2x"
+      data-sizes="auto"
+      alt="image-20220619230352528"
+      title="image-20220619230352528"/>
+  </a></p>
+<p><strong>原理体系结构</strong></p>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220620154217155.png" data-thumbnail="https://img.gujin.store/img/image-20220620154217155.png" data-sub-html="<h2>image-20220620154217155</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220620154217155.png"
+      data-srcset="https://img.gujin.store/img/image-20220620154217155.png, https://img.gujin.store/img/image-20220620154217155.png 1.5x, https://img.gujin.store/img/image-20220620154217155.png 2x"
+      data-sizes="auto"
+      alt="image-20220620154217155"
+      title="image-20220620154217155"/>
+  </a></p>
+<h2 id="3-物理层概述">3. 物理层概述</h2>
+<p><strong>作用: 在各种传输媒体上传输比特 0 和 1</strong></p>
+<p><strong>传输媒体</strong>：</p>
+<ul>
+<li>
+<p>导引型传输媒体</p>
+<p>同轴电缆、双绞线、光纤、电力线</p>
+</li>
+<li>
+<p>非导引型传输媒体</p>
+<p>无线电波、微波、红外线、可见光</p>
+</li>
+</ul>
+<h2 id="4-数据链路层概述">4. 数据链路层概述</h2>
+<ul>
+<li>
+<p>数据链路层三个重要问题</p>
+<ul>
+<li>封装成帧</li>
+<li>差错检测</li>
+<li>可靠传输</li>
+</ul>
+</li>
+<li>
+<p>可靠传输的实现机制</p>
+<ul>
+<li>停止-等待协议 SW</li>
+<li>回退 N 帧协议 GBN</li>
+<li>选择重传协议 SR</li>
+</ul>
+</li>
+<li>
+<p>点对点协议 PPP：Point to Point Protocol</p>
+</li>
+</ul>
+<h3 id="41-媒体接入控制">4.1. 媒体接入控制</h3>
+<p>共享信道要着重考虑的一个问题就是如何协调多个发送和接收站点对一个共享传输媒体的占用，<strong>即媒体接入控制 MAC</strong>(Medium Access Control)</p>
+<ul>
+<li>
+<p>静态划分信道</p>
+</li>
+<li>
+<p>动态接入控制</p>
+<ul>
+<li>多址接入</li>
+<li>载波监听</li>
+<li>碰撞检测</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-mac-地址ip-地址以及-arp-协议">4.2. MAC 地址、IP 地址以及 ARP 协议</h3>
+<ul>
+<li>
+<p>使用点对点信道的数据链路不需要使用地址</p>
+</li>
+<li>
+<p><strong>MAC 地址</strong>是以太网的 MAC 子层所使用的地址， 属于<strong>数据链路层</strong></p>
+<p>严格来说，MAC 地址是对网络上各接口的唯一标识，而不是对各设备的唯一标识</p>
+</li>
+<li>
+<p><strong>IP 地址</strong>是 TCP/IP 体系结构<strong>网际层</strong>所使用的地址</p>
+</li>
+<li>
+<p><strong>ARP 协议</strong>是属于 TCP/IP 体系结构的网际层，其作用是已知设备所分配到的 IP 地址，使用 ARP 协议可以通过该 IP 地址获取到设备的 MAC 地址</p>
+<p>ARP 协议只能在一段链路或同一网络中使用</p>
+</li>
+</ul>
+<p>数据包转发过程中：</p>
+<ol>
+<li>源 IP 地址和目的 IP 地址保持不变</li>
+<li>源 MAC 地址和目的 MAC 地址逐个链路(或逐个网络)改变</li>
+</ol>
+<h3 id="43-集线器与交换机的区别">4.3. 集线器与交换机的区别</h3>
+<ul>
+<li>使用集线器的以太网逻辑上仍是一个总线网，各站共享总线资源，使用的还是 CSMA/CD 协议，属于同一个碰撞域和广播域</li>
+<li>集线器只工作在物理层，它的每个接口仅简单地转发比特，不进行碰撞检测</li>
+<li>集线器一般都有少量的容错能力和网络管理功能</li>
+<li>交换机通常有多个接口，一般都工作在全双工方式</li>
+<li>交换机具有并行性，能同时联通多对接口，使多对主机同时通信，无碰撞(不使用 CSMA/CD 协议)</li>
+<li>交换机工作在<strong>数据链路层</strong>，它收到帧后，在帧交换表中查找帧的目的 MAC 地址所对应的接口号</li>
+<li>交换机的每个接口是一个独立的碰撞域</li>
+<li>交换机隔离碰撞域但不隔离广播域</li>
+</ul>
+<h3 id="44-以太网交换机生成树协议-stp">4.4. 以太网交换机生成树协议 STP</h3>
+<ul>
+<li>
+<p>如何提高以太网可靠性？</p>
+<ul>
+<li>
+<p>添加冗余链路</p>
+<p>但是冗余链路会带来负面效应——形成网络回路，带来以下问题：</p>
+<ol>
+<li>广播风暴</li>
+<li>主机收到重复的广播帧</li>
+<li>交换机的帧交换表震荡(飘移)</li>
+</ol>
+</li>
+<li>
+<p>使用生成树协议 STP</p>
+<ol>
+<li>
+<p>避免网络环路带来的各种问题</p>
+</li>
+<li>
+<p>不论交换机间采用怎样的物理连接，交换机都能自动计算并构建一个逻辑上没有环路的网络，其逻辑拓扑结构必须是树型的(无逻辑环路)</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="45-虚拟局域网-vlan">4.5. 虚拟局域网 VLAN</h3>
+<p>使用一个或多个交换机互连起来的交换式以太网，其所有站点都属于同一个广播域</p>
+<p>巨大的广播域会带来很多弊端：</p>
+<ol>
+<li>广播风暴</li>
+<li>难以管理和维护</li>
+<li>潜在的安全问题</li>
+</ol>
+<ul>
+<li>
+<p>网络中会频繁出现广播信息</p>
+<ul>
+<li>TCP/IP 协议栈中很多协议都会使用广播
+<ol>
+<li>地址解析协议 ARP</li>
+<li>路由信息协议 RIP</li>
+<li>动态主机配置协议 DHCP</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>分割广播域的方法</p>
+<ul>
+<li>使用路由器可以隔离广播域</li>
+</ul>
+</li>
+<li>
+<p><strong>虚拟局域网 VLAN</strong>是一种将局域网内的设备划分成与物理位置无关的逻辑组的技术，这些逻辑组具有某些共同的需求</p>
+</li>
+</ul>
+<h2 id="5-网络层概述">5. 网络层概述</h2>
+<p>网络层的主要任务是实现网络互连，进而实现数据包在各网络之间的传输。</p>
+<p>网络层提供的两种服务：</p>
+<ul>
+<li>
+<p>面向连接的虚电路服务</p>
+<ul>
+<li>
+<p>可靠通信由网络来保证</p>
+</li>
+<li>
+<p>必须建立网络层的连接——虚电路 VC</p>
+</li>
+<li>
+<p>通信双方沿着已建立的虚电路发送分组</p>
+</li>
+<li>
+<p>目的主机地址仅在连接建立阶段使用，之后每个分组首部只需携带一条虚电路编号</p>
+</li>
+<li>
+<p>数据总是按序到达</p>
+</li>
+<li>
+<p>通信结束后，需要释放之前所建立的虚电路</p>
+</li>
+</ul>
+</li>
+<li>
+<p>无连接的数据包服务</p>
+<ul>
+<li>
+<p>可靠通信由用户主机来保证</p>
+</li>
+<li>
+<p>不需要建立网络层连接</p>
+</li>
+<li>
+<p>每个分组可走不同路径</p>
+</li>
+<li>
+<p>每个分组必须携带目的主机的完整地址</p>
+</li>
+<li>
+<p>这种通信方式所传送的分组可能误码，丢失，重复和失序</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="51-分类编址的-ipv4-地址">5.1. 分类编址的 IPv4 地址</h3>
+<ul>
+<li>
+<p>A 类地址</p>
+<p>8 位网络号，最高位为 0</p>
+</li>
+<li>
+<p>B 类地址</p>
+<p>16 位网络号，最高位为 10</p>
+</li>
+<li>
+<p>C 类地址</p>
+<p>24 位网络号，最高位为 110</p>
+</li>
+<li>
+<p>D 类地址</p>
+<p>全 32 位，最高位为 1110，多播地址</p>
+</li>
+<li>
+<p>E 类地址</p>
+<p>全 32 位，最高位为 1111，保留</p>
+</li>
+<li>
+<p>地址 0.0.0.0 是一个特殊的 IPv4 地址，只能作为源地址使用，表示在本网络上的本主机</p>
+</li>
+<li>
+<p>以 127 开头，且后面三个字节非全 0 或者全 1 的 IPv4 地址，既可以作为源地址，也可以作为目的地址，一般用于本地软件回环测试，例如常用的 127.0.0.1</p>
+</li>
+<li>
+<p>地址 255.255.255.255，只能作为目的地之使用，表示“只在本网络上进行广播(各路由器均不转发)”</p>
+</li>
+<li>
+<p>只有 A 类，B 类，C 类地址可分配给网络中的主机或路由器的各接口</p>
+</li>
+<li>
+<p>主机号为全“0”的地址是网络地址，不能分配给主机或者路由器的各接口</p>
+</li>
+<li>
+<p>主机号为全“1”的地址是广播地址，不能分配给主机或者路由器的各接口</p>
+</li>
+</ul>
+<h3 id="52-划分子网的-ipv4-地址和子网掩码">5.2. 划分子网的 IPv4 地址和子网掩码</h3>
+<p>32 位子网掩码用于表明分类 IP 地址的主机号部分借用了几个比特作为子网号</p>
+<ul>
+<li>子网掩码用连续的比特 1 来对应网络号和子网号</li>
+<li>子网掩码用连续的比特 0 来对应主机号</li>
+<li>将划分子网的 IPv4 地址与其对应的子网掩码进行<strong>逻辑与运算</strong>就可以得到 IPv4 地址所在子网网络地址</li>
+</ul>
+<h3 id="53-无分类编址的-ipv4-地址">5.3. 无分类编址的 IPv4 地址</h3>
+<p>为了解决 IP 地址紧张的问题</p>
+<p><strong>无分类域间路由选择 CIDR</strong>，CIDR 使用“斜线记法”，即在 IPv4 地址后面加上斜杠，写上网络前缀所占的比特数量，剩余比特作为主机号。</p>
+<h3 id="54-ip-数据报的发送和转发过程">5.4. IP 数据报的发送和转发过程</h3>
+<ul>
+<li>主机发送 IP 数据报
+<ul>
+<li>若在同一网络则直接交付</li>
+<li>若不在同一网络，则间接交付，传输给主机所在网络的默认网关(路由器)，由默认网关帮忙转发</li>
+</ul>
+</li>
+<li>路由器转发 IP 数据报
+<ul>
+<li>检查 IP 数据报首部是否出错，若出错则直接丢弃该 IP 数据报并通告源主机；若没有出错，则进行转发</li>
+<li>根据 IP 数据报目的地址在路由表中查找匹配条目，找到则转发给下一跳，若找不到则丢弃该 IP 数据报并通告源主机</li>
+</ul>
+</li>
+</ul>
+<h3 id="55-路由选择协议路由信息协议-rip">5.5. 路由选择协议——路由信息协议 RIP</h3>
+<p>RIP 要求自治系统 AS 内的每一个路由器都要维护从它自己到 AS 内其他每一个网络的距离记录，称为“距离向量”。</p>
+<p>RIP 使用跳数作为度量来衡量到达目的网络的距离</p>
+<ul>
+<li>路由器到直连网络的距离定义为 1</li>
+<li>路由器到非直连网络的距离定义为所经过的路由器数加 1</li>
+<li>允许一条路径最多只能包含 15 个路由器</li>
+<li>RIP 只适用于小型互联网</li>
+</ul>
+<h3 id="56-路由选择协议开放最短路径优先-ospf-算法">5.6. 路由选择协议——开放最短路径优先 OSPF 算法</h3>
+<p>开放最短路径优先 OSPF 算法使用了 DijKstra 提出的最短路径算法 SPF，克服了 RIP 算法的缺点</p>
+<ul>
+<li>OSPF 是基于链路状态(指本路由器和哪些路由器相邻，以及相应链路代价：费用、时延。带宽等)</li>
+<li>OSPF 采用 SPF 算法计算路由，从算法上保证了不会产生路由环路</li>
+<li>OSPF 不限制网络规模，更新效率高，收敛速度快</li>
+</ul>
+<h3 id="57-边界网关协议-bgp-基本工作原理">5.7. 边界网关协议 BGP 基本工作原理</h3>
+<ul>
+<li>外部网关协议 EGP(例如边界网关协议 BGP)
+<ul>
+<li>在不同自治系统内，度量路由的代价可能不同，因此，对于自治系统之间的路由选择，使用“代价”作为度量来寻找最佳路由是不行的</li>
+<li>自治系统之间的路由选择必须考虑相关策略(政治，经济，安全等)</li>
+<li>边界网关协议力求寻找一条能够到达目的网络且比较好的路由，并非一定要寻找最佳路由</li>
+</ul>
+</li>
+</ul>
+<h3 id="58-ip-协议ipv4-数据报首部格式">5.8. IP 协议——IPv4 数据报首部格式</h3>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220723151301149.png" data-thumbnail="https://img.gujin.store/img/image-20220723151301149.png" data-sub-html="<h2>image-20220723151301149</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220723151301149.png"
+      data-srcset="https://img.gujin.store/img/image-20220723151301149.png, https://img.gujin.store/img/image-20220723151301149.png 1.5x, https://img.gujin.store/img/image-20220723151301149.png 2x"
+      data-sizes="auto"
+      alt="image-20220723151301149"
+      title="image-20220723151301149"/>
+  </a></p>
+<ul>
+<li>
+<p><strong>版本</strong></p>
+<p>占 4 个比特，通信双方版本必须一致</p>
+</li>
+<li>
+<p><strong>首部长度</strong></p>
+<p>占 4 个比特，表示 IP 数据报首部长度，取值以 4 字节为单位，最小十进制取值为 5，表示首部只有 20 字节固定部分；最大取值为 15，表示 IP 数据报首部包含 20 字节固定部分和最大 40 字节可变部分</p>
+</li>
+<li>
+<p><strong>可选字段</strong></p>
+<p>用来支持拍错，测量以及安全等措施，实际上可选字段很少被使用</p>
+</li>
+<li>
+<p>填充字段，确保首部长度为 4 字节的整数倍，使用全 0 进行填充</p>
+</li>
+<li>
+<p><strong>区分服务</strong></p>
+<p>占 8 比特，用来获得更好地服务，利用该字段不同数值可以提供不同等级的服务质量，一般情况下不使用</p>
+</li>
+<li>
+<p><strong>总长度字段</strong></p>
+<p>占 16 比特，表示 IP 数据报总长度，首部+数据载荷，最大取值为十进制 65535，单位为字节</p>
+</li>
+<li>
+<p><strong>标识</strong></p>
+<p>占 16 比特，属于同一个数据报的各分片数据报应该具有相同的标识，IP 软件维持一个计数器，每产生一个数据报，计数器值加 1，并将此值赋给标识字段</p>
+</li>
+<li>
+<p><strong>标志</strong></p>
+<p>占 3 个比特</p>
+</li>
+<li>
+<p><strong>片偏移</strong></p>
+<p>表示该数据报分片在总的数据载荷中的偏移位置，<strong>以 8 字节为单位</strong></p>
+</li>
+<li>
+<p><strong>生存时间</strong></p>
+<p>占 8 比特，最初以秒为单位，最大生存周期 255 秒，每转发一次减去该次转发在路由器上耗费的时间；现在以跳数为单位，每转发一次值减 1</p>
+</li>
+<li>
+<p><strong>协议</strong></p>
+<p>占 8 比特，指明 IPv4 数据报的数据部分是何种协议数据单元</p>
+<p>如：取值为 6 表明为 TCP 协议；取值为 17 表明为 UDP 协议</p>
+</li>
+</ul>
+<h3 id="59-网际控制报文协议-icmp">5.9. 网际控制报文协议 ICMP</h3>
+<p>为了更有效地转发 IP 数据报和提高交付成功的机会，在网际层使用了网际控制报文协议 ICMP，ICMP 是 IP 协议的附属协议，是介于 IP 层和 TCP 层的协议，一般被认为属于 IP 层协议。</p>
+<ul>
+<li>ICMP 报文被封装在 IP 数据报中进行发送</li>
+<li>主机或路由器使用 ICMP 来向源 发送差错报告报文和询问报文</li>
+</ul>
+<p>ICMP 差错报告报文共有以下 5 种：</p>
+<ul>
+<li>终点不可达</li>
+<li>源点抑制</li>
+<li>时间超过</li>
+<li>参数问题</li>
+<li>改变路由(重定向)</li>
+</ul>
+<p>ICMP 询问报文有以下两种：</p>
+<ul>
+<li>
+<p>回送请求和回答</p>
+<p>用来测试目的站是否可达及了解其有关状态</p>
+</li>
+<li>
+<p>时间戳请求和回答</p>
+<p>请某个主机或路由器回答当前的日期和时间</p>
+</li>
+</ul>
+<p>ICMP 应用举例：</p>
+<ul>
+<li>
+<p>分组间探测 Ping</p>
+<p>用来测试主机或路由器间的连通性，使用 ICMP 的回送请求和回答报文</p>
+</li>
+<li>
+<p>跟踪路由</p>
+<p>用来测试 IP 数据报从源主机到达目的主机要经过哪些路由器</p>
+</li>
+</ul>
+<h3 id="510-虚拟专用网-vpn-和网络地址转换-nat">5.10. 虚拟专用网 VPN 和网络地址转换 NAT</h3>
+<ul>
+<li>
+<p>虚拟专用网 VPN</p>
+<p><strong>利用公用的因特网</strong>作为本机构各专用网之间的通信载体，这样的专用网又称为虚拟专用网</p>
+</li>
+<li>
+<p>网络地址转换 NAT</p>
+<p>缓解 IPv4 地址空间即将耗尽的问题，NAT 能使大量使用内部专用地址的专用网络用户共享少量外部全球地址来访问因特网上的主机和资源。</p>
+</li>
+</ul>
+<h2 id="6-运输层概述">6. 运输层概述</h2>
+<p><strong>物理层</strong>、<strong>数据链路层</strong>以及<strong>网络层</strong>它们共同解决了将主机通过异构网络互联起来所面临的问题，实现了主机到主机的通信。</p>
+<p>但实际上在计算机网络中进行通信的<strong>真正实体是位于通信两端主机中的进程</strong>。</p>
+<ul>
+<li>TCP/IP 体系运输层使用端口号来区分应用层的不同应用进程
+<ul>
+<li>端口号使用<strong>16 比特</strong>表示，取值范围 0~65535</li>
+</ul>
+</li>
+</ul>
+<h3 id="61-tcp-和-udp-对比">6.1. TCP 和 UDP 对比</h3>
+<p>TCP：传输控制协议(Transmission Control Protocol)</p>
+<p>UDP：用户数据报协议(User Datagram Protocol)</p>
+<ul>
+<li><strong>UDP 是无连接</strong>的；<strong>TCP 是面向连接</strong>的</li>
+<li>UDP 支持单播、多播以及广播；TCP 仅支持单播，一对一通信</li>
+<li><strong>UDP 是面向应用报文</strong>的，对应用层交付的报文既不合并也不拆分，保留边界，报文不可分割，是 UDP 数据报处理的最小单位；<strong>TCP 是面向字节流</strong>的，会对数据块进行编号拆分发送</li>
+<li><strong>UDP 向上层提供无连接不可靠的传输服务</strong>(适用于 IP 电话、视频会议等实时应用)；<strong>TCP 向上层提供面向连接的可靠传输服务</strong>(适用于要求可靠传输的应用)</li>
+<li>UDP 用户数据报由首部和数据部分组成，首部仅包含 8 字节(源端口+目的端口+长度+校验和)；TCP 报文段也由首部和数据部分组成，但是首部格式复杂得多，最小为 20 字节(固定部分)，最大为 60 字节(可变部分 40 字节)</li>
+</ul>
+<h3 id="62-tcp-的流量控制">6.2. TCP 的流量控制</h3>
+<p>所谓流量控制就是让发送方的发送速率不要太快，要让接收方来得及接受</p>
+<ul>
+<li>利用<strong>滑动窗口机制</strong>可以很方便地实现 TCP 连接上的流量控制
+<ul>
+<li>TCP 接收方利用自己的接收窗口的大小来限制发送方发送窗口的大小</li>
+<li>TCP 发送方收到接收方的零窗口通知后，应启动持续计时器，计时器超时后，向接收方发送零窗口探测报文</li>
+</ul>
+</li>
+</ul>
+<h3 id="63-tcp-的拥塞控制">6.3. TCP 的拥塞控制</h3>
+<p>在某段时间内，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络性能就要变坏，这种情况就叫<strong>拥塞</strong>，若出现拥塞而不进行控制，整个网络的吞吐量将随输入负荷的增大而下降。</p>
+<p>TCP 四种拥塞控制算法</p>
+<ul>
+<li>
+<p>慢开始</p>
+<ul>
+<li>TCP 维护一个拥塞窗口 cwnd 和一个慢开始门限 ssthresh</li>
+<li>拥塞窗口小于慢开始门限时，执行慢开始算法，每收到一次确认，拥塞窗口指数增长</li>
+</ul>
+</li>
+<li>
+<p>拥塞避免</p>
+<ul>
+<li>拥塞窗口大于慢开始门限时，执行拥塞避免算法，每收到一次确认，拥塞窗口线性加 1</li>
+<li>当发生丢包时，认为网络拥塞，此时将慢开始门限变为开始时的一半，拥塞窗口变为 1，重新执行慢开始算法</li>
+</ul>
+</li>
+<li>
+<p>快重传</p>
+<ul>
+<li>
+<p>要求接收方不要等待自己发送数据时才进行捎带确认，而是要立即发送确认</p>
+</li>
+<li>
+<p>即使收到了失序的报文段也要立即发出对已收到的报文段的重复确认</p>
+</li>
+<li>
+<p>发送发一旦收到 3 个连续的重复确认，就将相应的报文段立即重传，而不是等待该报文段的超时重传计时器超时再重传</p>
+</li>
+</ul>
+</li>
+<li>
+<p>快恢复</p>
+<ul>
+<li>发送方一但收到 3 个重复确认，就知道现在只是丢失了个别的报文段，于是不启动慢开始算法，而执行快恢复算法</li>
+</ul>
+</li>
+</ul>
+<h3 id="64-tcp-可靠传输的实现">6.4. TCP 可靠传输的实现</h3>
+<ul>
+<li>
+<p>TCP 基于<strong>以字节为单位的滑动窗口</strong>来实现可靠传输</p>
+</li>
+<li>
+<p>虽然发送方的发送窗口是根据接收方的接收窗口设置的，但在同一时刻，发送方的发送窗口并不总是和接收方的接收窗口一样大</p>
+</li>
+<li>
+<p>TCP 要求<strong>接收方必须有累积确认和捎带确认机制</strong>，这样可以减小传输开销。</p>
+<ul>
+<li>接收方不应过分推迟发送确认，否则会导致不必要的超时重传</li>
+</ul>
+</li>
+<li>
+<p>TCP 是全双工通信，通信中的每一方都在发送和接收报文段，因此，每一方都有自己的发送窗口和接受窗口。</p>
+</li>
+</ul>
+<h3 id="65-tcp-运输连接管理">6.5. TCP 运输连接管理</h3>
+<ul>
+<li>
+<p>TCP 是面向连接的协议，它基于运输连接来传送 TCP 报文段</p>
+</li>
+<li>
+<p>TCP 运输连接的建立和释放是每一次面向连接的通信中必不可少的过程</p>
+</li>
+<li>
+<p>TCP 运输连接的三个阶段：</p>
+<ul>
+<li>建立 TCP 连接(三报文握手)</li>
+<li>数据传送</li>
+<li>释放 TCP 连接(四报文挥手)</li>
+</ul>
+</li>
+<li>
+<p><strong>TCP“三报文”握手建立连接</strong></p>
+<ol>
+<li>客户端发送同步位 SYN=1、初始序号字段 seq=x 的连接请求到服务器，同时进入同步已发送状态</li>
+<li>服务器发送针对 TCP 连接请求的确认报文：同步位 SYN=1、确认位 ACK=1、序号字段 seq 为 y，确认号字段 ack=x+1，之后进入同步已接收状态</li>
+<li>客户端收到来自服务器的确认报文后也发送一个确认报文至服务器，ACK=1，序号字段 seq=x+1，确认号字段 ack=y+1，至此两方连接建立</li>
+</ol>
+</li>
+<li>
+<p><strong>TCP“四报文挥手”释放连接</strong></p>
+<ol>
+<li>客户端发送 TCP 连接释放报文段，终止位 FIN=1，确认位 ACK=1，序号字段 seq=u，确认号字段 ack=v，进入终止等待状态 1</li>
+<li>服务器发送一个 TCP 确认报文段，确认位 ACK=1，seq=v，ack=u+1，进入关闭等待状态，这个时候服务器仍然可以向客户端发送数据，客户端进入终止等待状态 2</li>
+<li>数据传输完毕后，服务器发送 TCP 链接释放报文段并进入最后确认状态，终止位 FIN=1，确认位 ACK=1，序号字段 seq=w (因为半关闭状态下，服务器可能又发送了一些数据)，确认号字段 ack=u+1</li>
+<li>客户端发送 TCP 确认报文段，ACK=1，seq=u+1，ack=w+1，进入时间等待状态</li>
+<li>服务器收到客户端的确认报文后进入关闭状态，客户端经过 2MSL(最长报文寿命)后进入关闭状态</li>
+</ol>
+</li>
+</ul>
+<p><strong>注意</strong>：ack 均是对于对方报文 seq 序号 x 的确认，值为 ack=x+1</p>
+<h3 id="66-tcp-报文段首部格式">6.6. TCP 报文段首部格式</h3>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220724164503319.png" data-thumbnail="https://img.gujin.store/img/image-20220724164503319.png" data-sub-html="<h2>image-20220724164503319</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220724164503319.png"
+      data-srcset="https://img.gujin.store/img/image-20220724164503319.png, https://img.gujin.store/img/image-20220724164503319.png 1.5x, https://img.gujin.store/img/image-20220724164503319.png 2x"
+      data-sizes="auto"
+      alt="image-20220724164503319"
+      title="image-20220724164503319"/>
+  </a></p>
+<ul>
+<li>
+<p><strong>源端口</strong></p>
+<p>占 16 比特，用来标识发送该 TCP 报文段的应用进程</p>
+</li>
+<li>
+<p><strong>目的端口</strong></p>
+<p>占 16 比特，用来标识接受该 TCP 报文段的应用进程</p>
+</li>
+<li>
+<p><strong>序号</strong></p>
+<p>占 32 比特，序号增加到最后一个后，下一个序号又回到 0</p>
+<p>指出本 TCP 报文段数据载荷的第一个字节的序号</p>
+</li>
+<li>
+<p><strong>确认号</strong></p>
+<p>占 32 比特，确认号增加到最后一个后，下一个确认号又回到 0</p>
+<p>指出期望收到对方下一个 TCP 报文段的数据载荷的第一个字节的序号，同时也是对之前收到的所有数据的确认</p>
+</li>
+<li>
+<p><strong>确认标志位 ACK</strong></p>
+<p>取值为 1 时确认号字段才有效，取值为 0 时确认号字段无效</p>
+<p>TCP 规定，在连接建立后所有传送的 TCP 报文段都必须把 ACK 置 1</p>
+</li>
+<li>
+<p><strong>数据偏移</strong></p>
+<p>占 4 比特，并<strong>以 4 字节为单位</strong></p>
+<p>用来指出 TCP 报文段的数据载荷部分的起始处距离 TCP 报文段的起始处有多远（实际上指出的是首部长度）</p>
+</li>
+<li>
+<p><strong>窗口</strong></p>
+<p>占 16 比特，以字节为单位，指出发送本报文段的一方的<strong>接收窗口</strong></p>
+</li>
+<li>
+<p><strong>检验和</strong></p>
+<p>占 16 比特，检查范围包括 TCP 报文段的首部和数据载荷两部分</p>
+</li>
+<li>
+<p><strong>同步标志位 SYN</strong></p>
+<p>在 TCP 连接建立时用来同步序号</p>
+</li>
+<li>
+<p><strong>终止标志位 FIN</strong></p>
+<p>用来释放 TCP 连接</p>
+</li>
+<li>
+<p><strong>复位标志位 RST</strong></p>
+<p>用来复位 TCP 连接</p>
+<p>当 RST=1 时，表明 TCP 连接出现了异常，必须释放连接，然后再重新建立连接</p>
+<p>RST 置 1 还可以用来拒绝一个报文段或者拒绝一个 TCP 连接</p>
+</li>
+<li>
+<p><strong>推送标志位 PSH</strong></p>
+<p>接收方的 TCP 收到该标志位为 1 的报文段会<strong>尽快上交应用进程</strong>，而不必等到接受缓存都填满后再向上交付</p>
+</li>
+<li>
+<p><strong>紧急标志为 URG</strong></p>
+<p>取值为 1 时紧急指针字段有效；取值为 0 时紧急指针字段无效</p>
+</li>
+<li>
+<p><strong>紧急指针</strong></p>
+<p>占 16 比特，以字节为单位，用来指明紧急数据的长度</p>
+<p>当发送方有紧急数据时，可将紧急数据插队到发送缓存的最前面，并立刻封装到一个 TCP 报文段中进行发送、紧急指针会指出本报文段数据载荷部分包含了多长的紧急数据，紧急数据之后是普通数据</p>
+</li>
+<li>
+<p><strong>选项</strong></p>
+<ul>
+<li>最大报文段长度 MSS 选项：TCP 报文段数据载荷部分的最大长度</li>
+<li>窗口扩大选项：为了扩大窗口，提高吞吐率</li>
+<li>时间戳选项：用来计算往返时间 RTT</li>
+<li>选择确认选项</li>
+</ul>
+</li>
+<li>
+<p><strong>填充</strong></p>
+<p>由于数据偏移字段(首部长度)以 4 字节为单位，因此必须填充保证首部长度为 4 字节的倍数</p>
+</li>
+</ul>
+<h2 id="7-应用层概述">7. 应用层概述</h2>
+<h3 id="71-动态主机配置协议-dhcp">7.1. 动态主机配置协议 DHCP</h3>
+<ul>
+<li>DHCP 允许以太计算机加入新网络时刻自动获取 IP 地址等网络配置信息而不用手工参与</li>
+<li>DHCP 报文在运输层使用 UDP 协议封装</li>
+<li>DHCP 客户在未获取到 IP 地址时使用地址为 0.0.0.0</li>
+</ul>
+<h3 id="72-万维网-www">7.2. 万维网 WWW</h3>
+<ul>
+<li>
+<p>HTTP/1.0 采用非持续连接方式。在该方式下，每次浏览器请求一个文件都要与服务器建立 TCP 连接</p>
+</li>
+<li>
+<p>HTTP/1.1 采用持续连接方式。在该方式下，服务器在发送响应后仍然保持这条连接。</p>
+<ul>
+<li>为了进一步提高效率，HTTP/1.1 的持续连接还可以使用流水线方式工作，即浏览器在收到 HTTP 的响应报文之前就能够连续发送多个请求报文。</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTP 报文格式</strong></p>
+<p>HTTP 是面向文本的，其报文每一个字段都是 ASCII 码串，并且每个字段长度都是不确定的。</p>
+<ul>
+<li><strong>请求报文</strong></li>
+</ul>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220724232140714.png" data-thumbnail="https://img.gujin.store/img/image-20220724232140714.png" data-sub-html="<h2>image-20220724232140714</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220724232140714.png"
+      data-srcset="https://img.gujin.store/img/image-20220724232140714.png, https://img.gujin.store/img/image-20220724232140714.png 1.5x, https://img.gujin.store/img/image-20220724232140714.png 2x"
+      data-sizes="auto"
+      alt="image-20220724232140714"
+      title="image-20220724232140714"/>
+  </a></p>
+<ul>
+<li><strong>响应报文</strong></li>
+</ul>
+<p><a class="lightgallery" href="https://img.gujin.store/img/image-20220724232400959.png" data-thumbnail="https://img.gujin.store/img/image-20220724232400959.png" data-sub-html="<h2>image-20220724232400959</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://img.gujin.store/img/image-20220724232400959.png"
+      data-srcset="https://img.gujin.store/img/image-20220724232400959.png, https://img.gujin.store/img/image-20220724232400959.png 1.5x, https://img.gujin.store/img/image-20220724232400959.png 2x"
+      data-sizes="auto"
+      alt="image-20220724232400959"
+      title="image-20220724232400959"/>
+  </a></p>
+</li>
+</ul>
+<p><strong>TODO&hellip;</strong></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-04-28&#32;11:56:58>更新于 2022-04-28&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/posts/2022-4-28-csnetwork/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://gujin.store/posts/2022-4-28-csnetwork/" data-title="计算机网络学习笔记" data-hashtags="计算机网络"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://gujin.store/posts/2022-4-28-csnetwork/" data-hashtag="计算机网络"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://gujin.store/posts/2022-4-28-csnetwork/" data-title="计算机网络学习笔记"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' class="post-tag">计算机网络</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/2022-4-25-interview/" class="post-nav-item" rel="prev" title="面经学习(持续更新)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>面经学习(持续更新)</a>
+      <a href="/posts/tools/2022-5-8-websites/" class="post-nav-item" rel="next" title="一些值得收藏的网站(持续更新)">一些值得收藏的网站(持续更新)<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/alipay_qrcode.png"
+    data-srcset="/img/alipay_qrcode.png, /img/alipay_qrcode.png 1.5x, /img/alipay_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 支付宝"
+    title="Jin 支付宝"/><span data-animation>支付宝</span>
+          </div><div><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/img/wechat_donation_qrcode.png"
+    data-srcset="/img/wechat_donation_qrcode.png, /img/wechat_donation_qrcode.png 1.5x, /img/wechat_donation_qrcode.png 2x"
+    data-sizes="auto"
+    alt="Jin 微信"
+    title="Jin 微信"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://img.gujin.store/img/favicon.ico"target="_blank" rel="external nofollow noopener noreferrer">Jin</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">网站运行时间</span><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider">辽ICP备2021010117号</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/black/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"JinYiGao/blogtalks"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2019-12-18T16:15:22+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
