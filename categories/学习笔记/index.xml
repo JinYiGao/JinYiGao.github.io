@@ -84,5 +84,13 @@
   <guid>https://gujin.store/posts/2021-10-04-git-study-note/</guid>
   <description><![CDATA[平时经常有使用github或者gitee，本篇笔记收录了git的一些常用命令，对于日常使用来说足够了]]></description>
 </item>
+<item>
+  <title>Latex 学习笔记</title>
+  <link>https://gujin.store/posts/2020-12-13-latex-study-note/</link>
+  <pubDate>Sun, 13 Dec 2020 21:00:00 &#43;0800</pubDate>
+  <author>Jin</author>
+  <guid>https://gujin.store/posts/2020-12-13-latex-study-note/</guid>
+  <description><![CDATA[本篇笔记就简单介绍一下latex写作时的一些常用命令，其他知识以后我会慢慢补充！]]></description>
+</item>
 </channel>
 </rss>
