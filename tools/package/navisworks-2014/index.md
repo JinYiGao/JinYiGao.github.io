@@ -121,5 +121,5 @@ Autodesk Navisworks软件能够将AutoCAD和Revit系列等应用创建的设计�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/navisworks-2014/  
+> URL: https://www.gujin.store/tools/package/navisworks-2014/  
 

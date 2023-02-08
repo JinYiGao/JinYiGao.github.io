@@ -90,5 +90,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/su-2016/  
+> URL: https://www.gujin.store/tools/package/su-2016/  
 

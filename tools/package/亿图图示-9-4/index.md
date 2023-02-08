@@ -120,5 +120,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/%E4%BA%BF%E5%9B%BE%E5%9B%BE%E7%A4%BA-9-4/  
+> URL: https://www.gujin.store/tools/package/%E4%BA%BF%E5%9B%BE%E5%9B%BE%E7%A4%BA-9-4/  
 

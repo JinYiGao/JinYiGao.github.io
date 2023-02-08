@@ -555,5 +555,5 @@ TCP 四种拥塞控制算法
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2022-4-28-csnetwork/  
+> URL: https://www.gujin.store/posts/2022-4-28-csnetwork/  
 

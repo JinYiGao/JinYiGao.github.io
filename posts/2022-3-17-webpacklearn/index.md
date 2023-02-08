@@ -1863,5 +1863,5 @@ module.exports = {
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2022-3-17-webpacklearn/  
+> URL: https://www.gujin.store/posts/2022-3-17-webpacklearn/  
 

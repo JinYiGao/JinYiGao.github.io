@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>OpenGL - 分类 - Jin&#39;s Blog</title>
-    <link>https://gujin.store/categories/OpenGL/</link>
+    <link>https://www.gujin.store/categories/OpenGL/</link>
     <description>OpenGL - 分类 - Jin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Mon, 04 Oct 2021 23:06:33 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/categories/OpenGL/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Mon, 04 Oct 2021 23:06:33 &#43;0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/OpenGL/" rel="self" type="application/rss+xml" /><item>
   <title>OpenGL 学习笔记</title>
-  <link>https://gujin.store/posts/2021-7-14-opengl-learn-note/</link>
+  <link>https://www.gujin.store/posts/2021-7-14-opengl-learn-note/</link>
   <pubDate>Mon, 04 Oct 2021 23:06:33 &#43;0800</pubDate>
   <author>Jin</author>
-  <guid>https://gujin.store/posts/2021-7-14-opengl-learn-note/</guid>
+  <guid>https://www.gujin.store/posts/2021-7-14-opengl-learn-note/</guid>
   <description><![CDATA[本人的OpenGL学习，基于learnopengl教程进行的知识点梳理，记录了一些常用的OpenGL API]]></description>
 </item>
 </channel>

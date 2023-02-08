@@ -131,5 +131,5 @@ Autodesk Maya是美国Autodesk公司出品的世界顶级的三维动画软件�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/maya-2015/  
+> URL: https://www.gujin.store/tools/package/maya-2015/  
 

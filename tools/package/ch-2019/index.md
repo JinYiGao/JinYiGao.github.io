@@ -51,5 +51,5 @@ Adobe Character Animator CC 是一款角色动画应用程序，允许您使用�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ch-2019/  
+> URL: https://www.gujin.store/tools/package/ch-2019/  
 

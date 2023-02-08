@@ -130,5 +130,5 @@ Lumion是一款强大的3D可视化软件，主要用于建筑、景观、规划
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/lumion-10-0/  
+> URL: https://www.gujin.store/tools/package/lumion-10-0/  
 

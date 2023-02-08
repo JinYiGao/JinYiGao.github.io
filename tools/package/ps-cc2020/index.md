@@ -52,5 +52,5 @@ Adobe Photoshop，简称“PS”，是美国Adobe公司旗下最为出名的图�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ps-cc2020/  
+> URL: https://www.gujin.store/tools/package/ps-cc2020/  
 

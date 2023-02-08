@@ -88,5 +88,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2021-12-15-ad-learn-note1/  
+> URL: https://www.gujin.store/posts/2021-12-15-ad-learn-note1/  
 

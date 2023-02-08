@@ -135,5 +135,5 @@ C4D全名CINEMA 4D，由德国Maxon Computer研发出的3D动画软体。C4D是�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/c4d-r16/  
+> URL: https://www.gujin.store/tools/package/c4d-r16/  
 

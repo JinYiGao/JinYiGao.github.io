@@ -873,5 +873,5 @@ glGetError();
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2021-7-14-opengl-learn-note/  
+> URL: https://www.gujin.store/posts/2021-7-14-opengl-learn-note/  
 

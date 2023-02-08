@@ -66,5 +66,5 @@ Solid Converter无需安装Word、Excel 即可将PDF转Word；PDF转Excel ;PDF�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/solid-pdf/  
+> URL: https://www.gujin.store/tools/package/solid-pdf/  
 

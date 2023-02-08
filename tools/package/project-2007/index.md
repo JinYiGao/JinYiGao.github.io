@@ -74,5 +74,5 @@ Microsoft Project是一个国际上享有盛誉的通用的项目管理工具软
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/project-2007/  
+> URL: https://www.gujin.store/tools/package/project-2007/  
 

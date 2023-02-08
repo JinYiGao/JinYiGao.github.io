@@ -79,5 +79,5 @@ Proteus软件是EDA工具软件。它不仅具有其它EDA工具软件的仿真�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/proteus-8-9/  
+> URL: https://www.gujin.store/tools/package/proteus-8-9/  
 

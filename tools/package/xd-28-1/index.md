@@ -53,5 +53,5 @@ Adobe XD是一款UI设计软件，可以帮助用户在设计移动端的网页�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/xd-28-1/  
+> URL: https://www.gujin.store/tools/package/xd-28-1/  
 

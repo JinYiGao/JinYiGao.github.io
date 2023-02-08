@@ -75,5 +75,5 @@ Fireworks由Macromedia（在2005年被Adobe收购）推出的一款网页作图�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/fireworks-cs3/  
+> URL: https://www.gujin.store/tools/package/fireworks-cs3/  
 

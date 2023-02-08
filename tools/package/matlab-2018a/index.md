@@ -132,5 +132,5 @@ MATLAB是美国MathWorks公司出品的商业数学软件，用于算法开发�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/matlab-2018a/  
+> URL: https://www.gujin.store/tools/package/matlab-2018a/  
 

@@ -51,5 +51,5 @@ Adobe After Effects软件可以帮助您高效且精确地创建无数种引人�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ae-cc2019/  
+> URL: https://www.gujin.store/tools/package/ae-cc2019/  
 

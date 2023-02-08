@@ -54,5 +54,5 @@ Adobe InDesign（简称ID）桌面出版软件和在线发布工具，报刊杂�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/id-2021/  
+> URL: https://www.gujin.store/tools/package/id-2021/  
 

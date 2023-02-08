@@ -116,5 +116,5 @@ Autodesk SketchBook Pro 专业版 是一款新一代的自然画图软件，软�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/sketchbook-2016/  
+> URL: https://www.gujin.store/tools/package/sketchbook-2016/  
 

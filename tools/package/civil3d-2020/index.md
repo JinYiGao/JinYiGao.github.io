@@ -163,5 +163,5 @@ Civil3D软件是一款面向土木工程设计与文档编制的建筑信息模�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/civil3d-2020/  
+> URL: https://www.gujin.store/tools/package/civil3d-2020/  
 

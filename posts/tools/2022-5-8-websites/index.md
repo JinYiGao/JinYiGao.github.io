@@ -12,5 +12,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/tools/2022-5-8-websites/  
+> URL: https://www.gujin.store/posts/tools/2022-5-8-websites/  
 

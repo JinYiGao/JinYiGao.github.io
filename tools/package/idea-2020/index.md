@@ -133,5 +133,5 @@ IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/idea-2020/  
+> URL: https://www.gujin.store/tools/package/idea-2020/  
 

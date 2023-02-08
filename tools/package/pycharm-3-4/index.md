@@ -99,5 +99,5 @@ PyCharm是一种Python IDE，带有一整套可以帮助用户在使用Python语
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/pycharm-3-4/  
+> URL: https://www.gujin.store/tools/package/pycharm-3-4/  
 

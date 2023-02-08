@@ -52,5 +52,5 @@ Adobe InCopy（简称IC）文字编写和副本编辑软件，通常与InDesign�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/incopy-2020/  
+> URL: https://www.gujin.store/tools/package/incopy-2020/  
 

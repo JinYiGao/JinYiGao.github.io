@@ -94,5 +94,5 @@ ACDSee是ACD Systems开发的一款看图工具软件，提供良好的操作界
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/acdsee-9-0/  
+> URL: https://www.gujin.store/tools/package/acdsee-9-0/  
 

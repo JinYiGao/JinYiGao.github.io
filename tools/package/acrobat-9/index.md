@@ -84,5 +84,5 @@ Adobe Acrobat是一款非常好用且功能强大的PDF编辑和阅读软件。�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/acrobat-9/  
+> URL: https://www.gujin.store/tools/package/acrobat-9/  
 

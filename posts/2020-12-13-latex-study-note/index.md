@@ -71,5 +71,5 @@ x^{2}  %表示上标
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2020-12-13-latex-study-note/  
+> URL: https://www.gujin.store/posts/2020-12-13-latex-study-note/  
 

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>论文阅读 - 分类 - Jin&#39;s Blog</title>
-    <link>https://gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+    <link>https://www.gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
     <description>论文阅读 - 分类 - Jin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Thu, 11 Nov 2021 15:08:31 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Thu, 11 Nov 2021 15:08:31 &#43;0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
   <title>论文阅读 —— QSplat: A Multiresolution Point Rendering System for Large Meshes (2000)</title>
-  <link>https://gujin.store/posts/2021-11-11-qsplat-read-note/</link>
+  <link>https://www.gujin.store/posts/2021-11-11-qsplat-read-note/</link>
   <pubDate>Thu, 11 Nov 2021 15:08:31 &#43;0800</pubDate>
   <author>Jin</author>
-  <guid>https://gujin.store/posts/2021-11-11-qsplat-read-note/</guid>
+  <guid>https://www.gujin.store/posts/2021-11-11-qsplat-read-note/</guid>
   <description><![CDATA[QSplat论文阅读笔记]]></description>
 </item>
 </channel>

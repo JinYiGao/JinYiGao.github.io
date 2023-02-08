@@ -106,5 +106,5 @@ Maple是目前最为通用的数学和工程计算软件之一，内置高级技
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/maple-2020/  
+> URL: https://www.gujin.store/tools/package/maple-2020/  
 

@@ -101,5 +101,5 @@ Solidworks是一款功能强大的三维机械设计软件系统，有功能强�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/sw-2015/  
+> URL: https://www.gujin.store/tools/package/sw-2015/  
 

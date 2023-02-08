@@ -45,5 +45,5 @@ git rm -r --f "文件路径"   #不仅将该文件从缓存中删除，还会将
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2021-10-04-git-study-note/  
+> URL: https://www.gujin.store/posts/2021-10-04-git-study-note/  
 

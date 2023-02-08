@@ -1552,5 +1552,5 @@ InnoDB的数据是基于索引组织的，行锁是通过**对索引上的索引
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2022-8-28-mysqllearn/  
+> URL: https://www.gujin.store/posts/2022-8-28-mysqllearn/  
 

@@ -93,5 +93,5 @@ Dreamweaver，简称“DW”，中文名称"梦想编织者"，最初为美国MA
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/dw-cs5/  
+> URL: https://www.gujin.store/tools/package/dw-cs5/  
 

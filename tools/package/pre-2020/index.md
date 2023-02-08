@@ -51,5 +51,5 @@ Adobe Premiere是一款常用的视频编辑软件，Adobe Premiere是一款编�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/pre-2020/  
+> URL: https://www.gujin.store/tools/package/pre-2020/  
 

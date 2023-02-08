@@ -40,5 +40,5 @@ SAI是一款来自日本非常优秀的动漫漫画绘画软件，一直以来�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/sai-1-0/  
+> URL: https://www.gujin.store/tools/package/sai-1-0/  
 

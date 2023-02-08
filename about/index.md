@@ -7,5 +7,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/about/  
+> URL: https://www.gujin.store/about/  
 

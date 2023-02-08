@@ -97,5 +97,5 @@ Altium Designer 是一款简单易用、原生3D设计增强的一体化设计�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ad-17/  
+> URL: https://www.gujin.store/tools/package/ad-17/  
 

@@ -92,5 +92,5 @@ Microsoft Visual Studio（简称VS）是美国微软公司的开发工具包系�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/vs-2015/  
+> URL: https://www.gujin.store/tools/package/vs-2015/  
 

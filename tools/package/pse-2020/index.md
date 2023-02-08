@@ -44,5 +44,5 @@ Adobe Photoshop，简称“PS”，是图像扫描、编辑修改、图像制作
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/pse-2020/  
+> URL: https://www.gujin.store/tools/package/pse-2020/  
 

@@ -54,5 +54,5 @@ Adobe Bridge是一款adobe creative suite的控制中心软件，是一款图片
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/br-2021/  
+> URL: https://www.gujin.store/tools/package/br-2021/  
 

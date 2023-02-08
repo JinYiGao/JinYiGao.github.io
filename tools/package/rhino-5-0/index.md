@@ -89,5 +89,5 @@ Rhino中文名称犀牛，是一款超强的三维建模工具。不过不要小
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/rhino-5-0/  
+> URL: https://www.gujin.store/tools/package/rhino-5-0/  
 

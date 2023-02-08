@@ -42,5 +42,5 @@ LINGO是Linear Interactive and General Optimizer的缩写，即“交互式的�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/lingo-8-0/  
+> URL: https://www.gujin.store/tools/package/lingo-8-0/  
 

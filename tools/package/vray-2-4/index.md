@@ -100,5 +100,5 @@ VRay是由chaosgroup和asgvis公司出品，中国由曼恒公司负责推广的
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/vray-2-4/  
+> URL: https://www.gujin.store/tools/package/vray-2-4/  
 

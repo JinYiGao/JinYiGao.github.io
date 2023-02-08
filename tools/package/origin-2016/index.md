@@ -154,5 +154,5 @@ Origin是图形可视化和数据分析软件，是科研人员和工程师常�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/origin-2016/  
+> URL: https://www.gujin.store/tools/package/origin-2016/  
 

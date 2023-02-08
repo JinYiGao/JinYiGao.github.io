@@ -115,5 +115,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/cass-9-0/  
+> URL: https://www.gujin.store/tools/package/cass-9-0/  
 

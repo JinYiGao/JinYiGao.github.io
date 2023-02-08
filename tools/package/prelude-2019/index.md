@@ -53,5 +53,5 @@ Prelude是一种专为直观、高效的媒体整理和元数据输入而设计�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/prelude-2019/  
+> URL: https://www.gujin.store/tools/package/prelude-2019/  
 

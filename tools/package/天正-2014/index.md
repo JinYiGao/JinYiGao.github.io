@@ -139,5 +139,5 @@
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/%E5%A4%A9%E6%AD%A3-2014/  
+> URL: https://www.gujin.store/tools/package/%E5%A4%A9%E6%AD%A3-2014/  
 

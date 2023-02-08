@@ -181,5 +181,5 @@ UG（Unigraphics NX）是Siemens PLM Software公司出品的一个产品工程�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ug-12-0/  
+> URL: https://www.gujin.store/tools/package/ug-12-0/  
 

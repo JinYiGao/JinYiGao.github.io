@@ -132,5 +132,5 @@ AutoCAD软件是由美国欧特克有限公司（Autodesk）出品的一款自�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/cad-2019/  
+> URL: https://www.gujin.store/tools/package/cad-2019/  
 

@@ -95,5 +95,5 @@ Multisim是美国国家仪器（NI）有限公司推出的以Windows为基础的
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/multisim-10-0/  
+> URL: https://www.gujin.store/tools/package/multisim-10-0/  
 

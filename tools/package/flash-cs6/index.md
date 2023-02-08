@@ -44,5 +44,5 @@ Flash是一种动画创作与应用程序开发于一身的创作软件，人们
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/flash-cs6/  
+> URL: https://www.gujin.store/tools/package/flash-cs6/  
 

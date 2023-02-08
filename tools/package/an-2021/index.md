@@ -57,5 +57,5 @@ Adobe Animate CC 于 2016年1月推出。同时，Adobe 还将推出适用于桌
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/an-2021/  
+> URL: https://www.gujin.store/tools/package/an-2021/  
 

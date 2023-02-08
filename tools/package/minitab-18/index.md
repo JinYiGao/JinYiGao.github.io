@@ -82,5 +82,5 @@ Minitab是来自国外的一款无与伦比的可视化统计分析软件，既�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/minitab-18/  
+> URL: https://www.gujin.store/tools/package/minitab-18/  
 

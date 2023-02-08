@@ -53,5 +53,5 @@ Adobe Dimensions与一般的3D绘图软件相较之下，在操作界面在功�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/dn-2021/  
+> URL: https://www.gujin.store/tools/package/dn-2021/  
 

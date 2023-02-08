@@ -127,5 +127,5 @@ Inventor是美国AutoDesk公司推出的一款三维可视化实体模拟软件�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/inventor-2014/  
+> URL: https://www.gujin.store/tools/package/inventor-2014/  
 

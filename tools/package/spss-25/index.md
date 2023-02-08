@@ -94,5 +94,5 @@ SPSS（Statistical Product and Service Solutions），最初软件的全称为�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/spss-25/  
+> URL: https://www.gujin.store/tools/package/spss-25/  
 

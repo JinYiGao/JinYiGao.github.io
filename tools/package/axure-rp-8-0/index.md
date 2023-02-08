@@ -101,5 +101,5 @@ Axure RP是美国Axure Software Solution公司旗舰产品，是一个专业的�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/axure-rp-8-0/  
+> URL: https://www.gujin.store/tools/package/axure-rp-8-0/  
 

@@ -195,5 +195,5 @@ Pro/Engineer软件以参数化著称，是参数化技术的最早应用者，�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/proe-5-0/  
+> URL: https://www.gujin.store/tools/package/proe-5-0/  
 

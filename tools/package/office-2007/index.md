@@ -68,5 +68,5 @@ Microsoft Office是微软公司开发的一套基于 Windows 操作系统的办�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/office-2007/  
+> URL: https://www.gujin.store/tools/package/office-2007/  
 

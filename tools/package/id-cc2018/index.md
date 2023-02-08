@@ -76,5 +76,5 @@ InDesign软件是一个定位于专业排版领域的设计软件， 是面向�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/id-cc2018/  
+> URL: https://www.gujin.store/tools/package/id-cc2018/  
 

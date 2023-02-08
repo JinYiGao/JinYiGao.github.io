@@ -97,5 +97,5 @@ Visual C++ 6.0，简称VC或者VC6.0，是微软的一款C++编译器，将“�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/vc-6-0/  
+> URL: https://www.gujin.store/tools/package/vc-6-0/  
 

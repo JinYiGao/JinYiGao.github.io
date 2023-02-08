@@ -113,5 +113,5 @@ PowerMill是款顶级的数控加工编程软件系统。能使用户方便有�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/powermill-2021/  
+> URL: https://www.gujin.store/tools/package/powermill-2021/  
 

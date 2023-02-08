@@ -56,5 +56,5 @@ Adobe Photoshop Lightroom是Adobe 研发的一款以后期制作为重点的图�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/lr-10-1/  
+> URL: https://www.gujin.store/tools/package/lr-10-1/  
 

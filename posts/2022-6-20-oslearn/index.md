@@ -53,5 +53,5 @@ TCB 在内核中，ThreadCreate 是系统调用，会进入内核，Yield()用�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/posts/2022-6-20-oslearn/  
+> URL: https://www.gujin.store/posts/2022-6-20-oslearn/  
 

@@ -57,5 +57,5 @@ Adobe Media Encoder可以收录、转码、创建代理和输出多种格式。�
 ---
 
 > 作者: [Jin](https://img.gujin.store/img/favicon.ico)  
-> URL: https://gujin.store/tools/package/ame-2021/  
+> URL: https://www.gujin.store/tools/package/ame-2021/  
 
