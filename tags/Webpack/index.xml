@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Webpack - 标签 - Jin&#39;s Blog</title>
-    <link>https://gujin.store/tags/webpack/</link>
+    <link>https://gujin.store/tags/Webpack/</link>
     <description>Webpack - 标签 - Jin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Thu, 17 Mar 2022 22:24:00 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/tags/webpack/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Thu, 17 Mar 2022 22:24:00 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/tags/Webpack/" rel="self" type="application/rss+xml" /><item>
   <title>Webpack5学习笔记</title>
   <link>https://gujin.store/posts/2022-3-17-webpacklearn/</link>
   <pubDate>Thu, 17 Mar 2022 22:24:00 &#43;0800</pubDate>

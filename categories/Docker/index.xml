@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Docker - 分类 - Jin&#39;s Blog</title>
-    <link>https://gujin.store/categories/docker/</link>
+    <link>https://gujin.store/categories/Docker/</link>
     <description>Docker - 分类 - Jin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Mon, 04 Oct 2021 17:07:31 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/categories/docker/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Mon, 04 Oct 2021 17:07:31 &#43;0800</lastBuildDate><atom:link href="https://gujin.store/categories/Docker/" rel="self" type="application/rss+xml" /><item>
   <title>Docker 学习笔记</title>
   <link>https://gujin.store/posts/2021-10-04-docker-study-note/</link>
   <pubDate>Mon, 04 Oct 2021 17:07:31 &#43;0800</pubDate>
