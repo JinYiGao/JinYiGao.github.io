@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>学习笔记 - 标签 - Jin&#39;s Blog</title>
+    <title>学习笔记 on 小小呆呆没有脑袋的博客</title>
     <link>https://www.gujin.store/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-    <description>学习笔记 - 标签 - Jin&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Sun, 28 Aug 2022 22:42:23 &#43;0800</lastBuildDate><atom:link href="https://www.gujin.store/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
-  <title>MySQL学习笔记</title>
-  <link>https://www.gujin.store/posts/2022-8-28-mysqllearn/</link>
-  <pubDate>Sun, 28 Aug 2022 22:42:23 &#43;0800</pubDate>
-  <author>Jin</author>
-  <guid>https://www.gujin.store/posts/2022-8-28-mysqllearn/</guid>
-  <description><![CDATA[&lsquo;自学了一波MySQL数据库，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&hellip;&rsquo;]]></description>
-</item>
-</channel>
+    <description>Recent content in 学习笔记 on 小小呆呆没有脑袋的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 28 Aug 2022 22:42:23 +0800</lastBuildDate>
+    <atom:link href="https://www.gujin.store/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL学习笔记</title>
+      <link>https://www.gujin.store/post/2022-8-28-mysqllearn/</link>
+      <pubDate>Sun, 28 Aug 2022 22:42:23 +0800</pubDate>
+      <guid>https://www.gujin.store/post/2022-8-28-mysqllearn/</guid>
+      <description>自学了一波MySQL数据库，浅浅地记录了一下学习的笔记，后面如果有进阶的话再进行补充&amp;hellip;</description>
+    </item>
+  </channel>
 </rss>

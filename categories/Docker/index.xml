@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker - 分类 - Jin&#39;s Blog</title>
+    <title>Docker on 小小呆呆没有脑袋的博客</title>
     <link>https://www.gujin.store/categories/Docker/</link>
-    <description>Docker - 分类 - Jin&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>jin497189242@gmail.com (Jin)</managingEditor>
-      <webMaster>jin497189242@gmail.com (Jin)</webMaster><lastBuildDate>Mon, 04 Oct 2021 17:07:31 &#43;0800</lastBuildDate><atom:link href="https://www.gujin.store/categories/Docker/" rel="self" type="application/rss+xml" /><item>
-  <title>Docker 学习笔记</title>
-  <link>https://www.gujin.store/posts/2021-10-04-docker-study-note/</link>
-  <pubDate>Mon, 04 Oct 2021 17:07:31 &#43;0800</pubDate>
-  <author>Jin</author>
-  <guid>https://www.gujin.store/posts/2021-10-04-docker-study-note/</guid>
-  <description><![CDATA[最近，对微服务有点兴趣，就去学了一下docker，了解了一些基本的命令以及使用方法，汇成了这篇笔记，当然，还有很多没记下来(因为我还没学完&hellip;)，后面会慢慢完善]]></description>
-</item>
-</channel>
+    <description>Recent content in Docker on 小小呆呆没有脑袋的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 04 Oct 2021 17:07:31 +0800</lastBuildDate>
+    <atom:link href="https://www.gujin.store/categories/Docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://www.gujin.store/post/2021-10-04-docker-study-note/</link>
+      <pubDate>Mon, 04 Oct 2021 17:07:31 +0800</pubDate>
+      <guid>https://www.gujin.store/post/2021-10-04-docker-study-note/</guid>
+      <description>最近，对微服务有点兴趣，就去学了一下docker，了解了一些基本的命令以及使用方法，汇成了这篇笔记，当然，还有很多没记下来(因为我还没学完&amp;hellip;)，后面会慢慢完善</description>
+    </item>
+  </channel>
 </rss>
